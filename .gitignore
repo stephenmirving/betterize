@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Compressed Files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip

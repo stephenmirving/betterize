@@ -1,0 +1,30 @@
+{
+  "name": "betterize",
+  "version": "0.4.5",
+  "description": "Opinionated normalization for better cross-browser design.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenmirving/betterize.git"
+  },
+  "keywords": [
+    "Betterize",
+    "normalize",
+    "sanitize",
+    "reset",
+    "cross-browser",
+    "front-end",
+    "css",
+    "scss",
+    "sass"
+  ],
+  "author": "Stephen <stephenmichaelirving@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stephenmirving/betterize/issues"
+  },
+  "homepage": "https://github.com/stephenmirving/betterize#readme"
+}

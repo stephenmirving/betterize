@@ -1,2 +1,3 @@
 # betterize
-Opinionated normalization for cross-browser design
+
+Opinionated normalization for better cross-browser design.
