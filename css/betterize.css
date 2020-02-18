@@ -1,26 +1,26 @@
 /* ////////////////////////////////////////////////////////////////////////////
 // betterize.css - Opinionated normalization for better cross-browser design //
-// @author Stephen M Irving -- <stephenmichaelirving@gmail.com> ///////////////
+// @author Stephen M Irving -- <stephenirving.net> ////////////////////////////
 // Version 0.4.5 02/17/2020 ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////// */
 
 *,
 :before,
 :after {
-  box-sizing: inherit;
   background-repeat: no-repeat;
+  box-sizing: inherit;
 }
 
 :before,
 :after {
-  vertical-align: inherit;
   text-decoration: inherit;
+  vertical-align: inherit;
 }
 
 html {
   box-sizing: border-box;
-  line-height: 1.5;
   cursor: default;
+  line-height: 1.5;
   scroll-behavior: smooth;
   -moz-tab-size: 4;
   tab-size: 4;
@@ -51,8 +51,8 @@ summary {
 }
 
 h1 {
-  margin: .67em 0;
   font-size: 2em;
+  margin: .67em 0;
 }
 
 table {
@@ -60,17 +60,17 @@ table {
 }
 
 hr {
-  display: block;
-  overflow: visible;
   box-sizing: content-box;
-  height: 1px;
+  display: block;
   font-size: 2em;
+  height: 1px;
+  overflow: visible;
 }
 
 nav ol,
 nav ul {
-  padding: 0;
   list-style: none;
+  padding: 0;
 }
 
 dl dl,
@@ -86,21 +86,21 @@ ul ul {
 }
 
 dialog {
+  background-color: #fff;
+  border: solid;
+  color: #222;
+  display: block;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
   position: absolute;
   right: 0;
-  left: 0;
-  display: block;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
+  width: -webkit-fit-content;
   width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 1em;
-  border: solid;
-  margin: auto;
-  background-color: #fff;
-  color: #222;
 }
 
 dialog:not([open]),
@@ -113,8 +113,8 @@ img,
 input,
 select,
 textarea {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 a {
@@ -158,10 +158,10 @@ small {
 
 sub,
 sup {
-  position: relative;
-  vertical-align: baseline;
   font-size: 75%;
   line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sub {
@@ -177,19 +177,19 @@ input,
 optgroup,
 select,
 textarea {
-  margin: 0;
   font: inherit;
+  margin: 0;
 }
 
 button,
 input,
 select,
 textarea {
-  padding: .25em .375em;
-  border: 1px solid WindowFrame;
   background-color: transparent;
+  border: 1px solid WindowFrame;
   color: inherit;
   letter-spacing: inherit;
+  padding: .25em .375em;
 }
 
 a,
@@ -226,8 +226,8 @@ button::-moz-focus-inner,
 [type=button]::-moz-focus-inner,
 [type=reset]::-moz-focus-inner,
 [type=submit]::-moz-focus-inner {
-  padding: 0;
   border-style: none;
+  padding: 0;
 }
 
 button:-moz-focusring,
@@ -238,10 +238,10 @@ button:-moz-focusring,
 }
 
 select {
-  border-radius: 0;
-  background: no-repeat right center/1em;
   -webkit-appearance: none;
   -moz-appearance: none;
+  background: no-repeat right center/1em;
+  border-radius: 0;
   padding-right: 1em;
 }
 
@@ -255,13 +255,13 @@ textarea {
 }
 
 ::-webkit-input-placeholder {
-  opacity: .54;
   color: inherit;
+  opacity: .54;
 }
 
 ::-webkit-file-upload-button {
-  font: inherit;
   -webkit-appearance: button;
+  font: inherit;
 }
 
 ::-ms-expand {
@@ -277,15 +277,15 @@ textarea {
 }
 
 fieldset {
-  padding: .35em .75em .625em;
   border: 1px solid #a0a0a0;
+  padding: .35em .75em .625em;
 }
 
 legend {
+  color: inherit;
   display: table;
   max-width: 100%;
   padding: 0;
-  color: inherit;
   white-space: normal;
 }
 
@@ -344,6 +344,6 @@ svg:not([fill]) {
 }
 
 [aria-hidden=false][hidden]:not(:focus) {
-  position: absolute;
   clip: rect(0, 0, 0, 0);
+  position: absolute;
 }
