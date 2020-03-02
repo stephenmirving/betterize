@@ -20,6 +20,7 @@
 html {
   box-sizing: border-box;
   cursor: default;
+  font-family: sans-serif;
   line-height: 1.5;
   scroll-behavior: smooth;
   -moz-tab-size: 4;
