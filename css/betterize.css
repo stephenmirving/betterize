@@ -59,6 +59,7 @@ h1 {
 table {
   border-collapse: collapse;
   font-variant-numeric: tabular-nums;
+  vertical-align: middle;
 }
 
 hr {
