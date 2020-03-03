@@ -80,9 +80,9 @@ dl dl,
 dl ol,
 dl ul,
 ol dl,
-ul dl,
 ol ol,
 ol ul,
+ul dl,
 ul ol,
 ul ul {
   margin: 0;
