@@ -1,7 +1,7 @@
 /* ////////////////////////////////////////////////////////////////////////////
 // betterize.css - Opinionated normalization for better cross-browser design //
 // @author Stephen M Irving -- <stephenmichaelirving@gmail.com> ///////////////
-// Version 0.4.5 02/17/2020 ///////////////////////////////////////////////////
+// @version 0.5.0 03/14/2020 //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////// */
 
 *,
@@ -21,6 +21,7 @@ html {
   box-sizing: border-box;
   cursor: default;
   font-family: sans-serif;
+  font-size: 100%;
   line-height: 1.5;
   scroll-behavior: smooth;
   -moz-tab-size: 4;
@@ -38,6 +39,10 @@ html {
 }
 
 body {
+  background: #fefefe;
+  color: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   text-rendering: optimizeLegibility;
 }
@@ -53,7 +58,7 @@ summary {
 
 h1 {
   font-size: 2em;
-  margin: .67em 0;
+  margin: 0.67em 0;
 }
 
 hr {
@@ -118,19 +123,26 @@ textarea {
   max-width: 100%;
 }
 
-a {
-  -webkit-text-decoration-skip: objects;
-}
-
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   text-decoration: underline dotted;
 }
 
+///
+/// Normalize the style of <b>, <strong>, <i>, and <em> elements.
+///
+
 b,
 strong {
-  font-weight: bolder;
+  font-weight: 700;
+  line-height: inherit;
+}
+
+i,
+em {
+  font-style: italic;
+  line-height: inherit;
 }
 
 code,
@@ -190,7 +202,7 @@ textarea {
   border: 1px solid WindowFrame;
   color: inherit;
   letter-spacing: inherit;
-  padding: .25em .375em;
+  padding: 0.25em 0.375em;
 }
 
 a,
@@ -201,7 +213,7 @@ label,
 select,
 summary,
 textarea,
-[tabindex] {
+[tabindex='0'] {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
@@ -255,9 +267,35 @@ textarea {
   resize: vertical;
 }
 
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: #e6e6e6;
+  cursor: not-allowed;
+}
+
+///
+/// Correct the text style of placeholders in text fields.
+///
+
 ::-webkit-input-placeholder {
-  color: inherit;
-  opacity: .54;
+  color: #cacaca;
+}
+
+::-moz-placeholder {
+  color: #cacaca;
+}
+
+:-ms-input-placeholder {
+  color: #cacaca;
+}
+
+::-ms-input-placeholder {
+  color: #cacaca;
+}
+
+::placeholder {
+  color: #cacaca;
 }
 
 ::-webkit-file-upload-button {
@@ -269,17 +307,13 @@ textarea {
   display: none;
 }
 
-:-ms-input-placeholder {
-  color: rgba(0, 0, 0, .54);
-}
-
 :-moz-ui-invalid {
   box-shadow: none;
 }
 
 fieldset {
   border: 1px solid #a0a0a0;
-  padding: .35em .75em .625em;
+  padding: 0.35em 0.75em 0.625em;
 }
 
 legend {
@@ -317,6 +351,11 @@ img,
 svg,
 video {
   vertical-align: middle;
+}
+
+img {
+  display: inline-block;
+  -ms-interpolation-mode: bicubic;
 }
 
 svg:not(:root) {
