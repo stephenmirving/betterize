@@ -56,16 +56,16 @@ h1 {
   margin: .67em 0;
 }
 
-table {
-  border-collapse: collapse;
-  font-variant-numeric: tabular-nums;
-  vertical-align: middle;
-}
-
 hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+}
+
+table {
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  vertical-align: middle;
 }
 
 nav ol,
