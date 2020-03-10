@@ -38,9 +38,9 @@ html {
 body {
   background: #fefefe;
   color: #0a0a0a;
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
   text-rendering: optimizeLegibility;
 }
 
@@ -88,9 +88,7 @@ table {
 
 hr {
   box-sizing: content-box;
-  display: block;
-  font-size: 2em;
-  height: 1px;
+  height: 0;
   overflow: visible;
 }
 
@@ -191,6 +189,15 @@ em {
 }
 
 ///
+/// Normalize font size across all browsers.
+///
+
+small {
+  font-size: 80%;
+  line-height: inherit;
+}
+
+///
 /// Correct the odd `em` font size, inheritance and size scaling issues seen
 /// in some browsers.
 ///
@@ -201,15 +208,6 @@ pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
-}
-
-///
-/// Normalize font size across all browsers.
-///
-
-small {
-  font-size: 80%;
-  line-height: inherit;
 }
 
 ///

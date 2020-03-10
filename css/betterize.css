@@ -145,16 +145,17 @@ em {
   line-height: inherit;
 }
 
+small {
+  font-size: 80%;
+  line-height: inherit;
+}
+
 code,
 kbd,
 pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
-}
-
-small {
-  font-size: 80%;
 }
 
 ::-moz-selection {
@@ -253,7 +254,7 @@ button:-moz-focusring,
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: no-repeat right center/1em;
+  background: no-repeat right center / 1em;
   border-radius: 0;
   padding-right: 1em;
 }
