@@ -1,0 +1,32 @@
+{
+  "autoClosingTags": false,
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "experimentalTernaries": true,
+  "printWidth": 80,
+  "proseWrap": "always",
+  "quoteProps": "consistent",
+  "semi": true,
+  "singleAttributePerLine": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "useTabs": false,
+  "vueIndentScriptAndStyle": true,
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "proseWrap": "preserve"
+      }
+    }, {
+      "files": "*.html",
+      "options": {
+        "useTabs": true,
+        "printWidth": 115
+      }
+    }
+  ]
+}

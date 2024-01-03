@@ -1,245 +1,158 @@
-/* /////////////////////////////////////////////////////////////////////////
-// betterize.scss - Opinionated normalize for better cross-browser design //
-// @author Stephen M Irving -- <stephenmichaelirving@gmail.com> ////////////
-// @version 0.5.0 03/14/2020 ///////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////// */
-
-*,
-:before,
-:after {
-  background-repeat: no-repeat;
-  box-sizing: inherit;
-}
-
-:before,
-:after {
-  text-decoration: inherit;
-  vertical-align: inherit;
-}
+/* /////////////////////////////////////////////////////////////////////////////
+// -----------------------------------------------------------------------------
+// betterize.scss - Opinionated normalization for better cross-browser design //
+// @author Stephen M Irving -- <@metric_dev> -----------------------------------
+// @version 1.0.0 01/03/2024 ---------------------------------------------------
+// -----------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////// */
 
 html {
+  overflow: hidden scroll;
   box-sizing: border-box;
-  cursor: default;
-  font-family: sans-serif;
-  line-height: 1.5;
-  scroll-behavior: smooth;
+  color: #333;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  font-size: 1em;
+  line-height: 1.4;
+  overflow-wrap: break-word;
   -moz-tab-size: 4;
-       tab-size: 4;
+  tab-size: 4;
+  cursor: default;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
+  -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-  word-wrap: break-word;
+  text-size-adjust: 100%;
+}
 
-  @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
+  html {
     scroll-behavior: auto;
   }
 }
 
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  background-repeat: no-repeat;
+}
+
+::before,
+::after {
+  vertical-align: inherit;
+  text-decoration: inherit;
+}
+
 body {
-  background: #fefefe;
-  color: #0a0a0a;
+  overflow-x: clip;
+  margin: 0;
+  background: $color-body-bg;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0;
   text-rendering: optimizeLegibility;
 }
 
-///
-/// Set the display type for the <main> element in IE 11-, and the <details>
-/// element in Edge 18-, Firefox 48-, and IE.
-///
+// Customize the background color to match your design.
 
-details,
-main {
-  display: block;
+::-moz-selection {
+  background: #345171;
+  color: #222;
+  text-shadow: none;
 }
 
-///
-/// Ensure the correct display value in all browsers.
-///
-
-summary {
-  display: list-item;
+::selection {
+  background: #345171;
+  color: #222;
+  text-shadow: none;
 }
 
-///
-/// Correct the font size and margin on <h1> elements within <section> and
-/// <article> contexts in Chrome, Firefox, and Safari.
-///
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
+  font-family:
+    'Lato',
+    Helvetica,
+    Arial,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  text-wrap: balance;
+  white-space: unset;
 }
-
-///
-/// Render tables with collapsed borders by default in all browsers.
-///
 
 table {
-  border-collapse: collapse;
   font-variant-numeric: tabular-nums;
+  border-collapse: collapse;
+  border-color: currentcolor;
+  border-spacing: 0;
+  text-indent: 0;
   vertical-align: middle;
 }
-
-///
-/// A better looking default horizontal rule.
-///
-
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-///
-/// Remove the list-style for <ol> and <ul> elements used in <nav> elements.
-///
-
-nav ol,
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-///
-/// Remove the margin on nested detail lists in Chrome, Edge, IE, and Safari,
-/// on nested ordered and unordered lists in Edge 18- and IE.
-///
-
-dl,
-ol,
-ul {
-  dl,
-  ol,
-  ul {
-    margin: 0;
-  }
-}
-
-///
-/// Ensure dialog elements always display correctly.
-///
 
 dialog {
   background-color: #fff;
   border: solid;
-  display: block;
-  height: -webkit-fit-content;
-  height:    -moz-fit-content;
-  height:         fit-content;
+  color: #000;
+  height: -moz-fit-content;
+  height: fit-content;
   left: 0;
   margin: auto;
   padding: 1em;
   position: absolute;
   right: 0;
-  width: -webkit-fit-content;
-  width:    -moz-fit-content;
-  width:         fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-
-///
-/// Ensures dialog elements without the 'open' attribute are not displayed
-/// and adds the correct display value for template elements in IE.
-///
 
 dialog:not([open]),
 template {
   display: none;
 }
 
-///
-/// Restrict sizing to the page width in all browsers.
-///
-
-iframe,
-img,
-input,
-select,
-textarea {
-  height: auto;
-  max-width: 100%;
-}
-
-///
-/// Remove the bottom border in Chrome 57- and add the correct text decoration
-/// in Chrome, Edge, IE, Opera, and Safari.
-///
-
 abbr[title] {
   border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
+  text-decoration: none;
 }
 
-///
-/// Normalize the style of <b>, <strong>, <i>, and <em> elements.
-///
+// Add the correct font weight in Chrome, Edge, and Safari.
 
 b,
 strong {
-  font-weight: 700;
+  font-weight: bolder;
   line-height: inherit;
 }
 
-i,
-em {
-  font-style: italic;
-  line-height: inherit;
-}
-
-///
-/// Normalize font size across all browsers.
-///
+// Add the correct font size in all browsers.
 
 small {
   font-size: 80%;
   line-height: inherit;
 }
 
-///
-/// Correct the odd `em` font size, inheritance and size scaling issues seen
-/// in some browsers.
-///
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-///
-/// Remove text-shadow in selection highlight:
-/// @link https://twitter.com/miketaylr/status/12228805301
-/// Vendor-prefixed and regular ::selection selectors cannot be combined:
-/// @link https://stackoverflow.com/a/16982510/7133471
-///
-
-::-moz-selection {
-  background: #b3d4fc;
-  color: if(global-variable-exists('black'), $black, #000);
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  color: if(global-variable-exists('black'), $black, #000);
-  text-shadow: none;
-}
-
-///
-/// Normalize <sub> and <sup> elements, preventing them from affecting
-/// line height in any browsers.
-///
+// Prevent `sub` and `sup` elements from affecting the line height in
+// all browsers.
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
   position: relative;
   vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
 }
 
 sub {
@@ -250,9 +163,32 @@ sup {
   top: -0.5em;
 }
 
+img {
+  border-style: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-style: italic;
+  -ms-interpolation-mode: bicubic;
+  shape-margin: 1rem;
+}
+
+img,
+picture,
+details {
+  display: block;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select:not([multiple]):not([size]) {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+}
+
 ///
-/// Change the font styles correctly across browsers and remove the margins in
-/// Firefox and Safari.
+// 1. Change the font styles in all browsers.
+// 2. Remove the margin in Firefox and Safari.
 ///
 
 button,
@@ -260,28 +196,11 @@ input,
 optgroup,
 select,
 textarea {
-  font: inherit;
-  margin: 0;
+  margin: 0; // 2
+  font-family: inherit; // 1
+  font-size: 100%; // 1
+  line-height: 1.15; // 1
 }
-
-///
-/// Fix the inconsistent appearance across browsers.
-///
-
-button,
-input,
-select,
-textarea {
-  background-color: transparent;
-  border: 1px solid WindowFrame;
-  color: inherit;
-  letter-spacing: inherit;
-  padding: 0.25em 0.375em;
-}
-
-///
-/// Ensure the correct touch action for these elements across browsers.
-///
 
 a,
 area,
@@ -293,30 +212,28 @@ summary,
 textarea,
 [tabindex='0'] {
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
 }
 
-///
-/// Show the overflow in Edge 18- and IE.
-///
-
-button,
-input {
-  overflow: visible;
+a {
+  cursor: pointer;
 }
 
-///
-/// Remove the inheritance of text transform in Edge, Firefox, and IE.
-///
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+
+// Remove the inheritance of text transform in Edge, Firefox, and IE.
 
 button,
 select {
   text-transform: none;
 }
 
-///
-/// Correct the inability to style clickable types in iOS and Safari.
-///
+// Correct the inability to style clickable types in iOS and Safari.
 
 button,
 [type='button'],
@@ -325,53 +242,140 @@ button,
   -webkit-appearance: button;
 }
 
-///
-/// Remove the inner border and padding on focused buttons in Firefox.
-///
-
-button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
-  border-style: none;
+// Remove the inner border and padding in Firefox.
+::-moz-focus-inner {
   padding: 0;
+  border-style: none;
 }
 
-///
-/// Restore the focus styles unset by the previous rule.
-///
+// Restore the focus styles unset by the previous rule.
 
-button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
-///
-/// Fix the inconsistent appearance across browsers.
-///
+legend {
+  padding: 0;
+}
 
-select {
+// Add the correct vertical alignment in Chrome, Firefox, and Opera.
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+// Correct the cursor style of increment and decrement buttons in Chrome.
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+}
+
+::-webkit-search-decoration {
   -webkit-appearance: none;
-     -moz-appearance: none;
-  background: no-repeat right center / 1em;
-  border-radius: 0;
-  padding-right: 1em;
 }
 
-select:not([multiple]):not([size]) {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+:where(details > summary:first-of-type) {
+  display: list-item;
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 0.54;
 }
 
 ///
-/// Remove the default vertical scrollbar in IE 10+ and restric horizontal
-/// resizing in all browsers.
+// 1. Correct the inability to style clickable types in iOS and Safari.
+// 2. Change font properties to `inherit` in Safari.
 ///
 
-textarea {
-  overflow: auto;
-  resize: vertical;
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:invalid {
+  box-shadow: none;
+}
+
+// A better looking default horizontal rule
+
+hr {
+  display: block;
+  box-sizing: content-box;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+}
+
+iframe {
+  border: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+picture,
+svg,
+video {
+  vertical-align: middle;
+}
+
+audio,
+embed,
+iframe,
+input,
+img,
+object,
+picture,
+select,
+textarea,
+video {
+  max-width: 100%;
+}
+
+iframe,
+img,
+input,
+picture,
+select,
+textarea,
+video {
+  height: auto;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
 
 input:disabled,
@@ -381,156 +385,65 @@ textarea:disabled {
   cursor: not-allowed;
 }
 
-///
-/// Correct the text style of placeholders in text fields.
-///
-
-::-webkit-input-placeholder {
-  color: #cacaca;
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
-::-moz-placeholder {
-  color: #cacaca;
-}
-
-:-ms-input-placeholder {
-  color: #cacaca;
-}
-
-::-ms-input-placeholder {
-  color: #cacaca;
-}
-
-::placeholder {
-  color: #cacaca;
-}
-
-///
-/// Correct the inability to style clickable types in iOS and Safari and change
-/// font properties to inherit in Safari.
-///
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-///
-/// Fix the inconsistent appearance in IE.
-///
-
-::-ms-expand {
-  display: none;
-}
-
-///
-/// Remove the additional :invalid styles in Firefox.
-///
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-///
-/// Fix the inconsistent border appearance across browsers and correct the
-/// padding in Firefox.
-///
-
-fieldset {
-  border: 1px solid #a0a0a0;
-  padding: 0.35em 0.75em 0.625em;
-}
-
-///
-/// Correct the text wrapping in Edge and IE and the color inheritance from
-/// <fieldset> elements in IE. Remove the padding so developers are not caught
-/// out when they zero out <fieldset> elements.
-///
-
-legend {
-  color: inherit;
-  display: table;
-  max-width: 100%;
+menu,
+nav ol,
+nav ul,
+footer ol,
+footer ul {
   padding: 0;
-  white-space: normal;
+  margin: 0;
+  list-style: none;
 }
 
-///
-/// Add the correct display in Edge 18- and IE, and correct the vertical
-/// alignment in Chrome, Firefox, and Opera.
-///
-
-progress {
-  display: inline-block;
-  vertical-align: baseline;
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ol ol,
+ol ul,
+ul dl,
+ul ol,
+ul ul {
+  margin: 0;
 }
 
-///
-/// Correct the cursor style of increment and decrement buttons in Chrome.
-///
+// Prevent VoiceOver from ignoring list semantics in Safari
 
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
+nav li:before {
+  content: '\200B';
+  float: left;
 }
 
-///
-/// Correct the appearance in Chrome and Safari and the outline style in Safari.
-///
-
-[type='search'] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
+pre {
+  overflow: auto;
 }
 
-///
-/// Remove the inner padding on search cancel buttons and search decorations in
-/// Chrome and Safari on macOS.
-///
-
-[type='search']::-webkit-search-cancel-button,
-[type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 1em;
 }
 
-///
-/// Remove the gap between audio, canvas, iframes, images, videos and the bottom
-/// of their containers: https://github.com/h5bp/html5-boilerplate/issues/440
-///
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
+address {
+  font-style: normal;
 }
-
-img {
-  display: inline-block;
-  -ms-interpolation-mode: bicubic;
-}
-
-///
-/// Hide the overflow in IE.
-///
 
 svg:not(:root) {
   overflow: hidden;
 }
 
-///
-/// Ensure SVGs without fill attributes inherit color correctly.
-///
-
 svg:not([fill]) {
-  fill: currentColor;
+  fill: currentcolor;
 }
-
-///
-/// Add cursor defaults for relevant attributes.
-///
 
 [aria-busy='true'] {
   cursor: progress;
@@ -545,15 +458,11 @@ svg:not([fill]) {
   cursor: not-allowed;
 }
 
-///
-/// Change the display on visually hidden accessible elements in all browsers.
-///
-
 [aria-hidden='false'][hidden] {
   display: initial;
+}
 
-  &:not(:focus) {
-    clip: rect(0, 0, 0, 0);
-    position: absolute;
-  }
+[aria-hidden='false'][hidden]:not(:focus) {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
 }
