@@ -5,9 +5,8 @@ better cross-browser design and default styling in 2024.
 
 Versions in CSS, SASS, SCSS, and LESS are available.
 
-## Betterize is still in active testing for what can be optimized, added, or removed
-
-**This is *betterize* version 0.9.9 - Last update: 01/03/24
+**This is *betterize* version 0.9.9 - Last update: 01/03/24**
+**Betterize is still in active testing for what can be optimized, added, or removed**
 
 ## Deployment
 
