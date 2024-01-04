@@ -1,18 +1,20 @@
 # betterize
 
 _betterize_ is a more modern and opinionated CSS normalization file for better
-cross-browser design and default styling in 2024.
+default styling and cross-browser design in 2024.
 
-Instead of CSS resets that will overwrite all the user-agent styles and require you
-to add much of what was taken away back in yourself, CSS normalization seeks to
-make your markup render consistently across browsers while maintaining modern standards.
+Instead of CSS resets that will overwrite all the user-agent styles and require
+you to add much of what was taken away back in yourself, CSS normalization seeks
+to make your markup render consistently across browsers while maintaining modern standards.
 
-With [normalize.css](https://necolas.github.io/normalize.css/) remaining the same for more than 6 years now, I began adding my own
-defaults that take advantage of modern CSS and removing old fixes that are no longer necessary.
+With [normalize.css](https://necolas.github.io/normalize.css/) remaining
+unchanged for more than 6 years now, I began creating my own normalization
+defaults that take advantage of modern CSS, and removing old fixes that are were
+no longer necessary.
 
-## Versions in .css, .min.css, .sass, .scss, .less are available.
+## Available in .css, .min.css, .sass, .scss, .less versions.
 
-**This is *betterize* version 0.9.9 - Last update: 01/03/24**
+**This is *betterize* version 0.9.9 - Last update: 01/04/24**
 
 **Betterize is still in active testing for what can be optimized, added, or removed**
 
