@@ -7,7 +7,7 @@ Instead of CSS resets that will overwrite all the user-agent styles and require 
 to add much of what was taken away back in yourself, CSS normalization seeks to 
 make your markup render consistently across browsers while maintaining modern standards.
 
-With normalization.css remaining the same for more than 6 years now, I began adding my own
+With [normalize.css](https://necolas.github.io/normalize.css/) remaining the same for more than 6 years now, I began adding my own
 defaults that take advantage of modern CSS and removing old fixes that are no longer necessary.
 
 ## Versions in .css, .min.css, .sass, .scss, .less are available.
