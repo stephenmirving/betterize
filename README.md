@@ -30,9 +30,11 @@ project via NPM.
 
 ### Print Styles
 
-I have also included a print file of default styles. I strongly recommend that
-you take the contents of this file and append it to the very bottom of your
-stylesheet in CSS. If you are using one of the CSS preprocessors (Sass, Less) then I
+I have also included a file of default styles for printing.
+I strongly recommend that you take the contents of this file and append it to
+the very bottom of your stylesheet in CSS.
+
+If you are using one of the CSS preprocessors (Sass, Less) then I
 recommend using it in it's current form and importing it from your main file
 that contains the imports for all the other partials.
 
