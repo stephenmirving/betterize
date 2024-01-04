@@ -34,7 +34,7 @@ stylesheet in CSS. If you are using one of the CSS preprocessors (Sass, Less) th
 recommend using it in it's current form and importing it from your main file
 that contains the imports for all the other partials.
 
-In Less you would use the [less import at-rule](https://lesscss.org/features/#import-atrules-feature) like this: `@import 'vendor/print.less`
+In Less you would use the [less import at-rule](https://lesscss.org/features/#import-atrules-feature) like this: `@import 'vendor/print.less'`
 
 In Sass' .sass & .scss syntax you would import it with
 [Sass' use at-rule](https://sass-lang.com/documentation/at-rules/use/) like this
