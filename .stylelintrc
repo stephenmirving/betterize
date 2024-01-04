@@ -4,7 +4,6 @@
   ],
   "plugins": [
     "stylelint-scss",
-    "stylelint-group-selectors",
     "stylelint-order",
     "stylelint-prettier"
   ],
@@ -29,7 +28,7 @@
       }
     ],
     "at-rule-no-unknown": null,
-    "at-rule-no-vendor-prefix": true,
+    "at-rule-no-vendor-prefix": null,
     "at-rule-property-required-list": {
       "font-face": [
         "font-family",
@@ -112,7 +111,7 @@
     "lightness-notation": "number",
     "max-nesting-depth": 6,
     "media-feature-name-no-unknown": true,
-    "media-feature-name-no-vendor-prefix": true,
+    "media-feature-name-no-vendor-prefix": null,
     "media-feature-name-value-no-unknown": null,
     "media-feature-range-notation": null,
     "media-query-no-invalid": null,
@@ -400,7 +399,6 @@
         "severity": "warning"
       }
     ],
-    "plugin/stylelint-group-selectors": true,
     "prettier/prettier": [
       true,
       {
@@ -455,7 +453,7 @@
       "-moz-box-shadow",
       "-webkit-cursor"
     ],
-    "property-no-vendor-prefix": true,
+    "property-no-vendor-prefix": null,
     "property-no-unknown": true,
     "rule-empty-line-before": [
       "always-multi-line",
@@ -476,10 +474,10 @@
         "ignore": ["attribute"]
       }
     ],
+    "selector-no-vendor-prefix": null,
     "selector-pseudo-class-no-unknown": true,
-    "selector-pseudo-element-colon-notation": "single",
     "selector-pseudo-element-no-unknown": true,
-    "selector-not-notation": "complex",
+    "selector-not-notation": null,
     "selector-type-case": "lower",
     "selector-type-no-unknown": true,
     "shorthand-property-no-redundant-values": true,
@@ -491,6 +489,9 @@
       {
         "ignoreProperties": [
           "/^\\$_?[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?$/"
+        ],
+        "ignoreKeywords": [
+          "optimizeLegibility"
         ]
       }
     ],

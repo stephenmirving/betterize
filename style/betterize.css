@@ -1,10 +1,10 @@
-/* /////////////////////////////////////////////////////////////////////////////
-// ---------------------------------------------------------------------------//
-// betterize.scss - Opinionated normalization for better cross-browser design //
-// @author Stephen M Irving -- <@metric_dev> ---------------------------------//
-// @version 0.9.9 01/03/2024 -------------------------------------------------//
-// ---------------------------------------------------------------------------//
-///////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// /
+/* --------------------------------------------------------------------------- /
+/* betterize.css - Opinionated normalization for better cross-browser design - /
+/* @author Stephen M Irving -- <@metric_dev> --------------------------------- /
+/* @version 0.9.9 01/03/2024 ------------------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* ////////////////////////////////////////////////////////////////////////// */
 
 html {
   overflow: hidden scroll;
@@ -61,17 +61,17 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-// Customize the background color to match your design.
+/* Customize the background color to match your design. */
 
 ::-moz-selection {
   background: #345171;
-  color: #222;
+  color: #fff;
   text-shadow: none;
 }
 
 ::selection {
   background: #345171;
-  color: #222;
+  color: #fff;
   text-shadow: none;
 }
 
@@ -82,41 +82,32 @@ h4,
 h5,
 h6,
 blockquote {
-  font-family:
-    'Lato',
-    Helvetica,
-    Arial,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
   text-wrap: balance;
   white-space: unset;
 }
 
 table {
-  font-variant-numeric: tabular-nums;
+  vertical-align: middle;
+  border-spacing: 0;
   border-collapse: collapse;
   border-color: currentcolor;
-  border-spacing: 0;
   text-indent: 0;
-  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
 }
 
 dialog {
-  background-color: #fff;
-  border: solid;
-  color: #000;
-  height: -moz-fit-content;
-  height: fit-content;
-  left: 0;
-  margin: auto;
-  padding: 1em;
   position: absolute;
   right: 0;
+  left: 0;
   width: -moz-fit-content;
   width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1em;
+  border: solid;
+  margin: auto;
+  background-color: #fff;
+  color: #000;
 }
 
 dialog:not([open]),
@@ -129,7 +120,7 @@ abbr[title] {
   text-decoration: none;
 }
 
-// Add the correct font weight in Chrome, Edge, and Safari.
+/* Add the correct font weight in Chrome, Edge, and Safari. */
 
 b,
 strong {
@@ -137,15 +128,17 @@ strong {
   line-height: inherit;
 }
 
-// Add the correct font size in all browsers.
+/* Add the correct font size in all browsers. */
 
 small {
   font-size: 80%;
   line-height: inherit;
 }
 
-// Prevent `sub` and `sup` elements from affecting the line height in
-// all browsers.
+/*
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+*/
 
 sub,
 sup {
@@ -186,20 +179,20 @@ select:not([multiple]):not([size]) {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
 }
 
-///
-// 1. Change the font styles in all browsers.
-// 2. Remove the margin in Firefox and Safari.
-///
+/*
+ * Equalize the font styles across all browsers.
+ * Remove the margin in Firefox and Safari.
+*/
 
 button,
 input,
 optgroup,
 select,
 textarea {
-  margin: 0; // 2
-  font-family: inherit; // 1
-  font-size: 100%; // 1
-  line-height: 1.15; // 1
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
 }
 
 a,
@@ -225,15 +218,14 @@ a:visited {
   text-decoration: none;
 }
 
-
-// Remove the inheritance of text transform in Edge, Firefox, and IE.
+/* Remove the inheritance of text transform in Edge, Firefox, and IE. */
 
 button,
 select {
   text-transform: none;
 }
 
-// Correct the inability to style clickable types in iOS and Safari.
+/* Correct the inability to style clickable types in iOS and Safari. */
 
 button,
 [type='button'],
@@ -242,13 +234,14 @@ button,
   -webkit-appearance: button;
 }
 
-// Remove the inner border and padding in Firefox.
+/* Remove the inner border and padding in Firefox. */
+
 ::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
 
-// Restore the focus styles unset by the previous rule.
+/* Restore the focus styles unset by the previous rule. */
 
 :-moz-focusring {
   outline: 1px dotted ButtonText;
@@ -258,72 +251,12 @@ legend {
   padding: 0;
 }
 
-// Add the correct vertical alignment in Chrome, Firefox, and Opera.
+/* Add the correct vertical alignment in Chrome, Firefox, and Opera. */
 
 progress {
   display: inline-block;
   vertical-align: baseline;
 }
-
-[type='checkbox'],
-[type='radio'] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-// Correct the cursor style of increment and decrement buttons in Chrome.
-
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type='search'] {
-  outline-offset: -2px;
-  -webkit-appearance: textfield;
-}
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-:where(details > summary:first-of-type) {
-  display: list-item;
-}
-
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
-
-::placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
-
-///
-// 1. Correct the inability to style clickable types in iOS and Safari.
-// 2. Change font properties to `inherit` in Safari.
-///
-
-::-webkit-file-upload-button {
-  font: inherit;
-  -webkit-appearance: button;
-}
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-:-moz-submit-invalid {
-  box-shadow: none;
-}
-
-:invalid {
-  box-shadow: none;
-}
-
-// A better looking default horizontal rule
 
 hr {
   display: block;
@@ -414,9 +347,9 @@ ul ul {
   margin: 0;
 }
 
-// Prevent VoiceOver from ignoring list semantics in Safari
+/* Prevent VoiceOver from ignoring list semantics in Safari  */
 
-nav li:before {
+nav li::before {
   content: '\200B';
   float: left;
 }
@@ -435,6 +368,65 @@ samp {
 
 address {
   font-style: normal;
+}
+
+
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Correct the cursor style of increment and decrement buttons in Chrome. */
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+:where(details > summary:first-of-type) {
+  display: list-item;
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/*
+// 1 . Correct the inability to style clickable types in iOS and Safari.
+// 2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:invalid {
+  box-shadow: none;
 }
 
 svg:not(:root) {
@@ -465,4 +457,80 @@ svg:not([fill]) {
 [aria-hidden='false'][hidden]:not(:focus) {
   position: absolute;
   clip: rect(0, 0, 0, 0);
+}
+
+
+/*
+ * #PRINT STYLES
+ * Keep with other styles to avoid the additional HTTP request.
+*/
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: ' (' attr(href) ')';
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+  */
+
+  a[href^='#']::after,
+  a[href^='javascript:']::after {
+    content: '';
+  }
+
+  abbr[title]::after {
+    content: ' (' attr(title) ')';
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+  */
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
