@@ -21,7 +21,7 @@ project via NPM.
 
 ### Authors
 
-Created by Stephen M Irving <[@metric_dev](https://twitter.com/metric_dev)>
+Created by SM Irving <[@metric_dev](https://twitter.com/metric_dev)>
 containing work and research done by [Nicolas Gallagher](https://github.com/necolas)
 and [Sindre Sorhus](https://github.com/sindresorhus)
 <[@sindresorhus](https://twitter.com/sindresorhus)>
