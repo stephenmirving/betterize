@@ -12,7 +12,7 @@ unchanged for more than 6 years now, I began creating my own normalization
 defaults that take advantage of modern CSS, and removing old fixes that are were
 no longer necessary.
 
-## Available in .css, .min.css, .sass, .scss, .less versions.
+### Available in .css, .min.css, .sass, .scss, .less versions.
 
 **This is *betterize* version 0.9.9 - Last update: 01/04/24**
 
