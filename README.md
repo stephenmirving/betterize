@@ -28,7 +28,7 @@ copy and paste from the file.
 The next update (ver. 1.0.0) will allow for installing directly into your
 project via NPM.
 
-## Print Styles
+### Print Styles
 
 I have also included a print file of default styles. I strongly recommend that
 you take the contents of this file and append it to the very bottom of your
