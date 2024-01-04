@@ -62,8 +62,6 @@ module.exports = {
         'overflow-scrolling',
         'clip',
 
-        //
-
         'box-sizing',
         'width',
         'min-width',
@@ -156,8 +154,6 @@ module.exports = {
         'list-style-type',
         'list-style-image',
 
-        //
-
         'font',
         'font-family',
         'font-size',
@@ -198,8 +194,6 @@ module.exports = {
         'hyphens',
         'interpolation-mode',
 
-        //
-
         'opacity',
         'visibility',
         'filter',
@@ -207,8 +201,6 @@ module.exports = {
         'cursor',
         'pointer-events',
         'user-select',
-
-        //
 
         'unicode-bidi',
         'direction',
@@ -237,8 +229,6 @@ module.exports = {
         'orientation',
         'fill',
         'stroke',
-
-        //
 
         'transition',
         'transition-delay',

@@ -21,12 +21,6 @@
       "options": {
         "proseWrap": "preserve"
       }
-    }, {
-      "files": "*.html",
-      "options": {
-        "useTabs": true,
-        "printWidth": 115
-      }
     }
   ]
 }
