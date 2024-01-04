@@ -40,7 +40,7 @@ that contains the imports for all the other partials.
 
 In Less you would use the
 [less import at-rule](https://lesscss.org/features/#import-atrules-feature) like
-this: `@import 'vendor/print.less'`
+this: `@import 'vendor/print'`
 
 In Sass' .sass & .scss syntax you would import it with
 [Sass' use at-rule](https://sass-lang.com/documentation/at-rules/use/) like this
