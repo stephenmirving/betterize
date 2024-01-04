@@ -1,10 +1,10 @@
-/* /////////////////////////////////////////////////////////////////////////////
-// ---------------------------------------------------------------------------//
-// betterize.scss - Opinionated normalization for better cross-browser design //
-// @author Stephen M Irving -- <@metric_dev> ---------------------------------//
-// @version 0.9.9 01/03/2024 -------------------------------------------------//
-// ---------------------------------------------------------------------------//
-///////////////////////////////////////////////////////////////////////////// */
+////////////////////////////////////////////////////////////////////////////////
+// -------------------------------------------------------------------------- //
+// betterize.less - Opinionated normalization for better cross-browser design //
+// @author Stephen M Irving -- <@metric_dev> -------------------------------- //
+// @version 0.9.9 01/03/2024 ------------------------------------------------ //
+// -------------------------------------------------------------------------- //
+////////////////////////////////////////////////////////////////////////////////
 
 html {
   overflow: hidden scroll;
@@ -451,78 +451,4 @@ svg:not([fill]) {
 [aria-hidden='false'][hidden]:not(:focus) {
   position: absolute;
   clip: rect(0, 0, 0, 0);
-}
-
-
-///
-// #PRINT STYLES
-// Keep with other styles to avoid the additional HTTP request.
-///
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: ' (' attr(href) ')';
-  }
-
-  // Don't show links that are fragment identifiers,
-  // or use the `javascript:` pseudo protocol
-
-  a[href^='#']::after,
-  a[href^='javascript:']::after {
-    content: '';
-  }
-
-  abbr[title]::after {
-    content: ' (' attr(title) ')';
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  ///
-  // Printing Tables:
-  // https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-  ///
-
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
 }

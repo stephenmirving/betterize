@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "cleancss -o style/betterize.min.css style/betterize.css"
+    "min": "cleancss -o style/betterize.min.css style/betterize.css && cleancss -o style/print.min.css style/print.css"
   },
   "repository": {
     "type": "git",
