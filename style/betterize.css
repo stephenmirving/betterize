@@ -55,7 +55,7 @@ html {
 body {
   overflow-x: clip;
   margin: 0;
-  background: $color-body-bg;
+  background: #f2f2f2;
   -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

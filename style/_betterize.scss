@@ -23,14 +23,14 @@ html {
   line-height: 1.4;
   overflow-wrap: break-word;
   -moz-tab-size: 4;
-  tab-size: 4;
+       tab-size: 4;
   cursor: default;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
 
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
@@ -53,9 +53,9 @@ html {
 body {
   overflow-x: clip;
   margin: 0;
-  background: $color-body-bg;
+  background: #f2f2f2;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
@@ -97,12 +97,12 @@ dialog {
   position: absolute;
   right: 0;
   left: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width:  -webkit-fit-content;
+  width:     -moz-fit-content;
+  width:          fit-content;
   height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height:    -moz-fit-content;
+  height:         fit-content;
   padding: 1em;
   border: solid;
   margin: auto;
