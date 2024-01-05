@@ -138,6 +138,7 @@ module.exports = {
         'background-origin',
         'background-size',
         'background-repeat',
+        'image-rendering',
         'color',
         'box-decoration-break',
         'box-shadow',

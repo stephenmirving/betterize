@@ -154,21 +154,6 @@ sup {
   top: -0.5em;
 }
 
-img {
-  border-style: none;
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-style: italic;
-  -ms-interpolation-mode: bicubic;
-  shape-margin: 1rem;
-}
-
-img,
-picture,
-details {
-  display: block;
-}
-
 textarea {
   resize: vertical;
 }
@@ -258,8 +243,10 @@ hr {
   margin: 1em 0;
 }
 
-iframe {
-  border: 0;
+img,
+picture,
+details {
+  display: block;
 }
 
 audio,
@@ -283,16 +270,20 @@ select,
 textarea,
 video {
   max-width: 100%;
+  height: auto;
 }
 
-iframe,
-img,
-input,
-picture,
-select,
-textarea,
-video {
-  height: auto;
+img {
+  border-style: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  image-rendering: smooth;
+  font-style: italic;
+  shape-margin: 1rem;
+}
+
+iframe {
+  border: 0;
 }
 
 fieldset {
@@ -453,9 +444,9 @@ svg:not([fill]) {
 
 [aria-hidden='false'][hidden] {
   display: initial;
-}
 
-[aria-hidden='false'][hidden]:not(:focus) {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
+  &:not(:focus) {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
 }

@@ -82,8 +82,8 @@
       }
     ],
     "declaration-property-value-disallowed-list": {
-      "/^animation/": ["/ease/"],
-      "/^transition/": ["/ease/"]
+      "/^animation/": ["/^ease$/"],
+      "/^transition/": ["/^ease$/"]
     },
     "declaration-property-value-no-unknown": null,
     "font-family-name-quotes": "always-where-recommended",
@@ -284,6 +284,7 @@
         "background-origin",
         "background-size",
         "background-repeat",
+        "image-rendering",
         "color",
         "caret-color",
         "box-decoration-break",

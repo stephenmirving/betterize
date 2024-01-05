@@ -158,21 +158,6 @@ sup {
   top: -0.5em;
 }
 
-img {
-  border-style: none;
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-style: italic;
-  -ms-interpolation-mode: bicubic;
-  shape-margin: 1rem;
-}
-
-img,
-picture,
-details {
-  display: block;
-}
-
 textarea {
   resize: vertical;
 }
@@ -264,8 +249,24 @@ hr {
   margin: 1em 0;
 }
 
-iframe {
-  border: 0;
+img,
+picture,
+details {
+  display: block;
+}
+
+audio,
+embed,
+iframe,
+img,
+input,
+object,
+picture,
+select,
+textarea,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 audio,
@@ -278,27 +279,17 @@ video {
   vertical-align: middle;
 }
 
-audio,
-embed,
-iframe,
-input,
-img,
-object,
-picture,
-select,
-textarea,
-video {
-  max-width: 100%;
+img {
+  border-style: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  image-rendering: smooth;
+  font-style: italic;
+  shape-margin: 1rem;
 }
 
-iframe,
-img,
-input,
-picture,
-select,
-textarea,
-video {
-  height: auto;
+iframe {
+  border: 0;
 }
 
 fieldset {
