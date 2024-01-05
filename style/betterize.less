@@ -360,6 +360,18 @@ address {
   font-style: normal;
 }
 
+// Makes the default keyboard focus styling look the same on all elements
+// and across all browsers with :-moz-focusring and :focus-visible
+
+:-moz-focusring {
+  outline: 2px solid #000;
+  outline-offset: 1px;
+}
+
+:focus-visible {
+  outline-offset: 3px;
+}
+
 [type='checkbox'],
 [type='radio'] {
   box-sizing: border-box;
