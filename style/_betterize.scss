@@ -28,8 +28,8 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
-  -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
 
   @media (prefers-reduced-motion: reduce) {
@@ -54,8 +54,8 @@ body {
   overflow-x: clip;
   margin: 0;
   background: $color-body-bg;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
@@ -97,8 +97,10 @@ dialog {
   position: absolute;
   right: 0;
   left: 0;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 1em;
@@ -204,13 +206,18 @@ textarea,
   touch-action: manipulation;
 }
 
+// I remove the default underline for <a> links here. This is very opinionated.
+// If you keep this here, you must ensure that you style your links so that they
+// stand out properly from regular text. If you want to keep the default
+// underline you can remove the following declaration of text-decoration: none;
+
 a {
   cursor: pointer;
 
   &,
   &:link,
   &:visited {
-    text-decoration: none;
+    text-decoration: none; // This part very opinionated
   }
 }
 

@@ -204,13 +204,18 @@ textarea,
   touch-action: manipulation;
 }
 
+// I remove the default underline for <a> links here. This is very opinionated.
+// If you keep this here, you must ensure that you style your links so that they
+// stand out properly from regular text. If you want to keep the default
+// underline you can remove the following declaration of text-decoration: none;
+
 a {
   cursor: pointer;
 
   &,
   &:link,
   &:visited {
-    text-decoration: none;
+    text-decoration: none; // This part very opinionated
   }
 }
 
