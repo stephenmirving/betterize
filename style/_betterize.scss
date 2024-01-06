@@ -216,16 +216,21 @@ progress {
   vertical-align: baseline;
 }
 
+// A better looking horizontal rule that looks the same in all browsers
+// and inherits the color of the parent element's text so that it looks good
+// by default on all background colors.
+
 hr {
   display: block;
+  overflow: hidden;
   box-sizing: content-box;
-  height: 1px;
+  height: 0;
   padding: 0;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 2px solid currentcolor;
   margin: 1em 0;
+  color: inherit;
 }
-
 
 img,
 picture {
