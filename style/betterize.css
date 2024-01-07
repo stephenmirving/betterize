@@ -28,8 +28,8 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
-     -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
 
