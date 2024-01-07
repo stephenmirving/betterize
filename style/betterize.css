@@ -75,6 +75,8 @@ body {
   text-shadow: none;
 }
 
+/* https://developer.chrome.com/docs/css-ui/css-text-wrap-balance */
+
 h1,
 h2,
 h3,
@@ -82,8 +84,8 @@ h4,
 h5,
 h6,
 blockquote {
-  text-wrap: balance;
   white-space: unset;
+  text-wrap: balance;
 }
 
 table {
@@ -123,7 +125,7 @@ small {
 /*
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
-*/
+ */
 
 sub,
 sup {
@@ -152,7 +154,7 @@ select:not([multiple]):not([size]) {
 /*
  * Equalize the font styles across all browsers.
  * Remove the margin in Firefox and Safari.
-*/
+ */
 
 button,
 input,
@@ -186,8 +188,8 @@ a {
  * I remove the default underline for <a> links here. This is very opinionated.
  * If you keep this here, you must ensure that you style your links so that they
  * stand out properly from regular text. If you want to keep the default
- * underline you can remove the following declaration of text-decoration: none;
-*/
+ * underline you can remove the following declaration of text-decoration: none
+ */
 
 a,
 a:link,
@@ -226,7 +228,7 @@ progress {
  * A better looking horizontal rule that looks the same in all browsers
  * and inherits the color of the parent element's text so that it looks good
  * by default on all background colors.
-*/
+ */
 
 hr {
   display: block;
@@ -325,7 +327,7 @@ ul ul {
   margin: 0;
 }
 
-/* Prevent VoiceOver from ignoring list semantics in Safari  */
+/* Prevent VoiceOver from ignoring list semantics in Safari */
 
 nav li::before {
   content: '\200B';
@@ -351,7 +353,7 @@ address {
 /*
  * Makes the default keyboard focus styling look the same on all elements
  * and across all browsers with :-moz-focusring and :focus-visible
-*/
+ */
 
 :-moz-focusring {
   outline: 2px solid #000;
@@ -401,7 +403,7 @@ address {
 /*
  * 1 . Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
-*/
+ */
 
 ::-webkit-file-upload-button {
   font: inherit;
@@ -448,4 +450,94 @@ svg:not([fill]) {
 [aria-hidden='false'][hidden]:not(:focus) {
   position: absolute;
   clip: rect(0, 0, 0, 0);
+}
+
+/*
+ * #UTILITIES
+ */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.sr-only,
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  white-space: nowrap;
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus,
+.sr-only--focusable:active,
+.sr-only--focusable:focus,
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus,
+.visually-hidden--focusable:active,
+.visually-hidden--focusable:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  width: auto;
+  height: auto;
+  margin: 0;
+  white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: ' ';
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/*
+ * Modern way to clear floats
+ */
+
+.group {
+  display: flow-root;
+}
+
+.anim-off {
+  animation: none !important;
+}
+
+.uline {
+  text-decoration: underline;
 }

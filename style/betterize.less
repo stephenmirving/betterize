@@ -73,6 +73,8 @@ body {
   text-shadow: none;
 }
 
+// https://developer.chrome.com/docs/css-ui/css-text-wrap-balance
+
 h1,
 h2,
 h3,
@@ -80,8 +82,8 @@ h4,
 h5,
 h6,
 blockquote {
-  text-wrap: balance;
   white-space: unset;
+  text-wrap: balance;
 }
 
 table {
@@ -177,7 +179,7 @@ textarea,
 // I remove the default underline for <a> links here. This is very opinionated.
 // If you keep this here, you must ensure that you style your links so that they
 // stand out properly from regular text. If you want to keep the default
-// underline you can remove the following declaration of text-decoration: none;
+// underline you can remove the following declaration of text-decoration: none
 
 a {
   cursor: pointer;
@@ -438,4 +440,85 @@ svg:not([fill]) {
     position: absolute;
     clip: rect(0, 0, 0, 0);
   }
+}
+
+///
+/// #UTILITIES
+///
+
+// Hide visually and from screen readers
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+// Hide only visually, but have it available for screen readers:
+// https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+
+.sr-only,
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  white-space: nowrap;
+}
+
+
+// Extends the .visually-hidden class to allow the element
+// to be focusable when navigated to via the keyboard:
+// https://www.drupal.org/node/897638
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus,
+.sr-only--focusable:active,
+.sr-only--focusable:focus,
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus,
+.visually-hidden--focusable:active,
+.visually-hidden--focusable:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  width: auto;
+  height: auto;
+  margin: 0;
+  white-space: inherit;
+}
+
+// Hide visually and from screen readers, but maintain layout
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: ' ';
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+// Modern way to clear floats
+
+.group {
+  display: flow-root;
+}
+
+.anim-off {
+  animation: none !important;
+}
+
+.uline {
+  text-decoration: underline;
 }
