@@ -56,14 +56,19 @@ body {
   overflow-x: clip;
   margin: 0;
   background: #f2f2f2;
-  -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
 }
 
 @media screen and (min-width: 80em) {
   body {
     text-rendering: optimizeLegibility;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+    }
   }
 }
 

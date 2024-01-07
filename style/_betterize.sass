@@ -58,6 +58,10 @@ body
   @media screen and (min-width: 80em)
     text-rendering: optimizeLegibility
 
+    @media (prefers-color-scheme: dark)
+      -moz-osx-font-smoothing: grayscale
+      -webkit-font-smoothing: antialiased
+
 // TODO: Customize the selection background and color to match your design.
 
 ::-moz-selection
