@@ -494,7 +494,9 @@
           "/^\\$_?[a-z]+(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?(?:-{1,2}(?!-)[a-z]+)*(?:(?:-{1,2})[1-9]\\d*)?$/"
         ],
         "ignoreKeywords": [
-          "optimizeLegibility"
+          "optimizeLegibility",
+          "optimizeSpeed",
+          "optimizeGeometricPrecision"
         ]
       }
     ],
