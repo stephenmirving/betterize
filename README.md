@@ -32,7 +32,11 @@ project via NPM.
 
 I have also included a file of default styles for printing.
 I strongly recommend that you take the contents of this file and append it to
-the very bottom of your stylesheet in CSS.
+the very bottom of your stylesheet in CSS. This is because you want to minimize
+the number of HTTP requests required to optimize loading times and this is the
+easiest way to accomplish that. If you want to lazy load the print stylesheet
+so it doesn't load until the user needs to print or after the page has already
+finished loading, then you can do that as well.
 
 If you are using one of the CSS preprocessors (Sass, Less) then I
 recommend using it in it's current form and importing it from your main file

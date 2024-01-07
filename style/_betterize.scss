@@ -2,7 +2,7 @@
 // -------------------------------------------------------------------------- //
 // betterize.scss - Opinionated normalization for better cross-browser design //
 // @author Stephen M Irving -- <@metric_dev> -------------------------------- //
-// @version 0.9.9 01/03/2024 ------------------------------------------------ //
+// @version 0.9.9 01/07/2024 ------------------------------------------------ //
 // -------------------------------------------------------------------------- //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -59,7 +59,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-// Customize the background color to match your design.
+// TODO: Customize the selection background and color to match your design.
 
 ::-moz-selection {
   background: #345171;
@@ -445,7 +445,8 @@ svg:not([fill]) {
 /// #UTILITIES
 ///
 
-// Hide visually and from screen readers
+// Hide visually and from screen readers. It is recommended that you use the
+// HTML attribute [hidden] rather than the .hidden class for accessibility.
 
 .hidden,
 [hidden] {
