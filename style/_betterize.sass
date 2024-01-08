@@ -232,6 +232,9 @@ svg,
 video
   display: block
 
+:where(details > summary:first-of-type)
+  display: list-item
+
 audio,
 canvas,
 iframe,
@@ -339,9 +342,6 @@ address
 
 ::-webkit-search-decoration
   -webkit-appearance: none
-
-:where(details > summary:first-of-type)
-  display: list-item
 
 ::-webkit-input-placeholder
   color: inherit
