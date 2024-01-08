@@ -50,6 +50,38 @@ html {
   text-decoration: inherit;
 }
 
+// TODO: Customize the selection background and color to match your design.
+
+::-moz-selection {
+  background: #345171;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #345171;
+  color: #fff;
+  text-shadow: none;
+}
+
+// Get rid of the default focus that can activate with the mouse and makes the
+// default keyboard focus styling look the same on all elements
+// and across all modern browsers with :-moz-focusring and :focus-visible
+
+:focus {
+  outline: 0;
+}
+
+:-moz-focusring {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
+
 body {
   overflow-x: clip;
   margin: 0;
@@ -64,20 +96,6 @@ body {
       -webkit-font-smoothing: antialiased;
     }
   }
-}
-
-// TODO: Customize the selection background and color to match your design.
-
-::-moz-selection {
-  background: #345171;
-  color: #fff;
-  text-shadow: none;
-}
-
-::selection {
-  background: #345171;
-  color: #fff;
-  text-shadow: none;
 }
 
 // https://developer.chrome.com/docs/css-ui/css-text-wrap-balance
@@ -113,15 +131,11 @@ abbr[title] {
   text-decoration: underline dotted;
 }
 
-// Add the correct font weight in Chrome, Edge, and Safari.
-
 b,
 strong {
   font-weight: bolder;
   line-height: inherit;
 }
-
-// Add the correct font size in all browsers.
 
 small {
   font-size: 80%;
@@ -155,11 +169,6 @@ select:not([multiple]):not([size]) {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
 }
 
-///
-// Equalize the font styles across all browsers.
-// Remove the margin in Firefox and Safari.
-///
-
 button,
 input,
 optgroup,
@@ -184,19 +193,8 @@ textarea,
   touch-action: manipulation;
 }
 
-// I remove the default underline for <a> links here. This is very opinionated.
-// If you keep this here, you must ensure that you style your links so that they
-// stand out properly from regular text. If you want to keep the default
-// underline you can remove the following declaration of text-decoration: none
-
 a {
   cursor: pointer;
-
-  &,
-  &:link,
-  &:visited {
-    text-decoration: none; // This part very opinionated
-  }
 }
 
 // Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -347,18 +345,6 @@ samp {
 
 address {
   font-style: normal;
-}
-
-// Makes the default keyboard focus styling look the same on all elements
-// and across all browsers with :-moz-focusring and :focus-visible
-
-:-moz-focusring {
-  outline: 2px solid #000;
-  outline-offset: 1px;
-}
-
-:focus-visible {
-  outline-offset: 3px;
 }
 
 [type='checkbox'],
