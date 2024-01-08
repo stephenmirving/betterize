@@ -25,15 +25,20 @@ html {
   -moz-tab-size: 4;
        tab-size: 4;
   cursor: default;
-  scroll-behavior: smooth;
   scrollbar-gutter: stable;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
+}
 
-  @media (prefers-reduced-motion: reduce) {
-    scroll-behavior: auto;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :has(:target) {
+    scroll-behavior: smooth;
   }
 }
 
@@ -107,6 +112,15 @@ h6,
 blockquote {
   white-space: unset;
   text-wrap: balance;
+}
+
+p {
+  max-width: 95ch;
+
+  @supports (text-wrap: pretty) {
+    white-space: unset;
+    text-wrap: pretty;
+  }
 }
 
 table {
