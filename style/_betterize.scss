@@ -109,7 +109,8 @@ template {
 
 abbr[title] {
   border-bottom: none;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
 // Add the correct font weight in Chrome, Edge, and Safari.
