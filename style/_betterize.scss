@@ -87,14 +87,11 @@ body {
   margin: 0;
   background: #f2f2f2;
   text-rendering: optimizeSpeed;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 
   @media screen and (min-width: 80em) {
     text-rendering: optimizeLegibility;
-
-    @media (prefers-color-scheme: dark) {
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-    }
   }
 }
 
@@ -240,8 +237,12 @@ hr {
   color: inherit;
 }
 
+canvas,
+details,
 img,
-picture {
+picture,
+svg,
+video {
   display: block;
 }
 
@@ -256,6 +257,7 @@ video {
 }
 
 audio,
+canvas,
 embed,
 iframe,
 img,
@@ -434,6 +436,19 @@ svg:not([fill]) {
     clip: rect(0, 0, 0, 0);
   }
 }
+
+///
+// This next rule is only needed if using a JS framework like React. You want
+// to select the top level element that your application is rendered within.
+// It ensures that high-priority elements are will show up above the others
+// and prevents stacking context bugs and z-index issues.
+///
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
 
 ///
 /// #UTILITIES

@@ -79,16 +79,12 @@ body
   overflow-x: clip
   margin: 0
   background: #f2f2f2
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
   text-rendering: optimizeSpeed
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
 
   @media screen and (min-width: 80em)
     text-rendering: optimizeLegibility
-
-    @media (prefers-color-scheme: dark)
-      -moz-osx-font-smoothing: grayscale
-      -webkit-font-smoothing: antialiased
 
 // https://developer.chrome.com/docs/css-ui/css-text-wrap-balance
 
@@ -213,9 +209,12 @@ hr
   margin: 1em 0
   color: inherit
 
+canvas,
+details,
 img,
 picture,
-details
+svg,
+video
   display: block
 
 audio,
@@ -228,6 +227,7 @@ video
   vertical-align: middle
 
 audio,
+canvas,
 embed,
 iframe,
 input,
@@ -376,6 +376,18 @@ svg:not([fill])
   &:not(:focus)
     position: absolute
     clip: rect(0, 0, 0, 0)
+
+///
+// This next rule is only needed if using a JS framework like React. You want
+// to select the top level element that your application is rendered within.
+// It ensures that high-priority elements are will show up above the others
+// and prevents stacking context bugs and z-index issues.
+///
+
+#root,
+#__next
+  isolation: isolate
+
 
 ///
 /// #UTILITIES
