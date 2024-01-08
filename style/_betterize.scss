@@ -39,6 +39,7 @@ html {
 
   :has(:target) {
     scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
   }
 }
 
