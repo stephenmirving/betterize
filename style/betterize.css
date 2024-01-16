@@ -2,7 +2,7 @@
 /* --------------------------------------------------------------------------- /
 /* betterize.css - Opinionated normalization for better cross-browser design - /
 /* @author Stephen M Irving -- <@metric_dev> --------------------------------- /
-/* @version 0.9.9 01/07/2024 ------------------------------------------------- /
+/* @version 0.9.9 01/16/2024 ------------------------------------------------- /
 /* --------------------------------------------------------------------------- /
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -125,13 +125,7 @@ blockquote {
 
 p {
   max-width: 95ch;
-}
-
-@supports (text-wrap: pretty) {
-  p {
-    white-space: unset;
-    text-wrap: pretty;
-  }
+  text-wrap: pretty;
 }
 
 table {
@@ -564,8 +558,4 @@ svg:not([fill]) {
 
 .anim-off {
   animation: none !important;
-}
-
-.uline {
-  text-decoration: underline;
 }

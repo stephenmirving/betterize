@@ -14,13 +14,13 @@ no longer necessary.
 
 ### Available in .css, .min.css, .sass, .scss, .less versions.
 
-**This is *betterize* version 0.9.9 - Last update: 01/04/24**
+**This is _betterize_ version 0.9.9 - Last update: 01/16/2024**
 
 **Betterize is still in active testing for what can be optimized, added, or removed**
 
 ### Deployment
 
-To use *betterize*, simply download the repo and choose which version of the
+To use _betterize_, simply download the repo and choose which version of the
 file you will use from the style folder. This depends on which CSS preprocessor
 you are using, or if you are using one at all. Of course, you can also simply
 copy and paste from the file.
