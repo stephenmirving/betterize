@@ -58,17 +58,16 @@ html {
   text-decoration: inherit;
 }
 
-
 /* TODO: Customize the selection background and color to match your design. */
 
 ::-moz-selection {
-  background: #345171;
+  background: rgb(52 81 113);
   color: #fff;
   text-shadow: none;
 }
 
 ::selection {
-  background: #345171;
+  background: rgb(52 81 113);
   color: #fff;
   text-shadow: none;
 }
@@ -85,12 +84,12 @@ html {
 
 :focus-visible {
   outline: 2px solid #000;
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
 :-moz-focusring {
   outline: 2px solid #000;
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
 
 body {
@@ -98,7 +97,7 @@ body {
   min-height: 100vh;
   min-height: 100lvh;
   margin: 0;
-  background: #f2f2f2;
+  background: rgb(242 242 242);
   text-rendering: optimizeSpeed;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -479,10 +478,9 @@ svg:not([fill]) {
 
 /*
  * Hide visually and from screen readers. It is recommended that you use the
- * HTML attribute [hidden] rather than the .hidden class for accessibility.
+ * HTML attribute [hidden] rather than a .hidden class for accessibility.
  */
 
-.hidden,
 [hidden] {
   display: none !important;
 }
@@ -554,6 +552,7 @@ svg:not([fill]) {
 
 .group {
   display: flow-root;
+  overflow: clip;
 }
 
 .anim-off {
