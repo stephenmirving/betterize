@@ -262,7 +262,6 @@ hr {
 canvas,
 details,
 img,
-picture,
 svg,
 video {
   display: block;
@@ -279,7 +278,6 @@ iframe,
 img,
 input,
 object,
-picture,
 select,
 textarea,
 video {
@@ -291,7 +289,6 @@ audio,
 canvas,
 iframe,
 img,
-picture,
 svg,
 video {
   vertical-align: middle;
