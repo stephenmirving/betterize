@@ -23,15 +23,17 @@ html {
   line-height: 1.4;
   overflow-wrap: break-word;
   -moz-tab-size: 4;
-       tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: auto;
+  hyphens: auto;
   cursor: default;
   color-scheme: light dark;
   scrollbar-gutter: stable;
   hanging-punctuation: first last;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-          text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -57,7 +59,6 @@ html {
   vertical-align: inherit;
   text-decoration: inherit;
 }
-
 
 // TODO: Customize the selection background and color to match your design.
 
@@ -471,7 +472,6 @@ svg:not([fill]) {
   isolation: isolate;
 }
 
-
 ///
 /// #UTILITIES
 ///
@@ -499,7 +499,6 @@ svg:not([fill]) {
   margin: -1px;
   white-space: nowrap;
 }
-
 
 // Extends the .visually-hidden class to allow the element
 // to be focusable when navigated to via the keyboard:
