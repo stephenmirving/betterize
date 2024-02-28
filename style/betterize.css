@@ -9,7 +9,7 @@
 html {
   overflow: hidden scroll;
   box-sizing: border-box;
-  color: #333;
+  color: #222;
   font-family:
     system-ui,
     -apple-system,
@@ -32,7 +32,6 @@ html {
   hanging-punctuation: first last;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -111,7 +110,7 @@ body {
   }
 }
 
-/* https://developer.chrome.com/docs/css-ui/css-text-wrap-balance */
+/* See: https://developer.chrome.com/docs/css-ui/css-text-wrap-balance */
 
 h1,
 h2,
@@ -120,7 +119,6 @@ h4,
 h5,
 h6,
 blockquote {
-  white-space: unset;
   text-wrap: balance;
 }
 
