@@ -69,6 +69,12 @@ module.exports = {
         'height',
         'min-height',
         'max-height',
+        'inline-size',
+        'min-inline-size',
+        'max-inline-size',
+        'block-size',
+        'min-block-size',
+        'max-block-size',
         'aspect-ratio',
         'padding',
         'padding-inline',
@@ -170,8 +176,8 @@ module.exports = {
         'counter-increment',
         'counter-reset',
         '-ms-writing-mode',
-        "white-space",
-        "white-space-collapse",
+        'white-space',
+        'white-space-collapse',
         'text-align',
         'text-align-last',
         'text-decoration',
@@ -252,4 +258,4 @@ module.exports = {
       'unspecified-properties-position': 'bottom'
     }
   }
-}
+};

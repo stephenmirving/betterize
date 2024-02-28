@@ -14,7 +14,7 @@ no longer necessary.
 
 ### Available in .css, .min.css, .sass, .scss, .less versions.
 
-**This is _betterize_ version 0.9.9 - Last update: 01/16/2024**
+**This is _betterize_ version 0.9.9 - Last update: 02/27/2024**
 
 **Betterize is still in active testing for what can be optimized, added, or removed**
 
