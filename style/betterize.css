@@ -61,13 +61,13 @@ html {
 /* TODO: Customize the selection background and color to match your design. */
 
 ::-moz-selection {
-  background: rgb(52, 81, 113);
+  background: #345171;
   color: #fff;
   text-shadow: none;
 }
 
 ::selection {
-  background: rgb(52 81 113);
+  background: #345171;
   color: #fff;
   text-shadow: none;
 }
