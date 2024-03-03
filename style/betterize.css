@@ -9,7 +9,6 @@
 html {
   overflow: hidden scroll;
   box-sizing: border-box;
-  color: #222;
   font-family:
     system-ui,
     -apple-system,
@@ -62,7 +61,7 @@ html {
 /* TODO: Customize the selection background and color to match your design. */
 
 ::-moz-selection {
-  background: rgb(52 81 113);
+  background: rgb(52, 81, 113);
   color: #fff;
   text-shadow: none;
 }
@@ -98,7 +97,8 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   margin: 0;
-  background: rgb(242 242 242);
+  background: hsl(0 0% 94.9%);
+  color: #222;
   text-rendering: optimizeSpeed;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
