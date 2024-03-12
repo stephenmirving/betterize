@@ -20,6 +20,7 @@ broad cross-browser support.
 - [Version](#version)
 - [Deployment](#deployment)
 - [Print Styles](#print-styles)
+- [Internet Explorer](#internet-explorer)
 - [Smoother](#smoother)
 - [Authors](#authors)
 
