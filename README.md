@@ -1,16 +1,19 @@
 # betterize
 
-_Betterize_ is a more modern and opinionated CSS normalization file for better
-default styling and cross-browser design in 2024.
+_Betterize_ is a **modern** &amp; _opinionated_ CSS normalization file for better
+default styling and cross-browser design in 2024 and beyond.
 
 Instead of CSS resets that will overwrite all the user-agent styles and require
 you to add much of what was taken away back in yourself, CSS normalization seeks
-to make your markup render consistently across browsers while maintaining modern standards.
+to make your markup render consistently across browsers while maintaining modern
+standards.
 
 With [normalize.css](https://necolas.github.io/normalize.css/) remaining
 unchanged for more than 6 years now, I began creating my own normalization
-defaults that take advantage of modern CSS, and removing old fixes that are were
-no longer necessary.
+defaults that removed old fixes that are were no longer necessary while also taking
+advantage of modern CSS properties. The goal is to continue adding to this and
+improving the experience of developing stylesheets for the web, while maintaining
+broad cross-browser support.
 
 ## Table of Contents
 
@@ -41,6 +44,26 @@ everything together as a part of your build process.
 
 The next update will allow for installing directly into your project via NPM.
 
+## Internet Explorer
+
+While some of the styles found in _betterize_ may work to normalize some styles
+between old versions of Internet Explorer and other browsers, this is purely
+incidental. Given that IE is no longer supported by Microsoft and their market
+share of browsers being used is now less that 0.4% globally, the decision has
+been made to intentionally ignore all versions of IE in the development of
+_betterize_. Any normalization fixes or hacks that were purely for the benefit
+of IE 11 or earlier, and had no benefit for any other browser, have been removed
+_with predjudice_. There is just not enough utility for such fixes to justify
+even a single line of bloat added to the vast majority of modern projects that
+do not have any need to support IE.
+
+If you have been damned to endure the utter torture of having to support IE with
+your project, you would be better suited to sticking to the
+[Nicolas Gallagher](https://github.com/necolas)
+normalize file, which having not been updated in 6 years, still supports fixes
+for IE. You can find
+[his normalize.css here](https://necolas.github.io/normalize.css/).
+
 ## Print Styles
 
 I have also included a file of default styles for printing.
@@ -69,10 +92,11 @@ being phased out of Sass and will eventually be removed.
 ## Smoother
 
 If you are interested in a Sass/SCSS library of mixins and functions that aid in
-front-end development, please consider checking out my project
+front-end development, please consider checking out my project,
 [smoother](https://github.com/stephenmirving/smthr).
 
-_Smoother_ has its own version of `_betterize.scss` that is reworked to be used
+Along with having more than 150 mixins and more than 80 functions, _Smoother_
+has its own version of `_betterize.scss` that is reworked to be used exclusively
 with the _Smoother_ library.
 
 ## Authors
