@@ -12,11 +12,19 @@ unchanged for more than 6 years now, I began creating my own normalization
 defaults that take advantage of modern CSS, and removing old fixes that are were
 no longer necessary.
 
-Available in .css, .min.css, .sass, .scss, .less versions.
+## Table of Contents
+
+- [Version](#version)
+- [Deployment](#deployment)
+- [Print Styles](#print-styles)
+- [Smoother](#smoother)
+- [Authors](#authors)
+
+## Version
 
 **This is _betterize_ version 1.0.0 - Last update: 03/12/2024**
 
-_Betterize_ is still in active testing for what can be optimized, added, or removed
+_Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
 ## Deployment
 
@@ -64,7 +72,7 @@ If you are interested in a Sass/SCSS library of mixins and functions that aid in
 front-end development, please consider checking out my project
 [smoother](https://github.com/stephenmirving/smthr).
 
-_Smoother_ has its own version of _betterize.scss that is reworked to be used
+_Smoother_ has its own version of `_betterize.scss` that is reworked to be used
 with the _Smoother_ library.
 
 ## Authors
