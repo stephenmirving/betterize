@@ -50,7 +50,7 @@ The next update will allow for installing directly into your project via NPM.
 While some of the styles found in _betterize_ may work to normalize some styles
 between old versions of Internet Explorer and other browsers, this is purely
 incidental. Given that IE is no longer supported by Microsoft and their market
-share of browsers being used is now less that 0.4% globally, the decision has
+share of browsers being used is now less than 0.4% globally, the decision has
 been made to intentionally ignore all versions of IE in the development of
 _betterize_. Any normalization fixes or hacks that were purely for the benefit
 of IE 11 or earlier, and had no benefit for any other browser, have been removed
