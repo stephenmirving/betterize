@@ -2,7 +2,7 @@
 // -------------------------------------------------------------------------- //
 // betterize.sass - Opinionated normalization for better cross-browser design //
 // @author Stephen M Irving -- <@metric_dev> -------------------------------- //
-// @version 0.9.9 02/27/2024 ------------------------------------------------ //
+// @version 1.0.0 03/12/2024 ------------------------------------------------ //
 // -------------------------------------------------------------------------- //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -66,12 +66,10 @@ html
   color: #fff
   text-shadow: none
 
-// Get rid of the default focus that can activate with the mouse and makes the
-// default keyboard focus styling look the same on all elements
-// and across all modern browsers with :-moz-focusring and :focus-visible
-
-:focus
-  outline: 0
+// Mozilla focus rings can look a little bit closer to the element than the
+// ring set in other browsers by `:focus-visible`. To normalize that, the
+// `:-moz-focusring` selector comes after the standardized `:focus-visible`.c
+// TODO: Change the outline color to something that matches your design.
 
 :focus-visible
   outline: 2px solid #000
@@ -86,8 +84,6 @@ body
   min-height: 100vh
   min-height: 100lvh
   margin: 0
-  background: hsl(0 0% 94.9%)
-  color: #222
   text-rendering: optimizeSpeed
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
@@ -461,7 +457,7 @@ svg:not([fill])
 
 .clearfix::before,
 .clearfix::after
-  content: ' '
+  content: ''
   display: table
 
 .clearfix::after
