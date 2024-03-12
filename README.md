@@ -1,6 +1,6 @@
 # betterize
 
-_betterize_ is a more modern and opinionated CSS normalization file for better
+_Betterize_ is a more modern and opinionated CSS normalization file for better
 default styling and cross-browser design in 2024.
 
 Instead of CSS resets that will overwrite all the user-agent styles and require
@@ -12,23 +12,28 @@ unchanged for more than 6 years now, I began creating my own normalization
 defaults that take advantage of modern CSS, and removing old fixes that are were
 no longer necessary.
 
-### Available in .css, .min.css, .sass, .scss, .less versions.
+Available in .css, .min.css, .sass, .scss, .less versions.
 
-**This is _betterize_ version 0.9.9 - Last update: 02/27/2024**
+**This is _betterize_ version 1.0.0 - Last update: 03/12/2024**
 
-**Betterize is still in active testing for what can be optimized, added, or removed**
+_Betterize_ is still in active testing for what can be optimized, added, or removed
 
-### Deployment
+## Deployment
 
 To use _betterize_, simply download the repo and choose which version of the
 file you will use from the style folder. This depends on which CSS preprocessor
 you are using, or if you are using one at all. Of course, you can also simply
-copy and paste from the file.
+copy and paste from the file. It is recommended to put this file at the top of
+your existing stylesheet, either manually or as part of your build process, so
+as to minimie the number of HTTP requests made just for stylesheets.
 
-The next update (ver. 1.0.0) will allow for installing directly into your
-project via NPM.
+The CSS version of _betterize_ has a minified version included for your convenience,
+but you could also just add the `.css` file to your project and bundle and minify
+everything together as a part of your build process.
 
-### Print Styles
+The next update will allow for installing directly into your project via NPM.
+
+## Print Styles
 
 I have also included a file of default styles for printing.
 I strongly recommend that you take the contents of this file and append it to
@@ -53,7 +58,16 @@ but keep in mind that
 [Sass' import at-rule](https://sass-lang.com/documentation/at-rules/import/) is
 being phased out of Sass and will eventually be removed.
 
-### Authors
+## Smoother
+
+If you are interested in a Sass/SCSS library of mixins and functions that aid in
+front-end development, please consider checking out my project
+[smoother](https://github.com/stephenmirving/smthr).
+
+_Smoother_ has its own version of _betterize.scss that is reworked to be used
+with the _Smoother_ library.
+
+## Authors
 
 Created by SM Irving <[@metric_dev](https://twitter.com/metric_dev)>.
 
