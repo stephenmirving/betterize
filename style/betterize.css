@@ -2,9 +2,15 @@
 /* --------------------------------------------------------------------------- /
 /* betterize.css - Opinionated normalization for better cross-browser design - /
 /* @author Stephen M Irving -- <@metric_dev> --------------------------------- /
-/* @version 1.0.0 - 03/12/2024 ----------------------------------------------- /
+/* @version 1.0.1 - 03/13/2024 ----------------------------------------------- /
 /* --------------------------------------------------------------------------- /
 /* ////////////////////////////////////////////////////////////////////////// */
+
+/* --------------------------------------------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* #BASE STYLES: opinionated defaults ---------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* -------------------------------------------------------------------------- */
 
 html {
   overflow: hidden scroll;
@@ -38,19 +44,35 @@ html {
     scroll-behavior: smooth;
   }
 
+  /*
+   * 1. May need to modify this value depending on height
+   *    of any masthead/top nav bar or similar content
+   */
   :has(:target) {
     scroll-behavior: smooth;
-    scroll-padding-top: 3rem;
+    scroll-padding-top: 3rem; /* 1 */
   }
 }
+
+/*
+ * 1. Set `box-sizing` to `inherit` while setting the inheritance root,
+ *    which is the html element, to `box-sizing: border-box`
+ * 2. Setting `min-width: 0` here is a VERY opinionated decision. It can save
+ *    you a lot of time trying to figure out a ton of odd and unintuitive
+ *    behavior, especially with flexbox, but it can also cause unexpected
+ *    issues if you aren't aware it is here.
+ * 3. Set background images to `no-repeat` which is a much better default
+ */
 
 *,
 ::before,
 ::after {
-  box-sizing: inherit;
-  min-width: 0;
-  background-repeat: no-repeat;
+  box-sizing: inherit; /* 1 */
+  min-width: 0; /* 2 */
+  background-repeat: no-repeat; /* 3 */
 }
+
+/* Improved default settings for the `::before` and `::after` pseudo-elements */
 
 ::before,
 ::after {
@@ -72,26 +94,12 @@ html {
   text-shadow: none;
 }
 
-// Mozilla focus rings can look a little bit closer to the element than the
-// ring set in other browsers by `:focus-visible`. To normalize that, the
-// `:-moz-focusring` selector comes after the standardized `:focus-visible`.c
-// TODO: Change the outline color to something that matches your design.
-
-:focus-visible {
-  outline: 2px solid #000;
-  outline-offset: 3px;
-}
-
-:-moz-focusring {
-  outline: 2px solid #000;
-  outline-offset: 4px;
-}
-
 body {
   overflow-x: clip;
   min-height: 100vh;
   min-height: 100dvh;
   margin: 0;
+  font-size: 1rem;
   text-rendering: optimizeSpeed;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -125,36 +133,25 @@ h1 {
   font-size: 2em;
 }
 
+/*
+ * Limit the inline size of paragraphs to 95 characters.
+ * Set text-wrap to pretty if possible.
+ */
+
 p {
   max-inline-size: 95ch;
   text-wrap: pretty;
 }
 
-table {
-  vertical-align: middle;
-  border-spacing: 0;
-  border-collapse: collapse;
-  border-color: currentcolor;
-  text-indent: 0;
-  font-variant-numeric: tabular-nums;
-}
-
-dialog:not([open]),
-template {
-  display: none;
-}
-
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
+/* Normalize bold and strong */
 
 b,
 strong {
   font-weight: bolder;
   line-height: inherit;
 }
+
+/* Normalize small */
 
 small {
   font-size: 80%;
@@ -182,66 +179,48 @@ sup {
   top: -0.5em;
 }
 
-textarea {
-  resize: vertical;
+pre {
+  overflow: auto;
 }
 
-select:not([multiple]):not([size]) {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+/*
+ * Correct the odd font size, inheritance, overflow and size scaling issues seen
+ * in some browsers when using `code`, `kbd`, `pre`, and `samp`, and add
+ * a better default font stock.
+ */
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 1em;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  margin: 0;
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
+address {
+  font-style: normal;
 }
 
-a,
-area,
-button,
-input,
-label,
-select,
-summary,
-textarea,
-[tabindex='0'] {
-  touch-action: manipulation;
+/*
+ * Remove the bottom border in Chrome 57- and add the correct text decoration
+ * in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
-a {
-  cursor: pointer;
-}
+/* Render tables with collapsed borders and other improved defaults. */
 
-/* Remove the inheritance of text transform in Edge, Firefox, and IE. */
-
-button,
-select {
-  text-transform: none;
-}
-
-/* Correct the inability to style clickable types in iOS and Safari. */
-
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-}
-
-legend {
-  padding: 0;
-}
-
-/* Add the correct vertical alignment in Chrome, Firefox, and Opera. */
-
-progress {
-  display: inline-block;
-  vertical-align: baseline;
+table {
+  vertical-align: middle;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-color: currentcolor;
+  text-indent: 0;
+  font-variant-numeric: tabular-nums;
 }
 
 /*
@@ -262,73 +241,14 @@ hr {
   color: inherit;
 }
 
-canvas,
-details,
-img,
-svg,
-video {
-  display: block;
-}
-
-:where(details > summary:first-of-type) {
-  display: list-item;
-}
-
-audio,
-canvas,
-embed,
-iframe,
-img,
-input,
-object,
-select,
-textarea,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-img {
-  border-style: none;
-  background-size: cover;
-  background-repeat: no-repeat;
-  image-rendering: smooth;
-  font-style: italic;
-  shape-margin: 1rem;
-}
-
-iframe {
-  border: 0;
-}
-
-fieldset {
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-
-input:disabled,
-select:disabled,
-textarea:disabled {
-  background-color: #e6e6e6;
-  cursor: not-allowed;
-}
-
 dl,
 ol,
 ul {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
+/* Remove the list-style for <ol> and <ul> elements used in <nav> elements. */
 
 menu,
 nav ol,
@@ -339,6 +259,11 @@ footer ul {
   margin: 0;
   list-style: none;
 }
+
+/*
+ * Remove the margin on nested detail lists in Chrome, Edge, IE, and Safari,
+ * on nested ordered and unordered lists in Edge 18- and IE.
+ */
 
 dl dl,
 dl ol,
@@ -359,20 +284,141 @@ nav li::before {
   float: left;
 }
 
-pre {
-  overflow: auto;
+/* Ensure dialog elements always displayed correctly. */
+
+dialog {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1em;
+  border: solid;
+  margin: auto;
+  background-color: #fff;
+  color: #222;
 }
 
-pre,
-code,
-kbd,
-samp {
-  font-family: ui-monospace, Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 1em;
+/*
+ * Ensures dialog elements without the 'open' attribute are not displayed and
+ * adds the correct display value for template elements in legacy Edge and IE.
+ */
+
+dialog:not([open]),
+template {
+  display: none;
 }
 
-address {
-  font-style: normal;
+
+/* --------------------------------------------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* #FORMS -------------------------------------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* -------------------------------------------------------------------------- */
+
+
+/*
+ * Change the font styles correctly across browsers and remove the margins in
+ * Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  line-height: 1.15;
+}
+
+/* Fix the inconsistent default appearance across browsers. */
+
+button,
+input,
+select,
+textarea {
+  padding: 0.25em 0.375em;
+  border: 1px solid WindowFrame;
+  background-color: transparent;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+/* Ensure the correct touch action for these elements across browsers. */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex='0'] {
+  touch-action: manipulation;
+}
+
+/* Ensure default cursor behavior on links */
+
+a {
+  cursor: pointer;
+}
+
+/* Show the overflow in legacy Edge (18-) and IE. */
+
+button,
+input {
+  overflow: visible;
+}
+
+/* Remove the inheritance of text transform in Edge, Firefox, and IE. */
+
+button,
+select {
+  text-transform: none;
+}
+
+/* Fix the inconsistent appearance across browsers. */
+
+select {
+  padding-right: 1em;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: no-repeat right center / 1em;
+}
+
+/* Correct the inability to style clickable types in iOS and Safari. */
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+/* Remove the inner border and padding on focused buttons in Firefox. */
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: #e6e6e6;
+  cursor: not-allowed;
 }
 
 [type='checkbox'],
@@ -380,6 +426,83 @@ address {
   box-sizing: border-box;
   padding: 0;
 }
+
+/*
+ * Ensure the same default "down arrow" to indicate available options
+ * in a select box
+ */
+
+select:not([multiple]):not([size]) {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+}
+
+/*
+ * Remove the default vertical scrollbar in Legacy Edge and IE, and restric
+ * horizontal resizing in all browsers.
+ */
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/* Fix the inconsistent border appearance across browsers */
+
+fieldset {
+  min-inline-size: min-content;
+  padding: 0.35em 0.75em 0.625em;
+  border: 2px groove #a0a0a0;
+}
+
+/*
+ * Correct the text wrapping in Edge and IE and the color inheritance from
+ * <fieldset> elements in IE. Remove the padding so developers are not caught
+ * out when they zero out <fieldset> elements.
+ */
+
+legend {
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  color: inherit;
+  white-space: normal;
+}
+
+/*
+ * Add the correct display in Legacy Edge and IE, and correct the vertical
+ * alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/*
+ * Mozilla focus rings can look a little bit closer to the element than the
+ * ring set in other browsers by `:focus-visible`. To normalize that, the
+ * `:-moz-focusring` selector comes after the standardized `:focus-visible`.
+ *
+ * TODO: Change the outline color to something that matches your design, or
+ *       change both rules to `outline:0` and create outlines with
+ *       `box-shadow` instead.
+ */
+
+:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
+
+:-moz-focusring {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}
+
+/*
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ * In modern browsers, make it easier to replace the existing styles by
+ * just changing the color rather than remembering to overwrite opacity.
+ */
 
 ::-webkit-input-placeholder {
   color: inherit;
@@ -390,24 +513,8 @@ address {
   color: rgba(0, 0, 0, 0.54);
 }
 
-/* Correct the cursor style of increment and decrement buttons in Chrome. */
-
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type='search'] {
-  outline-offset: -2px;
-  -webkit-appearance: textfield;
-}
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 /*
- * 1 . Correct the inability to style clickable types in iOS and Safari.
+ * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
 
@@ -415,6 +522,14 @@ address {
   font: inherit;
   -webkit-appearance: button;
 }
+
+/* Fix inconsistent behavior in Legacy Edge and IE */
+
+::-ms-expand {
+  display: none;
+}
+
+/* Remove the additional :invalid styles in Firefox. */
 
 :-moz-ui-invalid {
   box-shadow: none;
@@ -428,6 +543,100 @@ address {
   box-shadow: none;
 }
 
+/* Correct the cursor style of increment and decrement buttons in Chrome. */
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* Correct the appearance in Chrome and Safari and the outline style in Safari. */
+
+[type='search'] {
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+}
+
+/*
+ * Remove the inner padding on search cancel buttons and search decorations in
+ * Chrome and Safari on macOS.
+ */
+
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+
+/* --------------------------------------------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* #EMBEDDED MEDIA AND OTHER CONTENT ----------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* -------------------------------------------------------------------------- */
+
+
+/* Make maintaining media aspect-ratios simple */
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+input,
+object,
+select,
+textarea,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes, images, videos and the bottom
+ * of their containers: https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+canvas,
+details,
+img,
+svg,
+video {
+  display: block;
+}
+
+/*
+ * The styles necessary for the most optimized <img> defaults.
+ * The other styles associated with img are grouped with other selectors.
+ */
+
+img {
+  border-style: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  image-rendering: smooth;
+  font-style: italic;
+  shape-margin: 1rem;
+}
+
+iframe {
+  border: 0;
+}
+
+:where(details > summary:first-of-type) {
+  display: list-item;
+}
+
+/*  Hide the overflow in legacy Edge and IE */
+
 svg:not(:root) {
   overflow: hidden;
 }
@@ -435,6 +644,14 @@ svg:not(:root) {
 svg:not([fill]) {
   fill: currentcolor;
 }
+
+
+/* --------------------------------------------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* #ACCESSIBILITY - ARIA PROPERTIES ------------------------------------------ /
+/* --------------------------------------------------------------------------- /
+/* -------------------------------------------------------------------------- */
+
 
 [aria-busy='true'] {
   cursor: progress;
@@ -458,21 +675,12 @@ svg:not([fill]) {
   clip: rect(0, 0, 0, 0);
 }
 
-/*
- * This next rule is only needed if using a JS framework like React. You want
- * to select the top level element that your application is rendered within.
- * It ensures that high-priority elements will show up above the others
- * and prevents stacking context bugs and z-index issues.
- */
+/* --------------------------------------------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* #UTILITIES ---------------------------------------------------------------- /
+/* --------------------------------------------------------------------------- /
+/* -------------------------------------------------------------------------- */
 
-#root,
-#__next {
-  isolation: isolate;
-}
-
-/*
- * #UTILITIES
- */
 
 /*
  * Hide visually and from screen readers. It is recommended that you use the
@@ -484,7 +692,7 @@ svg:not([fill]) {
 }
 
 /*
- * Hide visually. Make it available for screen readers only:
+ * For Screen Readers Only - Hide visually but not from screen readers.
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 
@@ -503,8 +711,8 @@ svg:not([fill]) {
 }
 
 /*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
+ * Extends the `.visually-hidden` and `.sr-only` classes to allow
+ * the element to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
 
@@ -534,6 +742,11 @@ svg:not([fill]) {
   visibility: hidden;
 }
 
+/*
+ * Contain floats with classic clearfix.
+ * For all browsers (even IE 8 and up)
+ */
+
 .clearfix::before,
 .clearfix::after {
   content: '';
@@ -545,7 +758,8 @@ svg:not([fill]) {
 }
 
 /*
- * Modern way to clear floats
+ * Modern float clearing without clearfix hack.
+ * Chrome 58+, Safari 13+, Firefox 53+
  */
 
 .group {
@@ -553,6 +767,35 @@ svg:not([fill]) {
   overflow: clip;
 }
 
+/*
+ * A quick way to apply flex-based horizontal and vertical centering
+ * to an element
+ */
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Toggle off an active animation by applying this class with JavaScript */
+
 .anim-off {
   animation: none !important;
+}
+
+/*
+ * The last rule is only needed if your project uses a JS framework or library
+ * like React. You want the selector of this rule to select the top level
+ * element that your application is rendered within. It ensures that
+ * high-priority elements will show up above all others and prevents stacking
+ * context bugs and common z-index issues.
+ *
+ * TODO: If not using React or something similar, delete this rule and comment.
+ * If you are going to use the rule, just delete this todo (or entire comment).
+ */
+
+#root,
+#__next {
+  isolation: isolate;
 }

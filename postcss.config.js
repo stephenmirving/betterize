@@ -133,6 +133,7 @@ module.exports = {
         'margin-bottom',
         'margin-left',
 
+        'appearance',
         'background',
         'background-color',
         'background-image',

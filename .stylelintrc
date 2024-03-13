@@ -40,7 +40,7 @@
     },
     "block-no-empty": true,
     "color-hex-length": "short",
-    "color-function-notation": "modern",
+    "color-function-notation": null,
     "color-no-invalid-hex": true,
     "comment-empty-line-before": [
       "always",
@@ -279,6 +279,7 @@
         "margin-bottom",
         "margin-left",
 
+        "appearance",
         "background",
         "background-color",
         "background-image",
