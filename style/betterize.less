@@ -2,7 +2,7 @@
 /// ------------------------------------------------------------------------- //
 /// betterize.less - Opinionated normalization, better cross-browser design - //
 /// @author Stephen M Irving -- <@metric_dev> ------------------------------- //
-/// @version 1.0.1 - 03/13/2024 --------------------------------------------- //
+/// @version 1.0.2 - 03/14/2024 --------------------------------------------- //
 /// ------------------------------------------------------------------------- //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -14,48 +14,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-html {
-  overflow: hidden scroll;
-  box-sizing: border-box;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol';
-  font-size: 1em;
-  line-height: 1.4;
-  overflow-wrap: break-word;
-  -moz-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  cursor: default;
-  color-scheme: light dark;
-  scrollbar-gutter: stable;
-  hanging-punctuation: first last;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-text-size-adjust: 100%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  // 1. May need to modify this value depending on height
-  //    of any masthead/top nav bar or similar content
-  :has(:target) {
-    scroll-behavior: smooth;
-    scroll-padding-top: 3rem; // 1
-  }
-}
-
 // 1. Set `box-sizing` to `inherit` while setting the inheritance root,
-//    which is the html element, to `box-sizing: border-box`
+//    which is the html element, to `box-sizing: border-box`. This is
+//    a much more intuitive default box-model than `content-box`.
 // 2. Setting `min-width: 0` here is a VERY opinionated decision. It can save
 //    you a lot of time trying to figure out a ton of odd and unintuitive
 //    behavior, especially with flexbox, but it can also cause unexpected
@@ -76,6 +37,79 @@ html {
 ::after {
   vertical-align: inherit;
   text-decoration: inherit;
+}
+
+//  1. Prevent horizontal scrolling from being possible and set vertical
+//     scrolling. If you want a page with no scrollbar at all change
+//     to `overflow: hidden`.
+//  2. Set the root element box-sizing, the universal selector will inherit.
+//  3. Improve consistency of default font in all browsers.
+//  4. Set the default font size in an accessible way (such that a user
+//     can change the default size with the browser settings).
+//  5. Change the `line-height` to an opinionated default.
+//  6. Set a new default for `overflow-wrap` on the root element since it
+//     is an inherited property.
+//  7. Allow the browser to automatically break words at appropriate hyphenation
+//     points. Ensure you specificy a language using the `lang` HTML attribute.
+//     to guarantee the automatic hyphenation applied is language-specific.
+//  8. Use a more readable tab size.
+//  9. Resets the cursor to default across all browsers and for any property
+//     that does not explicitly define a different cursor.
+// 10. Tell the browser which color schemes the page can be rendered in.
+//     Change to just `light` or just `dark` if only doing a single scheme,
+//     but both are strongly recommended for accessibility purposes.
+// 11. This will reserve space for a scrollbar, preventing unwanted layout
+//     shifts as content grows or shrinks. If you are making a page that
+//     has no scrolling whatsoever, you can remove or overwrite this rule.
+// 12. Allows opening and closing punctuation like quotes at the start and end
+//     of a line of text to "hang" outside the line's content box, making the
+//     formatting look more aesthetically pleasing.
+// 13. Remove the blue tap box over buttons and links in some versions of
+//     WebKit browsers for touch-enabled devices.
+// 14. Prevent adjustments of font size after orientation changes in iOS.
+
+html {
+  overflow: hidden scroll; // 1
+  box-sizing: border-box; // 2
+  font-family: // 3
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  font-size: 1em; // 4
+  line-height: 1.4; //5
+  overflow-wrap: break-word; // 6
+  -webkit-hyphens: auto; // 7
+  hyphens: auto; // 7
+  -moz-tab-size: 4; // 8
+  tab-size: 4; // 8
+  cursor: default; // 9
+  color-scheme: light dark; // 10
+  scrollbar-gutter: stable; // 11
+  hanging-punctuation: first last; // 12
+  -webkit-tap-highlight-color: transparent; // 13
+  -webkit-text-size-adjust: 100%; // 14
+}
+
+// If user does not have prefers-reduced-motion on in their OS settings,
+// this will keep scrolling from looking jumpy when an anchor link or other
+// action automatically scrolls the page.
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  // 1. May need to modify this value depending on height
+  //    of any masthead/top nav bar or similar content
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem; // 1
+  }
 }
 
 /// @todo - Customize the selection background and color to match your design.
@@ -115,7 +149,8 @@ h3,
 h4,
 h5,
 h6,
-blockquote {
+blockquote,
+figcaption {
   text-wrap: balance;
 }
 
@@ -226,6 +261,7 @@ hr {
   color: inherit;
 }
 
+// Normalize the margins on all lists
 
 dl,
 ol,
@@ -233,6 +269,8 @@ ul {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
+// Reset all list styles for <ol> and <ul> elements used in <nav> elements
 
 menu,
 nav ol,
@@ -243,6 +281,10 @@ footer ul {
   margin: 0;
   list-style: none;
 }
+
+// Remove the margin on nested detail lists in IE and some versions of Chrome,
+// Edge, and Safari. Remove margin on nested ordered and unordered lists in
+// legacy Edge (18-) and IE.
 
 dl dl,
 dl ol,

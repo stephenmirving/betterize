@@ -26,7 +26,7 @@ broad cross-browser support.
 
 ## Version
 
-**This is _betterize_ version 1.0.1 - Last update: 03/13/2024**
+**This is _betterize_ version 1.0.2 - Last update: 03/14/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 

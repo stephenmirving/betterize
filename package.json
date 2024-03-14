@@ -1,6 +1,6 @@
 {
   "name": "betterize",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Opinionated normalization for better cross-browser design.",
   "main": "index.js",
   "scripts": {
