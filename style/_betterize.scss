@@ -803,7 +803,7 @@ svg:not([fill]) {
   cursor: not-allowed;
 }
 
-/* Change the display on visually hidden accessible elements */
+// Change the display on visually hidden accessible elements.
 
 [aria-hidden='false'][hidden] {
   display: initial;

@@ -877,17 +877,16 @@ svg:not([fill]) {
   cursor: not-allowed;
 }
 
+/* Change the display on visually hidden accessible elements. */
+
 [aria-hidden='false'][hidden] {
   display: initial;
 }
-
-/* Change the display on visually hidden accessible elements. */
 
 [aria-hidden='false'][hidden]:not(:focus) {
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
-
 
 /* --------------------------------------------------------------------------- /
 /* --------------------------------------------------------------------------- /
