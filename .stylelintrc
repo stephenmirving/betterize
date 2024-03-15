@@ -346,8 +346,8 @@
         "word-wrap",
         "word-break",
         "overflow-wrap",
-        "tab-size",
         "hyphens",
+        "tab-size",
         "interpolation-mode",
 
         "opacity",
