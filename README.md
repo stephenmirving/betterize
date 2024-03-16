@@ -25,7 +25,7 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 1.1.1 - Last update: 03/16/2024**
+**This is _betterize_ version 1.2.1 - Last update: 03/16/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
@@ -40,20 +40,20 @@ npm i betterize
 Alternately, you can use _betterize_ by simply downloading this repo.
 
 After using either method, you will need to choose which version of the file you
-will use from the style folder. This depends on which CSS preprocessor
-you are using, or if you are using one at all. _Betterize_ is included as a CSS
-file and a minified CSS file, but there are also versions for CSS preprocessors
-[Less](https://lesscss.org/) and [Sass](https://sass-lang.com/)
-(`.sass` and `.scss` syntax). You can also simply copy and paste from the files
-in the repo itself.
+will use. This depends on which CSS preprocessor you are using, or if you are
+using one at all. _Betterize_ is included as a CSS file and a minified CSS file,
+but there are also versions for CSS preprocessors [Less](https://lesscss.org/)
+and [Sass](https://sass-lang.com/) (`.sass` and `.scss` syntax).
+
+You can also simply copy and paste from the files in the repo itself.
 
 It is recommended to put this file at the top of your existing stylesheet,
 either manually or as part of your build process, so as to minimize the number
 of HTTP requests made just for stylesheets.
 
-The CSS version of _betterize_ has a minified version included for your convenience,
-but you could also just add the `.css` file to your project and bundle and minify
-everything together as a part of your build process.
+The CSS version of _betterize_ has a minified version included for your
+convenience, but you could also just add the `.css` file to your project and
+bundle and minify everything together as a part of your build process.
 
 ## Opinonated Design Choices
 
