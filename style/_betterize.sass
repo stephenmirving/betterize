@@ -2,7 +2,7 @@
 /// ------------------------------------------------------------------------- //
 /// betterize.less - Opinionated normalization, better cross-browser design - //
 /// @author Stephen M Irving -- <@metric_dev> ------------------------------- //
-/// @version 1.1.0 - 03/15/2024 --------------------------------------------- //
+/// version 1.1.1 - 03/16/2024 --------------------------------------------- //
 /// ------------------------------------------------------------------------- //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -21,7 +21,7 @@
 //    you a lot of time trying to figure out a ton of odd and unintuitive
 //    behavior, especially with flexbox, but it can also cause unexpected
 //    issues if you aren't aware it is here.
-// 3. Set background images to `no-repeat` which is a much better default
+// 3. Ensure background images do not repeat by default.
 
 *,
 ::before,
@@ -176,11 +176,22 @@ body
   margin: 0
   // 4
   font-family:
+    // Newer browsers
     system-ui,
+    // Safari for OS X and iOS (San Francisco)
     -apple-system,
+    // Chrome < 56 for OS X (San Francisco)
     BlinkMacSystemFont,
+    // Windows
     'Segoe UI',
+    // Android
+    Roboto,
+    // Basic web fallback
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
     sans-serif,
+    // Emoji fonts
     'Apple Color Emoji',
     'Segoe UI Emoji',
     'Segoe UI Symbol'
