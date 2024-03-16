@@ -1,3 +1,6 @@
+# Project-wide "to do" file
+.todo
+
 # Logs
 logs
 *.log

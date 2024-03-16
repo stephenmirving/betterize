@@ -2,5 +2,5 @@ TODO:
   ☐ Make available for installation with NPM and Yarn
   ☐ Do further testing for anything that can be removed or changed
   ☐ Split Betterize into 2 main versions
-    ☐ The current version that tries to support all legacy browsers
+    ☐ The current version that tries to support all legacy browsers (rename `betterize-all`)
     ☐ A slimmed down version that does not attempt to support IE
