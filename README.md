@@ -31,18 +31,29 @@ _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` ve
 
 ## Deployment
 
-To use _betterize_, simply download the repo and choose which version of the
-file you will use from the style folder. This depends on which CSS preprocessor
-you are using, or if you are using one at all. Of course, you can also simply
-copy and paste from the file. It is recommended to put this file at the top of
-your existing stylesheet, either manually or as part of your build process, so
-as to minimie the number of HTTP requests made just for stylesheets.
+_Betterize is now available on NPM! To install using NPM, simply run:
+
+```bash
+npm i betterize
+```
+
+Alternately, you can use _betterize_ by simply downloading this repo.
+
+After using either method, you will need to choose which version of the file you
+will use from the style folder. This depends on which CSS preprocessor
+you are using, or if you are using one at all. _Betterize_ is included as a CSS
+file and a minified CSS file, but there are also versions for CSS preprocessors
+[Less](https://lesscss.org/) and [Sass](https://sass-lang.com/)
+(`.sass` and `.scss` syntax). You can also simply copy and paste from the files
+in the repo itself.
+
+It is recommended to put this file at the top of your existing stylesheet,
+either manually or as part of your build process, so as to minimize the number
+of HTTP requests made just for stylesheets.
 
 The CSS version of _betterize_ has a minified version included for your convenience,
 but you could also just add the `.css` file to your project and bundle and minify
 everything together as a part of your build process.
-
-The next update will allow for installing directly into your project via NPM.
 
 ## Opinonated Design Choices
 
