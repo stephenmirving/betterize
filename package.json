@@ -1,8 +1,17 @@
 {
   "name": "betterize",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Opinionated normalization for better cross-browser design.",
-  "main": "index.js",
+  "main": "style/betterize.css",
+  "style": "style/betterize.css",
+  "files": [
+    "style/*.css",
+    "style/*.scss",
+    "style/*.sass",
+    "style/*.less",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "min": "cleancss -o style/betterize.min.css style/betterize.css && cleancss -o style/print.min.css style/print.css"
@@ -12,17 +21,22 @@
     "url": "git+https://github.com/stephenmirving/betterize.git"
   },
   "keywords": [
-    "Betterize",
+    "betterize",
     "normalize",
+    "normalization",
     "sanitize",
     "reset",
+    "reboot",
     "cross-browser",
     "front-end",
+    "style",
     "css",
     "scss",
-    "sass"
+    "sass",
+    "less",
+    "defaults"
   ],
-  "author": "Stephen <stephenmichaelirving@gmail.com>",
+  "author": "Stephen M Irving <@metric_dev stephenmichaelirving@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stephenmirving/betterize/issues"
