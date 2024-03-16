@@ -18,7 +18,7 @@ support and improve the experience of developing stylesheets for the web.
 
 - [Version](#version)
 - [Deployment](#deployment)
-- [Opinonated Design Choices](#opinionated-design)
+- [Opinonated Design Choices](#opinonated-design-choices)
 - [Print Styles](#print-styles)
 - [Smoother](#smoother)
 - [Authors](#authors)
