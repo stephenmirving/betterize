@@ -9,7 +9,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 // -------------------------------------------------------------------------- //
-// #BASE STYLES: opinionated defaults --------------------------------------- //
+// #BASE STYLES: opinionated default base element styles -------------------- //
 // -------------------------------------------------------------------------- //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -179,6 +179,15 @@ body {
   }
 }
 
+// Ensure HTML5 structual elements and media elements
+// display correctly in IE and very old browsers.
+
+article, aside, dialog, figcaption, figure,
+footer, header, hgroup, main, nav, section,
+canvas, details, legend, img, svg, video {
+  display: block;
+}
+
 // Better balance blocks of text in headings, blockqutoes, and figure captions.
 // See: https://developer.chrome.com/docs/css-ui/css-text-wrap-balance
 
@@ -301,7 +310,7 @@ address {
 
 // 1. Remove the bottom border in Chrome 57-
 // 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-// 3. Add explicit cursor to indicate behavior.
+// 3. Add explicit cursor to indicate changed behavior.
 
 abbr[title] {
   border-bottom: none; // 1
@@ -406,7 +415,6 @@ dialog {
   position: absolute;
   right: 0;
   left: 0;
-  display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -477,12 +485,14 @@ textarea,
   touch-action: manipulation;
 }
 
-// 1. Ensure default cursor behavior on links.
-// 2. Remove gaps in link underlines in iOS8+ and Safari 8+
+// 1. Remove the gray background on active links in IE10
+// 2. Ensure default cursor behavior on links.
+// 3. Remove gaps in link underlines in iOS8+ and Safari 8+
 
 a {
-  cursor: pointer;
-  -webkit-text-decoration-skip: objects;
+  background-color: transparent; // 1
+  cursor: pointer; // 2
+  -webkit-text-decoration-skip: objects; // 3
 }
 
 // Show the overflow in legacy Edge (18-) and IE.
@@ -540,10 +550,12 @@ textarea:disabled {
   cursor: not-allowed;
 }
 
+// Remove the padding and add the correct box sizing in IE 10-
+
 [type='checkbox'],
 [type='radio'] {
-  box-sizing: border-box;
-  padding: 0;
+  box-sizing: border-box; // 1
+  padding: 0; // 2
 }
 
 // Remove the default appearance of temporal inputs to avoid a Mobile Safari
@@ -591,7 +603,6 @@ fieldset {
 // out when they zero out <fieldset> elements.
 
 legend {
-  display: block;
   width: 100%;
   max-width: 100%;
   padding: 0;
@@ -728,14 +739,6 @@ img,
 svg,
 video {
   vertical-align: middle;
-}
-
-canvas,
-details,
-img,
-svg,
-video {
-  display: block;
 }
 
 // The styles necessary for the most optimized <img> defaults.
