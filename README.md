@@ -50,26 +50,40 @@ There are many key design choices with _betterize_ that are very opinionated,
 so if you are going to use betterize you should know what to look out for.
 
 - On the universal selector, three properties are added, to be applied to all element:
-  - The `box-sizing` property is changed from `content-box` by by using `inherit` here and then setting the `html` element  to `border-box`.
+  - The `box-sizing` property is changed from `content-box` by by using
+    `inherit` here and then setting the `html` element  to `border-box`.
   - The `min-width` property is set to `0`. This can you a lot of time trying
     to figure out a ton of odd and unintuitive behavior, especially with flexbox,
     but it can also cause unexpected issues if you aren't aware it is here.
     If you encounter such an issue where you element is shrinking down to nothing,
     set a `min-width` for that element explicitly.
-  - Set the `background-repeat` property `no-repeat`. If you have a background image that needs to repeat, set the `background-repeat` property for that element explicitly.
+  - Set the `background-repeat` property `no-repeat`. If you have a background
+    image that needs to repeat, set the `background-repeat` property for that
+    element explicitly.
 - On the `html` element, many modern CSS features are used:
   - The `color-scheme` property is set to `light dark`. If you are only
-    using a single color scheme, you can overwrite this explicitly with just `light` or `dark`. For accessibility and UX purposes, respecting user's native preferences for light/dark mode theming is recommended.
+    using a single color scheme, you can overwrite this explicitly with
+    `only light` or `only dark`. For accessibility and UX purposes,
+    respecting user's native preferences for light/dark mode theming
+    is recommended.
   - Uses `overflow: hidden scroll` with `scrollbar-gutter: stable` to
     ensure the page always has a vertical scrollbar visible, whether
     the page requires it or not. The `scrollbar-gutter` property works
     to reserve the space the scrollbar takes up in order to
     prevent unwanted layout changes as the content grows
     dynamically.
-  - Sets `hanging-punctuation` to `first last` to make punctuation like quotation makes have better balance at the beginning and end of a line of text by allowing them to be placed outside the line box.
+  - Sets `hanging-punctuation` to `first last` to make punctuation like
+    quotation makes have better balance at the beginning and end of a line
+    of text by allowing them to be placed outside the line box.
 - In addition that, many other design choices were made:
-  - _Betterize_ recommends to avoid the use of `margin-top`. Vertical margins collapse and often cause unexpected results. More importantly, a single direction of margin is an easier mental model. You should not set a `margin-top` or `margin-block-start` anyhere in the code, and should instead try to only use `margin-bottom` or `margin-block-end`.
-  - The `<body>`  sets `font-family`, `line-height`, and `text-align` globally here. This is inherited later by other elements to prevent font inconsistencies.
+  - _Betterize_ recommends to avoid the use of `margin-top`. Vertical margins
+    collapse and often cause unexpected results. More importantly, a single
+    direction of margin is an easier mental model. You should not set a
+    `margin-top` or `margin-block-start` anyhere in the code, and should
+    instead try to only use `margin-bottom` or `margin-block-end`.
+  - The `<body>`  sets `font-family`, `line-height`, and `text-align`
+    globally here. This is inherited later by other elements to prevent
+    font inconsistencies.
   - A native font stack for optimum text rendering on every device and OS is set.
   - Improved `<hr>` default look which uses `currentcolor` for the color
     of the line.
