@@ -2,7 +2,7 @@
 /* --------------------------------------------------------------------------- /
 /* betterize.css -- Modern normalization for better cross-browser design ----- /
 /* @author Stephen M Irving -- <@metric_dev> --------------------------------- /
-/* version 1.2.4 -- 03/17/2024 ----------------------------------------------- /
+/* version 1.2.5 -- 03/17/2024 ----------------------------------------------- /
 /* --------------------------------------------------------------------------- /
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -230,13 +230,15 @@ figcaption {
 
 /*
  * 1. Remove the top margin for easier control as it avoids margin collapse.
- * 2. Correct the font size <h1> elements within <section> and
+ * 2. Overwrite margin-bottom with margin-block-end for browsers that support it.
+ * 3. Correct the font size <h1> elements within <section> and
  *    <article> contexts in Chrome, Firefox, and Safari.
  */
 
 h1 {
-  margin: 0 0 0.67em;
-  font-size: 2em;
+  margin: 0 0 0.67em; /* 1 */
+  margin-block-end: 0.67em; /* 2 */
+  font-size: 2em; /* 3 */
 }
 
 /* Remove the top margin for easier control as it avoids margin collapse. */
@@ -263,7 +265,8 @@ p {
 
 /*
  * Remove the top margin for easier control as it avoids margin collapse.
- * Normalize the margins on all lists as well.
+ * Reset the side margins and change the bottom margin from `1em` to `1rem`.
+ * Overwrite bottom margin with margin-block-end for browesers that support it.
  */
 
 blockquote,
@@ -272,6 +275,7 @@ dl,
 ol,
 ul {
   margin: 0 0 1rem;
+  margin-block-end: 1rem;
 }
 
 /* Normalize bold and strong across browsers. */
@@ -326,13 +330,15 @@ samp {
 /*
  * 1. Dont't allow content to break outside
  * 2. Remove top margin to avoid vertical margin collapse.
- * 3. Having @viewport set causes scrollbars to overlap content in legacy Edge
+ * 3. Overwrite margin-bottom with margin-block-end for browsers that support it.
+ * 4. Having @viewport set causes scrollbars to overlap content in legacy Edge
  *    and IE11, so force a non-overlapping, non-auto-hiding scrollbar.
  */
 
 pre {
   overflow: auto; /* 1 */
   margin: 0 0 1rem; /* 2 */
+  margin-block-end: 1rem; /* 3 */
   -ms-overflow-style: scrollbar; /* 3 */
 }
 
@@ -342,6 +348,7 @@ output {
 
 address {
   margin-bottom: 1rem;
+  margin-block-end: 1rem;
   font-style: normal;
   line-height: inherit;
 }
@@ -400,7 +407,8 @@ hr {
   padding: 0;
   border: 0;
   border-top: 2px solid currentColor;
-  margin: 1em 0;
+  margin: 0.75em 0;
+  margin-block: 0.75em;
   color: inherit;
 }
 
@@ -429,10 +437,11 @@ cite {
   font-style: italic;
 }
 
-/* Undo browser default */
+/* Undo browser default margins */
 
 dd {
   margin-bottom: 0.5rem;
+  margin-block-end: 0.5rem;
   margin-left: 0;
 }
 
@@ -680,6 +689,7 @@ legend {
   max-width: 100%;
   padding: 0;
   margin-bottom: 0.5rem;
+  margin-block-end: 0.5rem;
   color: inherit;
   font-size: 1.5rem;
   line-height: inherit;
