@@ -48,11 +48,15 @@ using one at all. _Betterize_ is included as a CSS file and a minified CSS file,
 but there are also versions for CSS preprocessors [Less](https://lesscss.org/)
 and [Sass](https://sass-lang.com/) (both `.sass` and `.scss` syntax available).
 
-You can also simply copy and paste from the files in the repo itself.
+Choose the file type you want and either copy it from the `node_modules/betterize`
+folder, or the downloaded repo folder, and paste it into your project. You could
+also have your build process pull it directly from the `node_modules` folder.
+
+Of course, you can also simply copy and paste from the files in the repo itself.
 
 It is recommended to put this file at the top of your existing stylesheet,
-either manually or as part of your build process, so as to minimize the number
-of HTTP requests made just for stylesheets.
+either manually or as part of your build process, and not to link to it on its
+own, so as to minimize the number of HTTP requests made just for stylesheets.
 
 The CSS version of _betterize_ has a minified version included for your
 convenience, but you could also just add the `.css` file to your project and
