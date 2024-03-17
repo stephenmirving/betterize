@@ -2,7 +2,7 @@
 /// ------------------------------------------------------------------------ ///
 /// betterize.sass -- Modern normalization for better cross-browser design - ///
 /// @author Stephen M Irving -- <@metric_dev> ------------------------------ ///
-/// version 1.2.2 -- 03/16/2024 -------------------------------------------- ///
+/// version 1.2.3 -- 03/17/2024 -------------------------------------------- ///
 /// ------------------------------------------------------------------------ ///
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -529,19 +529,17 @@ select
   appearance: none
   background: no-repeat right center / 1em
 
-// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
-//    controls in Android 4.
-// 2. Remove the default `border-radius` that macOS Chrome adds.
-// 3. Correct the inability to style clickable types in iOS and Safari.
+
+// 1. Remove the default `border-radius` that macOS Chrome adds.
+// 2. Correct the inability to style clickable types in iOS and Safari.
 
 button,
-// 1
-html [type='button'],
+[type='button'],
 [type='reset'],
 [type='submit']
-  // 2
+  // 1
   border-radius: 0
-  // 3
+  // 2
   -webkit-appearance: button
 
 // Remove the inner border and padding on focused buttons in Firefox.
