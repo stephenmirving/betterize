@@ -101,9 +101,9 @@ so if you are going to use betterize you should know what to look out for.
     instead try to only use `margin-bottom` or `margin-block-end`.
   - The `<body>` sets `line-height: 1.5`, and `text-align:left`. This is
     inherited later by other elements to prevent font inconsistencies.
-  - A native font stack for optimum text rendering on every device and OS is set.
   - Improved `<hr>` default look which uses `currentColor` for the color
-    of the line. For a more standard `<hr>` look, use the class `hr-light`.
+    of the line. For a more standard `<hr>` look, use the class `hr-light` on
+    your `<hr>` elements.
 
 For more information about each specific choice, you can read the _betterize_
 files themselves, as they are heavily documented.

@@ -503,7 +503,8 @@
         "ignoreKeywords": [
           "optimizeLegibility",
           "optimizeSpeed",
-          "optimizeGeometricPrecision"
+          "optimizeGeometricPrecision",
+          "currentColor"
         ]
       }
     ],
