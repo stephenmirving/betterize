@@ -1,12 +1,12 @@
 ////////////////////////////////////////////////////////////////////////////////
-///                                                                          ///
-/// #PRINT STYLES -- version 1.2.4 -- 03/17/2024                             ///
-///                                                                          ///
+/// ------------------------------------------------------------------------ ///
+/// #PRINT STYLES -- ver. 1.2.4 -- 03/17/2024                                ///
+/// ------------------------------------------------------------------------ ///
 /// Append these styles to the bottom of your stylesheet and make any        ///
 /// changes necessary to your project from there. Minimizing the total       ///
-/// number of linked CSS files is recommended for reducing page load         ///
-/// speed, as it reduces the total quantity of HTTP requests.                ///
-///                                                                          ///
+/// number of linked CSS files is recommended for reducing page load speed   ///
+/// as it minimizes the amount of HTTP requests.                             ///
+/// ------------------------------------------------------------------------ ///
 ////////////////////////////////////////////////////////////////////////////////
 
 @media print {
@@ -72,12 +72,14 @@
   // Avoid page orphans/widows and page breaking after a header
 
   p,
+  h1,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
 
+  h1,
   h2,
   h3 {
     break-after: avoid;
