@@ -37,6 +37,9 @@ _Betterize is now available on NPM! To install using NPM, simply run:
 npm i betterize
 ```
 
+You can see it on the NPM website here:
+[https://www.npmjs.com/package/betterize](https://www.npmjs.com/package/betterize)
+
 Alternately, you can use _betterize_ by simply downloading this repo.
 
 After using either method, you will need to choose which version of the file you

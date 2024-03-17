@@ -38,7 +38,7 @@ This code is not exhaustive or complete. It serves to capture our common
 understanding of a productive, collaborative environment. The code should
 followed in spirit as much as in the letter.
 
-Basically: *JUST BE KIND, COOL, &amp; CHILL!*
+**Basically:** Just be _KIND_, _COOL_, &amp; _CHILL_!
 
 There is literally zero reason for you to be behave in any other manner while
 contributing to open source.
