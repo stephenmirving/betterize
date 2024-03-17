@@ -46,7 +46,7 @@ After using either method, you will need to choose which version of the file you
 will use. This depends on which CSS preprocessor you are using, or if you are
 using one at all. _Betterize_ is included as a CSS file and a minified CSS file,
 but there are also versions for CSS preprocessors [Less](https://lesscss.org/)
-and [Sass](https://sass-lang.com/) (`.sass` and `.scss` syntax).
+and [Sass](https://sass-lang.com/) (both `.sass` and `.scss` syntax available).
 
 You can also simply copy and paste from the files in the repo itself.
 
