@@ -1,5 +1,5 @@
 /*
- * #PRINT STYLES -- version 1.2.3 -- 03/17/2024
+ * #PRINT STYLES -- version 1.2.4 -- 03/17/2024
  *
  * Append these styles to the bottom of your stylesheet and make any
  * changes necessary to your project from there. Minimizing the total
@@ -8,6 +8,8 @@
 */
 
 @media print {
+  /* Eliminate all the color and shadow on the page */
+
   *,
   *::before,
   *::after {
@@ -16,6 +18,11 @@
     box-shadow: none !important;
     text-shadow: none !important;
   }
+
+  /*
+   * Underline links and include the link address
+   * in parentheses after the link text
+   */
 
   a,
   a:visited {
@@ -29,7 +36,7 @@
   /*
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
-  */
+   */
 
   a[href^='#']::after,
   a[href^='javascript:']::after {
@@ -59,18 +66,24 @@
     display: table-header-group;
   }
 
+  /* Avoid page breaking inside table rows or images */
+
   tr,
   img {
     break-inside: avoid;
   }
 
+  /* Avoid page orphans/widows and page breaking after a header */
+
   p,
+  h1,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
 
+  h1
   h2,
   h3 {
     break-after: avoid;

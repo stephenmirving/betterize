@@ -2,7 +2,7 @@
 /// ------------------------------------------------------------------------ ///
 /// betterize.sass -- Modern normalization for better cross-browser design - ///
 /// @author Stephen M Irving -- <@metric_dev> ------------------------------ ///
-/// version 1.2.3 -- 03/17/2024 -------------------------------------------- ///
+/// version 1.2.4 -- 03/17/2024 -------------------------------------------- ///
 /// ------------------------------------------------------------------------ ///
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -48,7 +48,7 @@
 //     on the body will prevent the behavior from breaking when an element
 //     like a masthead / nav bar is set with `position: sticky`.
 //  2. Set the root element box-sizing, the universal selector will inherit.
-//  3. Change default font family in all browsers.
+//  3. Add backup font stack that works across all browsers and devices.
 //  4. Set the default font size in an accessible way (such that a user
 //     can change the default size with the browser settings).
 //  5. Normalize default `line-height` across browsers.
@@ -82,11 +82,26 @@ html
   box-sizing: border-box
   // 3
   font-family:
+    // Newer browsers
+    system-ui,
+    // Safari for OS X and iOS (San Francisco)
+    -apple-system,
+    // Chrome < 56 for OS X (San Francisco)
+    BlinkMacSystemFont,
+    // Windows
+    'Segoe UI',
+    // Android
+    Roboto,
+    // Basic web fallback
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
     sans-serif,
+    // Emoji fonts
     'Apple Color Emoji',
     'Segoe UI Emoji',
     'Segoe UI Symbol',
-    'Noto Color Emoji'
+    'Noto Color Emoji'; // 3
   // 4
   font-size: 1em
   // 5
@@ -178,27 +193,6 @@ body
   // 3
   margin: 0
   // 4
-  font-family:
-    // Newer browsers
-    system-ui,
-    // Safari for OS X and iOS (San Francisco)
-    -apple-system,
-    // Chrome < 56 for OS X (San Francisco)
-    BlinkMacSystemFont,
-    // Windows
-    'Segoe UI',
-    // Android
-    Roboto,
-    // Basic web fallback
-    'Helvetica Neue',
-    Helvetica,
-    Arial,
-    sans-serif,
-    // Emoji fonts
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol',
-    'Noto Color Emoji'
   font-size: 1rem
   // 5
   line-height: 1.5
@@ -215,7 +209,7 @@ body
     text-rendering: optimizeLegibility
 
 // Ensure HTML5 structual elements and media elements
-// display correctly in IE and very old browsers.
+// display correctly in all browsers.
 
 article, aside, dialog, figcaption, figure,
 footer, header, hgroup, main, nav, section,
@@ -407,15 +401,9 @@ footer ul
 // Edge, and Safari. Remove margin on nested ordered and unordered lists in
 // legacy Edge (18-) and IE.
 
-dl dl,
-dl ol,
-dl ul,
-ol dl,
-ol ol,
-ol ul,
-ul dl,
-ul ol,
-ul ul
+dl dl, dl ol, dl ul,
+ol dl, ol ol, ol ul,
+ul dl, ul ol, ul ul
   margin: 0
 
 // Prevent VoiceOver from ignoring list semantics in Safari
@@ -739,10 +727,8 @@ img
 iframe
   border: 0
 
-summary {
-  display: list-item
+summary
   cursor: pointer
-}
 
 // Add the correct display in Safari.
 

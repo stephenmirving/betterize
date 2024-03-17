@@ -89,21 +89,24 @@ so if you are going to use betterize you should know what to look out for.
   - Sets `hanging-punctuation` to `first last` to make punctuation like
     quotation makes have better balance at the beginning and end of a line
     of text by allowing them to be placed outside the line box.
-- In addition that, many other design choices were made:
+- A default font stack that works across all browsers and devices is also added
+  to the `<html>` element. This ensures consistent inheritance and allows you to
+  set custom fonts on the `<body>` with a guaranteed fall back in case your font
+  takes a long time to load or doesn't load at all.
+- In addition, a few other design choices were made that you should be aware of:
   - _Betterize_ recommends to avoid the use of `margin-top`. Vertical margins
     collapse and often cause unexpected results. More importantly, a single
     direction of margin is an easier mental model. You should not set a
     `margin-top` or `margin-block-start` anyhere in the code, and should
     instead try to only use `margin-bottom` or `margin-block-end`.
-  - The `<body>`  sets `font-family`, `line-height`, and `text-align`
-    globally here. This is inherited later by other elements to prevent
-    font inconsistencies.
+  - The `<body>` sets `line-height: 1.5`, and `text-align:left`. This is
+    inherited later by other elements to prevent font inconsistencies.
   - A native font stack for optimum text rendering on every device and OS is set.
-  - Improved `<hr>` default look which uses `currentcolor` for the color
-    of the line.
-  - Reset the list styles of al `<ol>` or `<ul>` elements inside a `nav` or `footer`
+  - Improved `<hr>` default look which uses `currentColor` for the color
+    of the line. For a more standard `<hr>` look, use the class `hr-light`.
 
-For more information about each specific choice, the _betterize_ files are heavily documented.
+For more information about each specific choice, you can read the _betterize_
+files themselves, as they are heavily documented.
 
 ## Print Styles
 
@@ -140,11 +143,19 @@ Along with having more than 150 mixins and more than 80 functions, _Smoother_
 has its own version of `_betterize.scss` that is reworked to be used exclusively
 with the _Smoother_ library.
 
+You can install Smoother in NPM like this:
+
+```bash
+npm i smoother
+```
+
 ## Authors
 
 Created by SM Irving <[@metric_dev](https://twitter.com/metric_dev)>.
 
-Contains work and research done by
-[Nicolas Gallagher](https://github.com/necolas) and
-[Sindre Sorhus](https://github.com/sindresorhus)
-<[@sindresorhus](https://twitter.com/sindresorhus)>
+New contributors are welcome!
+
+Contains work and research done by:
+
+- [Nicolas Gallagher](https://github.com/necolas)
+- [Sindre Sorhus](https://github.com/sindresorhus) <[@sindresorhus](https://twitter.com/sindresorhus)>

@@ -1,6 +1,6 @@
 {
   "name": "betterize",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Opinionated normalization for better cross-browser design.",
   "main": "betterize.css",
   "style": "betterize.css",
