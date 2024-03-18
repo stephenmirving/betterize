@@ -1,6 +1,6 @@
 # betterize
 
-_Betterize_ is a **modern** &amp; _opinionated_ CSS normalization file for better
+_Betterize_ is a **modern** and _opinionated_ CSS normalization file for better
 foundational styling and cross-browser design in 2024 and beyond.
 
 Instead of CSS resets that will overwrite all the user-agent styles and require
@@ -10,7 +10,7 @@ standards.
 
 With [normalize.css](https://necolas.github.io/normalize.css/) remaining
 unchanged for more than 6 years now, it is now necessary to expand upon it.
-To remove old fixes that are were no longer necessary and take
+To remove old fixes that are no longer necessary and take
 advantage of modern CSS properties. To provide broad cross-browser and legacy
 support and improve the experience of developing stylesheets for the web.
 
@@ -18,8 +18,10 @@ support and improve the experience of developing stylesheets for the web.
 
 - [Version](#version)
 - [Deployment](#deployment)
-- [Opinonated Design Choices](#opinonated-design-choices)
+- [Opinionated Design Choices](#opinionated-design-choices)
 - [Print Styles](#print-styles)
+- [Contributions](#contributions)
+- [License](#license)
 - [Smoother](#smoother)
 - [Authors](#authors)
 
@@ -62,18 +64,18 @@ The CSS version of _betterize_ has a minified version included for your
 convenience, but you could also just add the `.css` file to your project and
 bundle and minify everything together as a part of your build process.
 
-## Opinonated Design Choices
+## Opinionated Design Choices
 
 There are many key design choices with _betterize_ that are very opinionated,
 so if you are going to use betterize you should know what to look out for.
 
 - On the universal selector, three properties are added, to be applied to all element:
   - The `box-sizing` property is changed from `content-box` by by using
-    `inherit` here and then setting the `html` element  to `border-box`.
-  - The `min-width` property is set to `0`. This can you a lot of time trying
+    `inherit` here and then setting the `html` element to `border-box`.
+  - The `min-width` property is set to `0`. This can save you a lot of time trying
     to figure out a ton of odd and unintuitive behavior, especially with flexbox,
     but it can also cause unexpected issues if you aren't aware it is here.
-    If you encounter such an issue where you element is shrinking down to nothing,
+    If you encounter such an issue where your element is shrinking down to nothing,
     set a `min-width` for that element explicitly.
   - Set the `background-repeat` property `no-repeat`. If you have a background
     image that needs to repeat, set the `background-repeat` property for that
@@ -91,7 +93,7 @@ so if you are going to use betterize you should know what to look out for.
     prevent unwanted layout changes as the content grows
     dynamically.
   - Sets `hanging-punctuation` to `first last` to make punctuation like
-    quotation makes have better balance at the beginning and end of a line
+    quotation marks have better balance at the beginning and end of a line
     of text by allowing them to be placed outside the line box.
 - A default font stack that works across all browsers and devices is also added
   to the `<html>` element. This ensures consistent inheritance and allows you to
@@ -101,7 +103,7 @@ so if you are going to use betterize you should know what to look out for.
   - _Betterize_ recommends to avoid the use of `margin-top`. Vertical margins
     collapse and often cause unexpected results. More importantly, a single
     direction of margin is an easier mental model. You should not set a
-    `margin-top` or `margin-block-start` anyhere in the code, and should
+    `margin-top` or `margin-block-start` anywhere in the code, and should
     instead try to only use `margin-bottom` or `margin-block-end`.
   - The `<body>` sets `line-height: 1.5`, and `text-align:left`. This is
     inherited later by other elements to prevent font inconsistencies.
@@ -123,7 +125,7 @@ so it doesn't load until the user needs to print or after the page has already
 finished loading, then you can do that as well.
 
 If you are using one of the CSS preprocessors (Sass, Less) then I
-recommend using it in it's current form and importing it from your main file
+recommend using it in its current form and importing it from your main file
 that contains the imports for all the other partials.
 
 In Less you would use the
@@ -136,6 +138,14 @@ In Sass' .sass & .scss syntax you would import it with
 but keep in mind that
 [Sass' import at-rule](https://sass-lang.com/documentation/at-rules/import/) is
 being phased out of Sass and will eventually be removed.
+
+For more information about migrating away from the soon-to-be-deprecated
+`@import` and using the newer `@forward` and `@use` directives, see the offical
+[Sass documentation](https://sass-lang.com/documentation/) for:
+
+- [@forward](https://sass-lang.com/documentation/at-rules/forward/)
+- [@use](https://sass-lang.com/documentation/at-rules/use/)
+- [Sass Migrator Tool](https://sass-lang.com/documentation/cli/migrator/)
 
 ## Smoother
 
@@ -152,6 +162,21 @@ You can install Smoother in NPM like this:
 ```bash
 npm i smoother
 ```
+
+## Contributions
+
+If you would like to contribute to _Smoother_, whether it is to add something
+new or fix a bug you have found, check out the
+[Contributions](https://github.com/stephenmirving/betterize/blob/master/CONTRIBUTIONS.md)
+document.
+
+## License
+
+_Betterize_ is distributed under an
+[MIT License](https://github.com/stephenmirving/betterize/blob/master/LICENSE).
+
+**TL;DR:** Anyone can use this code however they want but it would sure be nice
+if they also included a copy of the above license.
 
 ## Authors
 
