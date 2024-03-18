@@ -1,5 +1,12 @@
 # Project-wide "to do" file
-.todo
+todo.txt
+TODO.txt
+todo.md
+TODO.md
+todo
+TODO
+*.todo
+*.TODO
 
 # Logs
 logs
