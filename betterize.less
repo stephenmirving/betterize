@@ -2,7 +2,7 @@
 /// ------------------------------------------------------------------------ ///
 /// betterize.less -- Modern normalization for better cross-browser design - ///
 /// @author Stephen M Irving -- <@metric_dev> ------------------------------ ///
-/// version 1.2.5 -- 03/17/2024 -------------------------------------------- ///
+/// version 1.2.6 -- 03/18/2024 -------------------------------------------- ///
 /// ------------------------------------------------------------------------ ///
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -548,6 +548,7 @@ select {
 
 // 1. Remove the default `border-radius` that macOS Chrome adds.
 // 2. Correct the inability to style clickable types in iOS and Safari.
+// 3. Changes the default cursor on all buttons to the pointer.
 
 button,
 [type='button'],
@@ -555,6 +556,7 @@ button,
 [type='submit'] {
   border-radius: 0; // 1
   -webkit-appearance: button; // 2
+  cursor: pointer; // 3
 }
 
 // Remove the inner border and padding on focused buttons in Firefox.
