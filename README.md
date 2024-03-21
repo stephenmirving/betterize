@@ -135,6 +135,12 @@ browsers such as Chrome 64- which are more than a few years old.
 Also coming is custom configurarability for the betterize versions written for
 CSS preprocessors Sass and Less.
 
+### Version 1.3.1 and 1.3.2 Patch Notes
+
+- Removed the semicolon after the charset declaration in `_betterize.sass`
+- Added `:not(.hr-light)` to the `hr` selector so using `.hr-light` would not
+  maintain any of the opinionated choices for the `<hr>` element.
+
 ### Version 1.3.0 Patch Notes
 
 - As the above section states, the next version of _Betterize_ will be splitting
