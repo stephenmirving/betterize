@@ -137,6 +137,11 @@ CSS preprocessors Sass and Less.
 
 ### Version 1.3.0 Patch Notes
 
+- As the above section states, the next version of _Betterize_ will be splitting
+  into two versions, one that targets as many browsers and devices as possible,
+  and one that focuses on targeting modern browsers. In preparation of that,
+  this version of _Betterize_ added broad backwards support for legacy browsers
+  and devices.
 - In preparation of splitting betterize into two versions, and for maximum
   compatibility, colors that were in `rgb()` or `hsl()` notation were converted
   to hex notation where appropriate.
@@ -144,6 +149,8 @@ CSS preprocessors Sass and Less.
   compatibility, removed the double colon notation used for the first group of
   psuedo-elements like `::before` and ``::after` and instead switched to using
   `:before` and `:after`.
+- In preparation of splitting betterize into two versions, and for maximum
+  compatibility, added fallbacks for `rem` unit values.
 - Added more logical properties, leaving their physical property fallbacks
   (ex. `padding-block` and `padding-inline` below normal `padding` properties).
 - In preparation of splitting betterize into two versions, and for maximum

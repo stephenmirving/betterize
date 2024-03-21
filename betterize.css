@@ -310,7 +310,7 @@ ol,
 ul,
 blockquote,
 figure {
-  margin: 0 0 16px;
+  margin: 0 0 1em;
   margin: 0 0 1rem;
   margin-block-end: 1rem;
 }
@@ -436,7 +436,7 @@ kbd {
 
 pre {
   overflow: auto; /* 1*/
-  margin: 0 0 16px; /* 2 */
+  margin: 0 0 1em; /* 2 */
   margin: 0 0 1rem; /* 2 */
   margin-block-end: 1rem; /* 3 */
   -ms-overflow-style: scrollbar; /* 3 */
@@ -454,7 +454,7 @@ output {
 }
 
 address {
-  margin-bottom: 16px;
+  margin-bottom: 1em;
   margin-bottom: 1rem;
   margin-block-end: 1rem;
   font-style: normal;
@@ -569,7 +569,7 @@ dfn {
 /* Undo browser default margins */
 
 dd {
-  margin-bottom: 8px;
+  margin-bottom: 0.5em;
   margin-bottom: 0.5rem;
   margin-block-end: 0.5rem;
   margin-left: 0;
@@ -875,7 +875,7 @@ legend {
   width: 100%;
   max-width: 100%;
   padding: 0;
-  margin-bottom: 8px;
+  margin-bottom: 0.36364em;
   margin-bottom: 0.5rem;
   margin-block-end: 0.5rem;
   color: inherit;
