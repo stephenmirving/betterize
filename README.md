@@ -16,20 +16,24 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Table of Contents
 
-- [Version](#version)
-- [Deployment](#deployment)
-- [Opinionated Design Choices](#opinionated-design-choices)
-- [Print Styles](#print-styles)
-- [Contributions](#contributions)
-- [License](#license)
-- [Smoother](#smoother)
-- [Authors](#authors)
+1. [Version](#version)
+2. [Deployment](#deployment)
+3. [Opinionated Design Choices](#opinionated-design-choices)
+4. [Recent Updates](#recent-updates)
+5. [Print Styles](#print-styles)
+6. [Contributions](#contributions)
+7. [License](#license)
+8. [Questions](#questions)
+9. [Smoother](#smoother)
+10. [Authors](#authors)
 
 ## Version
 
-**This is _betterize_ version 1.2.6 - Last update: 03/18/2024**
+**This is _betterize_ version 1.3.0 - Last updated: 03/21/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
+
+The file size of betterize.min.css is 3.57kB minified and Gzipped.
 
 ## Deployment
 
@@ -114,19 +118,74 @@ so if you are going to use betterize you should know what to look out for.
 For more information about each specific choice, you can read the _betterize_
 files themselves, as they are heavily documented.
 
+## Recent Updates
+
+### Upcoming Changes
+
+The next major change coming to _Betterize_ will be splitting it into two versions,
+one that includes fixes and normalization for as many browsers and devices as possible,
+regardless of the percentge of global users it still has. This version will
+remain as `betterize.css`. The other version will be called `betterize-slim.css`,
+and as the name suggests it will be a slimmed down version of the file that only
+targets a more limited and modern set of browser versions and devices. For example,
+it will not include any styling which is only of benefit to Internet Explorer,
+legacy Edge (18-) or versions of Evergreen browsers such as Chrome 64- which are
+more than a few years old.
+
+Also coming is custom configurarability for the betterize versions written for
+CSS preprocessors Sass and Less.
+
+### Version 1.3.0 Patch Notes
+
+- In preparation of splitting betterize into two versions, and for maximum
+  compatibility, colors that were in `rgb()` or `hsl()` notation were converted
+  to hex notation where appropriate.
+- In preparation of splitting betterize into two versions, and for maximum
+  compatibility, removed the double colon notation used for the first group of
+  psuedo-elements like `::before` and ``::after` and instead switched to using
+  `:before` and `:after`.
+- Added more logical properties, leaving their physical property fallbacks
+  (ex. `padding-block` and `padding-inline` below normal `padding` properties).
+- In preparation of splitting betterize into two versions, and for maximum
+  compatibility, added vendor prefixes to some properties.
+- A default of `background-color: #fff` and `color: #212529` was added
+  to the `body` selector. A very faint background gradient was also added.
+- Dark mode color and background-color added to the `body` selector.
+- Now using a media query to change the default `line-height` on the `body` from
+  1.5 to 1.4 when the user has a device viewport with low width or height.
+- Undo the styles for placeholder links/named anchors (without href)
+  which have not been made explicitly keyboard-focusable (without tabindex).
+- Added an SVG arrow indicator to the `select` element.
+- Reset `padding` and `border-width` to 0 for `[type='color']` and `[type='range']`
+- Turned of animations and transitions for prefers-reduce-motion with universal
+  selector and `!important`.
+- Added Linux fonts to the default font stack on the `html` element.
+- Fixed inputs of type `range` do not have `touch-action: manipulation` applied.
+- Added `@charset "UTF-8";` to the top of the file.
+- Added an opinionated default styling of `<kbd>` text elements that makes them
+  look more like keyboard buttons.
+- Changed `image-rendering: smooth` on `<img>` elements to only be applied if
+  the image has a file extension indicating it is likely to be a photo,
+  .jpg, .jpeg, .webp, .avif, .jp2, or .jxr.
+- Added `image-rendering: crisp-edges` to `<img>` elements with .svg file extensions.
+- Finished fleshing out the print stylesheet.
+
 ## Print Styles
 
 I have also included a file of default styles for printing.
-I strongly recommend that you take the contents of this file and append it to
+I recommend that you take the contents of this file and append it to
 the very bottom of your stylesheet in CSS. This is because you want to minimize
 the number of HTTP requests required to optimize loading times and this is the
 easiest way to accomplish that. If you want to lazy load the print stylesheet
 so it doesn't load until the user needs to print or after the page has already
 finished loading, then you can do that as well.
 
-If you are using one of the CSS preprocessors (Sass, Less) then I
-recommend using it in its current form and importing it from your main file
-that contains the imports for all the other partials.
+The file size of `print.min.css` is 0.6kB minified and Gzipped.
+
+If you are using one of the CSS preprocessors (Sass or Less) then I recommend
+using `_print.sass`, `_print.scss`, and `_print.less` in their current form and
+importing the file from your main file that contains the imports for all the
+other partials.
 
 In Less you would use the
 [less import at-rule](https://lesscss.org/features/#import-atrules-feature) like
@@ -147,6 +206,17 @@ For more information about migrating away from the soon-to-be-deprecated
 - [@use](https://sass-lang.com/documentation/at-rules/use/)
 - [Sass Migrator Tool](https://sass-lang.com/documentation/cli/migrator/)
 
+## Questions
+
+If you have any questions about how to use _Betterize_ that cannot be answered
+by this README or the documentation in the file, or if you have any issues,
+suggestions or comments, I would be happy to help anyone
+who reaches out. You can find me on X/Twitter at
+[@metric_dev](https://twitter.com/metric_dev).
+
+Feel free to ask me anything you like in a tweet, or shoot me a DM (though if
+you are not verified on X/Twitter I may not see the DM).
+
 ## Smoother
 
 If you are interested in a Sass/SCSS library of mixins and functions that aid in
@@ -157,7 +227,7 @@ Along with having more than 150 mixins and more than 80 functions, _Smoother_
 has its own version of `_betterize.scss` that is reworked to be used exclusively
 with the _Smoother_ library.
 
-You can install Smoother in NPM like this:
+You can install _Smoother_ in NPM like this:
 
 ```bash
 npm i smoother
@@ -165,7 +235,7 @@ npm i smoother
 
 ## Contributions
 
-If you would like to contribute to _Smoother_, whether it is to add something
+If you would like to contribute to _Betterize_, whether it is to add something
 new or fix a bug you have found, check out the
 [Contributions](https://github.com/stephenmirving/betterize/blob/master/CONTRIBUTIONS.md)
 document.

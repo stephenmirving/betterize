@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// ------------------------------------------------------------------------ ///
-/// #PRINT STYLES -- version 1.2.6 -- 03/18/2024 --------------------------- ///
+/// #PRINT STYLES -- version 1.3.0 -- 03/21/2024 --------------------------- ///
 /// ------------------------------------------------------------------------ ///
 /// Append these styles to the bottom of your stylesheet and make any        ///
 /// changes necessary to your project from there. Minimizing the total       ///
@@ -13,32 +13,72 @@
   // Eliminate all the color and shadow on the page
 
   *,
-  *::before,
-  *::after
+  :before,
+  :after
     background: #fff !important
+    background: transparent !important
     color: #000 !important
     box-shadow: none !important
     text-shadow: none !important
 
-  // Underline links and include the link address
-  // in parentheses after the link text
+  // Specify a default `size` of page and a min-width on `<body>` to make
+  // printing closer across browsers.
+
+  @page
+    size: a3
+
+  // We don't set page margins inside body normally because explicit margins
+  // will break break the above `size` in Webkit, but Firefox and IE and legacy
+  // Edge do not support the `size` property, so we set margins there using
+  // Firefox and IE targeting hacks.
+
+  body
+    font-size: 12pt
+    line-height: 1.5
+    text-rendering: optimizeLegibility
+
+    // Target Mozilla Firefox
+    @-moz-document url-prefix()
+      margin: 1in
+
+    // Target IE 9 - 11 and legacy Edge
+    @media (min-width: 0\0) and (min-resolution: +72dpi)
+      margin: 1in
+
+  body,
+  .container
+    min-width: 992px !important
+
+  header:has(nav),
+  nav,
+  aside,
+  footer
+    display: none !important
+
+  // Underline links and avoid printing link URLs
 
   a,
   a:visited
     text-decoration: underline
 
-  a[href]::after
-    content: ' (' attr(href) ')'
+  a[href]:after
+    content: none !important
 
   // Don't show links that are fragment identifiers,
   // or use the `javascript:` pseudo protocol
 
-  a[href^='#']::after,
-  a[href^='javascript:']::after
+  a[href^='#']:after,
+  a[href^='javascript:']:after
     content: ''
 
-  abbr[title]::after
-    content: ' (' attr(title) ')'
+  dfn[title],
+  abbr[title],
+  acronym[title]
+    border-bottom: none
+    text-decoration: none
+
+    :after
+      content: ' (' attr(title) ')'
 
   pre
     white-space: pre-wrap !important
@@ -46,32 +86,78 @@
   pre,
   blockquote
     border: 1px solid #999
+    page-break-inside: avoid
     break-inside: avoid
 
-  ///
-  // Printing Tables:
-  // https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-  ///
+  // Ensure images don't overflow the page
 
-  thead
-    display: table-header-group
-
-  // Avoid page breaking inside table rows or images
-
-  tr,
   img
-    break-inside: avoid
+    max-width: 100%
+    max-height: 100%
 
   // Avoid page orphans/widows and page breaking after a header
 
   p,
-  h1
   h2,
-  h3
+  h3,
+  h4
     orphans: 3
     widows: 3
 
   h1,
   h2,
+  h3,
+  h4
+    page-break-after: avoid
+
+  // Scale down large headings
+
+  h1
+    font-size: 20pt
+  h2
+    font-size: 18pt
   h3
-    break-after: avoid
+    font-size: 16pt
+  h4
+    font-size: 14pt
+  h5
+    font-size: 12pt
+  h6
+    font-size: 10.5pt
+
+  // Printing Tables:
+  // https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+
+  table
+    max-width: 100%
+    border-collapse: collapse
+
+  thead
+    display: table-header-group
+
+  // Add borders and padding for clarity
+
+  th,
+  td
+    padding: 8px
+    border: 1px solid #ddd
+    text-indent: 0
+
+  // Avoid page breaking inside table rows or images
+
+  tr,
+  img
+    page-break-inside: avoid
+    break-inside: avoid
+
+  [aria-hidden='true']
+    display: none !important
+
+  // Utilitiy classes for marking things for printing or not printing
+
+  .no-print,
+  .no-print *
+    display: none !important
+
+  .print
+    display: block !important
