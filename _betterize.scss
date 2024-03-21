@@ -4,7 +4,7 @@
 /// ------------------------------------------------------------------------ ///
 /// betterize.scss -- Modern normalization for better cross-browser design - ///
 /// @author Stephen M Irving -- <@metric_dev> ------------------------------ ///
-/// version 1.3.2 -- 03/21/2024 -------------------------------------------- ///
+/// version 1.3.4 -- 03/21/2024 -------------------------------------------- ///
 /// ------------------------------------------------------------------------ ///
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -112,6 +112,7 @@ html {
   word-wrap: break-word; // 6
   overflow-wrap: break-word; // 6
   -webkit-hyphens: auto; // 7
+  -ms-hyphens: auto; // 7
   hyphens: auto; // 7
   -moz-tab-size: 4; // 8
   tab-size: 4; // 8
@@ -375,8 +376,10 @@ kbd {
   display: inline-block;
   padding: 4px 8px;
   padding: 0.25rem 0.5rem;
-  padding-block: 0.25rem;
-  padding-inline: 0.5rem;
+  padding-block-start: 0.25rem;
+  padding-block-end: 0.25em;
+  padding-inline-start: 0.5rem;
+  padding-inline-end: 0.5rem;
   border: 1px solid #b4b4b4;
   border-radius: 3px;
   background-color: #eee;
@@ -466,7 +469,8 @@ th {
 caption {
   padding: 12px 0;
   padding: 0.75rem 0;
-  padding-block: 0.75rem;
+  padding-block-start: 0.75rem;
+  padding-block-end: 0.75rem;
   color: #6c757d;
   caption-side: bottom;
   text-align: inherit;
@@ -486,8 +490,8 @@ hr:not(.hr-light) {
   border: 0;
   border-top: 2px solid #808080;
   border-top: 2px solid currentColor;
-  margin: 0 0 0.75em;
-  margin-block-end: 0.75em;
+  margin: 0 0 0.5em;
+  margin-block-end: 0.5em;
   color: inherit;
 }
 
@@ -610,8 +614,10 @@ input,
 select,
 textarea {
   padding: 0.25em 0.375em;
-  padding-block: 0.25em;
-  padding-inline: 0.375em;
+  padding-block-start: 0.25em;
+  padding-block-end: 0.25em;
+  padding-inline-start: 0.375em;
+  padding-inline-end: 0.375em;
   border: 1px solid WindowFrame;
   background-color: rgba(0, 0, 0, 0);
   color: inherit;
@@ -695,8 +701,10 @@ select {
 
 select {
   padding: 0.125em 1em 0.125em 0.25em;
-  padding-block: 0.125em;
-  padding-inline: 1em 0.25em;
+  padding-block-start: 0.125em;
+  padding-block-end: 0.125em;
+  padding-inline-start: 0.25em;
+  padding-inline-end: 1em;
   border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -852,11 +860,6 @@ progress {
 // just changing the color rather than remembering to overwrite opacity.
 
 :-moz-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
-
-::-moz-placeholder {
   color: inherit;
   opacity: 0.54;
 }
@@ -1190,19 +1193,19 @@ svg:not([fill]) {
 // Apply flex-based centering to an element directly from markup.
 
 .flex-center {
-  display: -webkit-box; // OLD - iOS 6-, Safari 3.1-6, BB7
-  display: -ms-flexbox; // OLD - IE 10
-  display: -webkit-flex; // NEWER - Safari 6.1+. iOS 7.1+, BB10
+  display: -webkit-box; // iOS 6-, Safari 3.1-6, BB7
+  display: -ms-flexbox; // IE 10
+  display: -webkit-flex; // Safari 6.1+. iOS 7.1+, BB10
   display: flex; // Standard syntax
 
-  -webkit-box-align: center; // OLD - iOS 6-, Safari 3.1-6
-  -ms-flex-align: center; // OLD - IE 10
-  -webkit-align-items: center; // NEWER - Safari 7.0+ iOS 7+
+  -webkit-box-align: center; // iOS 6-, Safari 3.1-6
+  -ms-flex-align: center; // IE 10
+  -webkit-align-items: center; // Safari 7.0+ iOS 7+
   align-items: center; // Standard syntax
 
-  -webkit-box-pack: center; // OLD - iOS 6-, Safari 3.1-6
-  -ms-flex-pack: center; // OLD - IE 10
-  -webkit-justify-content: center; // NEWER - Safari 6.1+. iOS 7.1+, BB10
+  -webkit-box-pack: center; // iOS 6-, Safari 3.1-6
+  -ms-flex-pack: center; // IE 10
+  -webkit-justify-content: center; // Safari 6.1+. iOS 7.1+, BB10
   justify-content: center; // Standard syntax
 }
 
@@ -1221,7 +1224,7 @@ svg:not([fill]) {
 /// context bugs and common z-index issues.
 ///
 /// @todo If not using React or something similar, delete this rule and comment.
-/// If you are going to use the rule, just delete this todo (or entire comment).
+/// If you are going to use the rule, just delete this comment.
 
 #root,
 #__next {

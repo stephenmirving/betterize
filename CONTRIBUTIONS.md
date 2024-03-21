@@ -9,7 +9,8 @@ appreciated.
 
 This project and everyone participating in it is governed by a Code of Conduct.
 By participating, you are expected to uphold this code. Please report unacceptable
-behavior to [stephenmichaelirving@gmail.com].
+behavior to [stephenmichaelirving@gmail.com] or via Twitter/X DM to
+<[@metric_dev](https://twitter.com/metric_dev)>.
 
 - Be friendly and patient: Remember you might not be communicating in someone
   else’s primary spoken or programming language, and others may not have your

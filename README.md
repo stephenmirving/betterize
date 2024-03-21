@@ -29,9 +29,12 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 1.3.2 - Last updated: 03/21/2024**
+**This is _betterize_ version 1.3.4 - Last updated: 03/21/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
+
+There is also a print stylesheet available in all of these file types as well.
+See: [Print Styles](#print-styles).
 
 The file size of betterize.min.css is 3.6kB minified and Gzipped.
 
@@ -135,11 +138,18 @@ browsers such as Chrome 64- which are more than a few years old.
 Also coming is custom configurarability for the betterize versions written for
 CSS preprocessors Sass and Less.
 
-### Version 1.3.1 and 1.3.2 Patch Notes
+### Version 1.3.4 Patch Notes
+
+- Changed all logical shorthand properties to their longhand forms
+  for broader compatibility.
+
+### Version 1.3.1 - 1.3.3 Patch Notes
 
 - Removed the semicolon after the charset declaration in `_betterize.sass`
 - Added `:not(.hr-light)` to the `hr` selector so using `.hr-light` would not
   maintain any of the opinionated choices for the `<hr>` element.
+- Removed the redundant `::-moz-placeholder` selector due to already using
+  `:-moz-placeholder` to support Firefox 18- as well.
 
 ### Version 1.3.0 Patch Notes
 
@@ -193,7 +203,7 @@ easiest way to accomplish that. If you want to lazy load the print stylesheet
 so it doesn't load until the user needs to print or after the page has already
 finished loading, then you can do that as well.
 
-The file size of `print.min.css` is 0.65kB minified and Gzipped.
+The file size of `print.min.css` is 656 Bytes minified and Gzipped.
 
 If you are using one of the CSS preprocessors (Sass or Less) then I recommend
 using `_print.sass`, `_print.scss`, and `_print.less` in their current form and
