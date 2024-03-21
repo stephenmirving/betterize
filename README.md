@@ -33,7 +33,7 @@ support and improve the experience of developing stylesheets for the web.
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
-The file size of betterize.min.css is 3.57kB minified and Gzipped.
+The file size of betterize.min.css is 3.6kB minified and Gzipped.
 
 ## Deployment
 
@@ -122,15 +122,15 @@ files themselves, as they are heavily documented.
 
 ### Upcoming Changes
 
-The next major change coming to _Betterize_ will be splitting it into two versions,
-one that includes fixes and normalization for as many browsers and devices as possible,
-regardless of the percentge of global users it still has. This version will
-remain as `betterize.css`. The other version will be called `betterize-slim.css`,
-and as the name suggests it will be a slimmed down version of the file that only
-targets a more limited and modern set of browser versions and devices. For example,
-it will not include any styling which is only of benefit to Internet Explorer,
-legacy Edge (18-) or versions of Evergreen browsers such as Chrome 64- which are
-more than a few years old.
+The next major change coming to _Betterize_ will be splitting it into two
+versions, one that includes fixes and normalization for as many browsers and
+devices as possible, regardless of the percentge of global users it still has.
+This version will remain as `betterize.css`. The other version will be called
+`betterize-slim.css`, and as the name suggests it will be a slimmed down version
+of the file that only targets a more limited and modern set of browser versions
+and devices. For example, it will not include any styling which is only of
+benefit to Internet Explorer, legacy Edge (18-) or versions of Evergreen
+browsers such as Chrome 64- which are more than a few years old.
 
 Also coming is custom configurarability for the betterize versions written for
 CSS preprocessors Sass and Less.
@@ -180,7 +180,7 @@ easiest way to accomplish that. If you want to lazy load the print stylesheet
 so it doesn't load until the user needs to print or after the page has already
 finished loading, then you can do that as well.
 
-The file size of `print.min.css` is 0.6kB minified and Gzipped.
+The file size of `print.min.css` is 0.65kB minified and Gzipped.
 
 If you are using one of the CSS preprocessors (Sass or Less) then I recommend
 using `_print.sass`, `_print.scss`, and `_print.less` in their current form and
