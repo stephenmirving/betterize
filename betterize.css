@@ -4,7 +4,7 @@
 /* --------------------------------------------------------------------------- /
 /* betterize.css -- Modern normalization for better cross-browser design ----- /
 /* @author Stephen M Irving -- <@metric_dev> --------------------------------- /
-/* version 1.3.5 -- 03/23/2024 ----------------------------------------------- /
+/* version 1.4.0 -- 03/23/2024 ----------------------------------------------- /
 /* --------------------------------------------------------------------------- /
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -555,7 +555,7 @@ hr {
   opacity: 1;
 }
 
-/* Add the correct font style in Android 4.3- */
+/* Add the correct font style in Android 4.3- and Safari 5.1- */
 
 cite,
 var,
@@ -563,13 +563,12 @@ dfn {
   font-style: italic;
 }
 
-/* Undo browser default margins */
+/* Undo browser default inline start margin */
 
 dd {
-  margin-bottom: 0.5em;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5em;
+  margin: 0 0 0.5rem;
   margin-block-end: 0.5rem;
-  margin-left: 0;
 }
 
 /* Reset all list styles for <ol> and <ul> elements used in <nav> elements */
@@ -609,10 +608,10 @@ dialog {
   position: absolute;
   right: 0;
   left: 0;
-  width: -webkit-fit-content;
+  width: -webkit-intrinsic;
   width: -moz-fit-content;
   width: fit-content;
-  height: -webkit-fit-content;
+  height: -webkit-intrinsic;
   height: -moz-fit-content;
   height: fit-content;
   padding: 1em;
@@ -667,7 +666,6 @@ textarea {
   padding-block-end: 0.25em;
   padding-inline-start: 0.375em;
   padding-inline-end: 0.375em;
-  border: 1px solid WindowFrame;
   background-color: rgba(0, 0, 0, 0);
   color: inherit;
   letter-spacing: inherit;
@@ -894,26 +892,6 @@ legend {
 progress {
   display: inline-block;
   vertical-align: baseline;
-}
-
-/*
- * Mozilla focus rings can look a little bit closer to the element than the
- * ring set in other browsers by `:focus-visible`. To normalize that, the
- * `:-moz-focusring` selector comes after the standardized `:focus-visible`.
- *
- * TODO: Change the outline color to something that matches your design, or
- *       change both rules to `outline:0` and create outlines with
- *       `box-shadow` instead.
- */
-
-:focus-visible {
-  outline: 2px solid #000;
-  outline-offset: 3px;
-}
-
-:-moz-focusring {
-  outline: 2px solid #000;
-  outline-offset: 4px;
 }
 
 /*

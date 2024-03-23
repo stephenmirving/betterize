@@ -29,7 +29,7 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 1.3.5 - Last updated: 03/23/2024**
+**This is _betterize_ version 1.4.0 - Last updated: 03/23/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
@@ -125,18 +125,14 @@ files themselves, as they are heavily documented.
 
 ### Upcoming Changes
 
-The next major change coming to _Betterize_ will be splitting it into two
-versions, one that includes fixes and normalization for as many browsers and
-devices as possible, regardless of the percentge of global users it still has.
-This version will remain as `betterize.css`. The other version will be called
-`betterize-slim.css`, and as the name suggests it will be a slimmed down version
-of the file that only targets a more limited and modern set of browser versions
-and devices. For example, it will not include any styling which is only of
-benefit to Internet Explorer, legacy Edge (18-) or versions of Evergreen
-browsers such as Chrome 64- which are more than a few years old.
+The next big update will include custom configurarability for the betterize
+versions written for CSS preprocessors Sass (`.scss`/`.sass`) and Less (`.less`).
 
-Also coming is custom configurarability for the betterize versions written for
-CSS preprocessors Sass and Less.
+### Version 1.4.0 Patch Notes
+
+- Completely removed the opinionated `:focus-visible` and `:-moz-focusring`
+  styles due to their ugly effect on form elements. Will be added back in a
+  more limited way in a future version.
 
 ### Version 1.3.5 Patch Notes
 
