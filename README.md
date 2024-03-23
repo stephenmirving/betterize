@@ -29,7 +29,7 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 1.4.0 - Last updated: 03/23/2024**
+**This is _betterize_ version 1.4.1 - Last updated: 03/23/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
@@ -128,11 +128,23 @@ files themselves, as they are heavily documented.
 The next big update will include custom configurarability for the betterize
 versions written for CSS preprocessors Sass (`.scss`/`.sass`) and Less (`.less`).
 
+### Version 1.4.1 Patch Notes
+
+- Changed the regular `::placeholder` selector to have the same properties as
+  the vendor-prefixed versions of the selector.
+
 ### Version 1.4.0 Patch Notes
 
 - Completely removed the opinionated `:focus-visible` and `:-moz-focusring`
   styles due to their ugly effect on form elements. Will be added back in a
   more limited way in a future version.
+- Modified the margin properties on the `dd` selector to use the shorthand
+  `margin` property instead of setting `margin-bottom` and `margin-left`
+  separately.
+- Changed instances of `-webkit-fit-content` to the correct legacy WebKit,
+  non-standard form of `fit-content`: `-webkit-intrinsic`.
+- Removed explicitly set border override with `WindowFrame` color from
+  declaration with `button`, `input`, `select`, and `text-area` selectors.
 
 ### Version 1.3.5 Patch Notes
 
