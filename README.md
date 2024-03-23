@@ -36,7 +36,7 @@ _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` ve
 There is also a print stylesheet available in all of these file types as well.
 See: [Print Styles](#print-styles).
 
-The file size of betterize.min.css is 3.52kB minified and Gzipped.
+The file size of betterize.min.css is 3.51kB minified and Gzipped.
 
 ## Deployment
 
