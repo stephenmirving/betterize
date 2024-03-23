@@ -29,7 +29,7 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 1.3.4 - Last updated: 03/21/2024**
+**This is _betterize_ version 1.3.5 - Last updated: 03/23/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
@@ -137,6 +137,13 @@ browsers such as Chrome 64- which are more than a few years old.
 
 Also coming is custom configurarability for the betterize versions written for
 CSS preprocessors Sass and Less.
+
+### Version 1.3.5 Patch Notes
+
+- Fixed the opinionated `<hr>` styling to look more subtle. The `.hr-light`
+  class is still available to overwrite it.
+- Updated the `.sr-only` / `.visually-hidden` classes to remove an unnecessary
+  declaration.
 
 ### Version 1.3.4 Patch Notes
 
