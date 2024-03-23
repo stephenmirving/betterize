@@ -2,7 +2,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 /// ------------------------------------------------------------------------ ///
-/// betterize.less -- Modern normalization for better cross-browser design - ///
+/// betterize-slim.scss -- Modern normalization, better cross-browser design ///
 /// @author Stephen M Irving -- <@metric_dev> ------------------------------ ///
 /// version 2.0.0 -- 03/23/2024 -------------------------------------------- ///
 /// ------------------------------------------------------------------------ ///
@@ -28,8 +28,8 @@
 // 3. Ensure background images do not repeat by default.
 
 *,
-:before,
-:after {
+::before,
+::after {
   box-sizing: inherit; // 1
   min-width: 0; // 2
   background-repeat: no-repeat; // 3
@@ -37,8 +37,8 @@
 
 // Improved default settings for the `::before` and `::after` pseudo-elements
 
-:before,
-:after {
+::before,
+::after {
   vertical-align: inherit;
   text-decoration: inherit;
 }
@@ -109,10 +109,8 @@ html {
     'Noto Color Emoji'; // 3
   font-size: 1em; // 4
   line-height: 1.15; // 5
-  word-wrap: break-word; // 6
   overflow-wrap: break-word; // 6
   -webkit-hyphens: auto; // 7
-  -ms-hyphens: auto; // 7
   hyphens: auto; // 7
   -moz-tab-size: 4; // 8
   tab-size: 4; // 8
@@ -120,7 +118,7 @@ html {
   color-scheme: light dark; // 10
   scrollbar-gutter: stable; // 11
   hanging-punctuation: first last; // 12
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 13
+  -webkit-tap-highlight-color: transparent; // 13
   -webkit-text-size-adjust: 100%; // 14
   -ms-overflow-style: scrollbar; // 15
 }
@@ -142,24 +140,10 @@ html {
   }
 }
 
-// IE10+ doesn't honor `<meta name="viewport">` in some cases.
-
-@at-root {
-  @-ms-viewport {
-    width: device-width;
-  }
-}
-
 /// Normalize the color of the background and text when it is highlighted by
 /// selecting it with a mouse.
 ///
 /// @todo - Customize the selection background and color to match your design.
-
-::-moz-selection {
-  background: #345172;
-  color: #fff;
-  text-shadow: none;
-}
 
 ::selection {
   background: #345172;
@@ -197,7 +181,6 @@ body {
   color: #212529; // 4
   font-size: 1rem; // 5
   line-height: 1.5; // 6
-  text-align: left; // 7
   text-align: start; // 7
   text-rendering: optimizeSpeed; // 8
   -moz-osx-font-smoothing: grayscale; // 9
@@ -219,12 +202,17 @@ body {
   }
 }
 
-// Ensure HTML5 structual elements and media elements
-// display correctly in all browsers.
+// Ensure HTML5 structual elements and media elements display correctly.
 
-article, aside, dialog, figcaption, figure,
-footer, header, hgroup, main, nav, section,
-canvas, details, summary, legend, img, svg, video {
+dialog,
+details,
+legend,
+main,
+summary,
+canvas,
+img,
+svg,
+video {
   display: block;
 }
 
@@ -250,10 +238,8 @@ figcaption {
 
 h1 {
   margin: 0 0 0.67em; // 1
-  margin-block-start: 0; // 2
-  margin-block-end: 0.67em; // 2
-  margin-inline-start: 0; // 2
-  margin-inline-end: 0; // 2
+  margin-block: 0 0.67em; // 2
+  margin-inline: 0; // 2
   font-size: 2em; // 3
 }
 
@@ -267,8 +253,7 @@ h6 {
   margin-top: 0;
   margin-block-start: 0;
   margin-block-end: initial;
-  margin-inline-start: initial;
-  margin-inline-end: initial;
+  margin-inline: initial;
 }
 
 // 1. Limit the inline size of paragraphs to 92 characters.
@@ -289,12 +274,9 @@ ol,
 ul,
 blockquote,
 figure {
-  margin: 0 0 1em;
   margin: 0 0 1rem;
-  margin-block-start: 0;
-  margin-block-end: 1rem;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+  margin-block: 0 1rem;
+  margin-inline: 0;
 }
 
 // Set a normalized font-weight for legacy Edge and older versions of Safari
@@ -325,18 +307,14 @@ sup {
 
 sub {
   bottom: -0.25em;
-  inset-block-start: auto;
-  inset-block-end: -0.25em;
-  inset-inline-start: auto;
-  inset-inline-end: auto;
+  inset-block: auto -0.25em;
+  inset-inline: auto;
 }
 
 sup {
   top: -0.5em;
-  inset-block-start: -0.5em;
-  inset-block-end: auto;
-  inset-inline-start: auto;
-  inset-inline-end: auto;
+  inset-block: -0.5em auto;
+  inset-inline: auto;
 }
 
 // Correct the odd font inheritance and size scaling issues seen
@@ -389,19 +367,13 @@ code {
 
 kbd {
   position: relative;
-  top: -2px;
   top: -0.125rem;
-  inset-block-start: -0.125rem;
-  inset-block-end: auto;
-  inset-inline-start: auto;
-  inset-inline-end: auto;
+  inset-block: -0.125rem auto;
+  inset-inline: auto;
   display: inline-block;
-  padding: 4px 8px;
   padding: 0.25rem 0.5rem;
-  padding-block-start: 0.25rem;
-  padding-block-end: 0.25em;
-  padding-inline-start: 0.5rem;
-  padding-inline-end: 0.5rem;
+  padding-block: 0.25rem;
+  padding-inline: 0.5rem;
   border: 1px solid #b4b4b4;
   border-radius: 3px;
   background-color: #eee;
@@ -424,12 +396,9 @@ kbd {
 
 pre {
   overflow: auto; // 1
-  margin: 0 0 1em; // 2
   margin: 0 0 1rem; // 2
-  margin-block-start: 0; // 3
-  margin-block-end: 1rem; // 3
-  margin-inline-start: 0; // 3
-  margin-inline-end: 0; // 3
+  margin-block: 0 1rem; // 3
+  margin-inline: 0; // 3
   -ms-overflow-style: scrollbar; // 4
 }
 
@@ -442,17 +411,15 @@ pre {
   padding-inline: 1rem;
 }
 
+
 output {
   display: inline-block;
 }
 
 address {
-  margin-bottom: 1em;
   margin-bottom: 1rem;
-  margin-block-start: 0;
-  margin-block-end: 1rem;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+  margin-block: 0 1rem;
+  margin-inline: 0;
   font-style: normal;
   line-height: inherit;
 }
@@ -476,7 +443,6 @@ table {
   vertical-align: middle;
   border-spacing: 0;
   border-collapse: collapse;
-  border-color: #808080;
   border-color: currentColor;
   text-indent: 0;
   font-variant-numeric: tabular-nums;
@@ -498,12 +464,9 @@ th {
 }
 
 caption {
-  padding: 12px 0;
   padding: 0.75rem 0;
-  padding-block-start: 0.75rem;
-  padding-block-end: 0.75rem;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
+  padding-block: 0.75rem;
+  padding-inline: 0;
   color: #6c757d;
   caption-side: bottom;
   text-align: inherit;
@@ -516,26 +479,21 @@ caption {
 hr {
   display: block;
   overflow: hidden;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
   padding: 0;
   border: 0;
-  border-top: 1px solid #808080;
-  border-top-color: currentColor;
-  margin: 1em 0;
+  border-top: 1px solid currentColor;
   margin: 1rem 0;
-  margin-block-start: 1rem;
-  margin-block-end: 1rem;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+  margin-block: 1rem;
+  margin-inline: 0;
   color: inherit;
   opacity: 0.6;
 }
 
 // If you do not like the look of the modified <hr> above, and you want a more
-// traditional horizontal rule without having to overwrite styling yourself, use
-// the `hr-light` class.
+// basic horizontal rule without having to overwrite styling yourself, use the
+// `hr-light` class.
 
 .hr-light {
   border-top-color: #ccc;
@@ -544,8 +502,6 @@ hr {
 
 // Add the correct font style in Android 4.3- and Safari 5.1-
 
-cite,
-var,
 dfn {
   font-style: italic;
 }
@@ -553,12 +509,9 @@ dfn {
 // Undo browser default inline start margin
 
 dd {
-  margin: 0 0 0.5em;
   margin: 0 0 0.5rem;
-  margin-block-start: 0;
-  margin-block-end: 0.5rem;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+  margin-block: 0 0.5rem;
+  margin-inline: 0;
 }
 
 // Reset all list styles for <ol> and <ul> elements used in <nav> elements
@@ -573,14 +526,15 @@ footer ul {
   list-style: none;
 }
 
-// Remove the margin on nested detail lists in IE and some versions of Chrome,
-// Edge, and Safari. Remove margin on nested ordered and unordered lists in
-// legacy Edge (18-) and IE.
+// Remove the margin on nested detail lists in Chrome, Edge, IE, and Safari,
 
-dl dl, dl ol, dl ul, dl menu,
-ol dl, ol ol, ol ul, ol menu,
-ul dl, ul ol, ul ul, ul menu,
-menu dl, menu ol, menu ul, menu menu {
+menu dl,
+ol dl,
+ul dl,
+dl dl,
+dl ol,
+dl ul,
+dl menu {
   margin: 0;
 }
 
@@ -604,7 +558,7 @@ dialog {
   height: -moz-fit-content;
   height: fit-content;
   padding: 1em;
-  border: solid;
+  border: 2px solid currentColor;
   margin: auto;
   background-color: #fff;
   color: #111;
@@ -647,11 +601,9 @@ input,
 select,
 textarea {
   padding: 0.25em 0.375em;
-  padding-block-start: 0.25em;
-  padding-block-end: 0.25em;
-  padding-inline-start: 0.375em;
-  padding-inline-end: 0.375em;
-  background-color: rgba(0, 0, 0, 0);
+  padding-block: 0.25em;
+  padding-inline: 0.375em;
+  background-color: transparent;
   color: inherit;
   letter-spacing: inherit;
 }
@@ -668,32 +620,29 @@ select,
 summary,
 textarea,
 [tabindex='0'] {
-  -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
 
-// 1. Remove the gray background on active links in IE10.
-// 2. Remove underline from links and add them back as a hover/focus effect.
-// 3. Ensure default cursor behavior on links.
-// 4. Remove gaps in link underlines in iOS8+ and Safari 8+ (opinionated).
-// 5. Add a fake color to `:link` and `:visited` which will cause those
+// 1. Remove underline from links and add them back as a hover/focus effect.
+// 2. Ensure default cursor behavior on links.
+// 3. Remove gaps in link underlines in iOS8+ and Safari 8+ (opinionated).
+// 4. Add a fake color to `:link` and `:visited` which will cause those
 //    link states to fall back to the color set on the `<a>` itself.
 
 a {
-  background-color: transparent; // 1
-  text-decoration: none; // 2
-  cursor: pointer; // 3
-  -webkit-text-decoration-skip: objects; // 4
+  text-decoration: none; // 1
+  cursor: pointer; // 2
+  -webkit-text-decoration-skip: objects; // 3
 
   &:link,
   &:visited {
-    color: _; // 5
+    color: _; // 4
   }
 
   &:hover,
   &:focus,
   &:active {
-    text-decoration: underline; // 2
+    text-decoration: underline; // 1
   }
 }
 
@@ -733,10 +682,8 @@ select {
 
 select {
   padding: 0.125em 1em 0.125em 0.25em;
-  padding-block-start: 0.125em;
-  padding-block-end: 0.125em;
-  padding-inline-start: 0.25em;
-  padding-inline-end: 1em;
+  padding-block: 0.125em;
+  padding-inline: 1em 0.25em;
   border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -787,14 +734,6 @@ textarea:disabled {
   cursor: not-allowed;
 }
 
-// Remove the padding and add the correct box sizing in IE 10-
-
-[type='checkbox'],
-[type='radio'] {
-  box-sizing: border-box; // 1
-  padding: 0; // 2
-}
-
 // Remove the border and padding in all browsers (opinionated)
 
 [type='color'],
@@ -836,23 +775,15 @@ fieldset {
   margin: 0;
 }
 
-// Correct the text wrapping in Edge and IE and the color inheritance from
-// <fieldset> elements in IE. Remove the padding so developers are not caught
-// out when they zero out <fieldset> elements.
-
 legend {
   width: 100%;
   max-width: 100%;
   padding: 0;
   border: 0;
-  margin-bottom: 0.36364em;
   margin-bottom: 0.5rem;
-  margin-block-start: 0;
-  margin-block-end: 0.5rem;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+  margin-block: 0 0.5rem;
+  margin-inline: 0;
   color: inherit;
-  font-size: 22px;
   font-size: 1.375rem;
   line-height: inherit;
   white-space: normal;
@@ -873,17 +804,7 @@ progress {
   outline: 0 !important;
 }
 
-// Correct the text style of placeholders in Firefox, Chrome, Edge, Safari.
-
-:-moz-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
-
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}
+// Correct the text style of placeholders.
 
 ::placeholder {
   color: inherit;
@@ -898,27 +819,13 @@ progress {
   -webkit-appearance: button;
 }
 
-// Fix inconsistent behavior in Legacy Edge and IE
-
-::-ms-expand {
-  display: none;
-}
-
 // Remove the additional :invalid styles in Firefox.
 
 :-moz-ui-invalid {
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-
-:-moz-submit-invalid {
-  -moz-box-shadow: none;
   box-shadow: none;
 }
 
 :invalid {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
 }
 
@@ -933,7 +840,6 @@ progress {
 // 2. Correct the outline offset in Safari.
 
 [type='search'] {
-  -webkit-appearance: none; // 1
   -webkit-appearance: textfield; // 1
   outline-offset: -2px; // 2
 }
@@ -991,12 +897,6 @@ img {
   font-style: italic;
   shape-margin: 1rem;
 
-  // IE fix for .svg as the src for an <img> scaling improperly.
-
-  &[src$='.svg'] {
-    width: 100%;
-  }
-
   // Render .svg, .bmp, .png, and .svg <img> elements
   // optimizing for quality over speed.
 
@@ -1041,12 +941,6 @@ details > summary:first-of-type {
 
 details[open] > summary:first-of-type {
   list-style: disclosure-open inside;
-}
-
-// Hide the overflow in legacy Edge and IE.
-
-svg:not(:root) {
-  overflow: hidden;
 }
 
 svg:not([fill]) {
@@ -1098,23 +992,13 @@ svg:not([fill]) {
 
 @media (prefers-reduced-motion: reduce) {
   *,
-  :before,
-  :after {
+  ::before,
+  ::after {
     background-attachment: initial !important; // 1
-    -webkit-transition-duration: 0s !important; // 2
-    -o-transition-duration: 0s !important; // 2
     transition-duration: 0s !important; // 2
-    -webkit-transition-delay: 0s !important; // 2
-    -o-transition-delay: 0s !important; // 2
     transition-delay: 0s !important; // 2
-    -webkit-animation-duration: 1ms !important; // 3
-    -moz-animation-duration: 1ms !important; // 3
     animation-duration: 1ms !important; // 3
-    -webkit-animation-delay: -1ms !important; // 3
-    -moz-animation-delay: -1ms !important; // 3
     animation-delay: -1ms !important; // 3
-    -webkit-animation-iteration-count: 1 !important; // 3
-    -moz-animation-iteration-count: 1 !important; // 3
     animation-iteration-count: 1 !important; // 3
     scroll-behavior: auto !important; // 4
   }
@@ -1180,18 +1064,16 @@ svg:not([fill]) {
   visibility: hidden;
 }
 
-// Contain floats with classic clearfix for all browsers.
+// Contain floats with classic clearfix.
 
 .clearfix {
-  *zoom: 1;
-
-  &:before,
-  &:after {
-    content: ' ';
+  &::before,
+  &::after {
+    content: '';
     display: table;
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -1207,27 +1089,14 @@ svg:not([fill]) {
 // Apply flex-based centering to an element directly from markup.
 
 .flex-center {
-  display: -webkit-box; // iOS 6-, Safari 3.1-6, BB7
-  display: -ms-flexbox; // IE 10
-  display: -webkit-flex; // Safari 6.1+. iOS 7.1+, BB10
-  display: flex; // Standard syntax
-
-  -webkit-box-align: center; // iOS 6-, Safari 3.1-6
-  -ms-flex-align: center; // IE 10
-  -webkit-align-items: center; // Safari 7.0+ iOS 7+
-  align-items: center; // Standard syntax
-
-  -webkit-box-pack: center; // iOS 6-, Safari 3.1-6
-  -ms-flex-pack: center; // IE 10
-  -webkit-justify-content: center; // Safari 6.1+. iOS 7.1+, BB10
-  justify-content: center; // Standard syntax
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // Toggle off an active animation by applying this class with JavaScript
 
 .anim-off {
-  -webkit-animation: none !important;
-  -moz-animation: none !important;
   animation: none !important;
 }
 

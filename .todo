@@ -7,16 +7,19 @@ TODO:
 
   ☐ For version 1.3.0
     ✔ Go through other sanitize files and add relevant content @started(24-03-18 23:27) @done(24-03-19 00:49) @lasted(1h22m52s)
-    ☐ Go through https://gist.github.com/absolutholz/a02b3bfd2fb45fc6ccd0ebe885608b85
-    ☐ GO through FSR file locally
-    ☐ use a media query to change the default `line-height` on the `body` from 1.5 to 1.4 when the user has a device viewport with low width or height.
-    ☐ Add to print file
+    ✔ Go through https://gist.github.com/absolutholz/a02b3bfd2fb45fc6ccd0ebe885608b85 @done(24-03-23 03:24)
+    ✔ GO through FSR file locally @done(24-03-23 03:24)
+    ✔ use a media query to change the default `line-height` on the `body` from 1.5 to 1.4 when the user has a device viewport with low width or height. @done(24-03-23 03:24)
+    ✔ Add to print file @done(24-03-23 03:24)
     ✔ Go through and add any necessary vendor prefixes @done(24-03-19 01:55)
     ✔ a:not([href]):not([tabindex]) fix @done(24-03-19 00:16)
     ✔ Turned of animations and transitions for prefers-reduce-motion with universal selector and !important @done(24-03-19 00:33)
-  ☐ For version 1.3.1
-    ☐ Figure out if double quotes might be better for compression than single quotes, and if so, switch.
+  ✔ For version 1.3.1 @done(24-03-23 03:24)
+    ✔ Figure out if double quotes might be better for compression than single quotes, and if so, switch. @done(24-03-23 03:24)
   ☐ For version 2.0.0
     ☐ Split Betterize into 2 main versions
-      ☐ The current version that tries to support all legacy browsers (rename `betterize-all`)
-      ☐ A slimmed down version that does not attempt to support IE (add back in double colon syntax)
+      ☐ Finish betterize-slim
+      ☐ Examine focus-state inconsistency issues
+
+  ☐ For Version 2.1.0
+    ☐ Figure out how the logical properties can overwrite physical properties correctly when writing direction changes

@@ -4,7 +4,7 @@
 /// ------------------------------------------------------------------------ ///
 /// betterize.sass -- Modern normalization for better cross-browser design - ///
 /// @author Stephen M Irving -- <@metric_dev> ------------------------------ ///
-/// version 1.4.1 -- 03/23/2024 -------------------------------------------- ///
+/// version 2.0.0 -- 03/23/2024 -------------------------------------------- ///
 /// ------------------------------------------------------------------------ ///
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -258,7 +258,8 @@ figcaption
   text-wrap: balance
 
 // 1. Remove the top margin for easier control as it avoids margin collapse.
-// 2. Overwrite bottom margin with margin-block-end for browesers that support it.
+// 2. Overwrite physical margin properties with logical margin properties if
+//    they are supported.
 // 3. Correct the font size `<h1>` elements within `<section>` and
 //    <article> contexts in Chrome, Firefox, and Safari.
 
@@ -266,7 +267,10 @@ h1
   // 1
   margin: 0 0 0.67em
   // 2
+  margin-block-start: 0
   margin-block-end: 0.67em
+  margin-inline-start: 0
+  margin-inline-end: 0
   // 3
   font-size: 2em
 
@@ -278,12 +282,16 @@ h4,
 h5,
 h6
   margin-top: 0
+  margin-block-start: 0
+  margin-block-end: initial
+  margin-inline-start: initial
+  margin-inline-end: initial
 
-// Limit the inline size of paragraphs to 95 characters.
+// Limit the inline size of paragraphs to 92 characters.
 // Set text-wrap to pretty if possible.
 
 p
-  max-inline-size: 95ch
+  max-inline-size: 92ch
   text-wrap: pretty
 
 // Remove the top margin for easier control as it avoids margin collapse.
@@ -298,7 +306,10 @@ blockquote,
 figure
   margin: 0 0 1em
   margin: 0 0 1rem
+  margin-block-start: 0
   margin-block-end: 1rem
+  margin-inline-start: 0
+  margin-inline-end: 0
 
 // Normalize bold and strong across browsers.
 
@@ -325,9 +336,17 @@ sup
 
 sub
   bottom: -0.25em
+  inset-block-start: auto
+  inset-block-end: -0.25em
+  inset-inline-start: auto
+  inset-inline-end: auto
 
 sup
   top: -0.5em
+  inset-block-start: -0.5em
+  inset-block-end: auto
+  inset-inline-start: auto
+  inset-inline-end: auto
 
 // Correct the odd font inheritance and size scaling issues seen
 // in some browsers when using `code`, `kbd`, `pre`, and `samp`.
@@ -379,6 +398,9 @@ kbd
   top: -2px
   top: -0.125rem
   inset-block-start: -0.125rem
+  inset-block-end: auto
+  inset-inline-start: auto
+  inset-inline-end: auto
   display: inline-block
   padding: 4px 8px
   padding: 0.25rem 0.5rem
@@ -398,7 +420,8 @@ kbd
 
 // 1. Dont't allow content to break outside
 // 2. Remove top margin to avoid vertical margin collapse.
-// 3. Overwrite margin-bottom with margin-block-end for browsers that support it.
+// 3. Overwrite physical margin properties with logical margin properties for
+//    browsers that support it in order to improve internationalization.
 // 4. Having @viewport set causes scrollbars to overlap content in legacy Edge
 //    and IE11, so force a non-overlapping, non-auto-hiding scrollbar.
 
@@ -409,13 +432,18 @@ pre
   margin: 0 0 1em
   margin: 0 0 1rem
   // 3
+  margin-block-start: 0
   margin-block-end: 1rem
+  margin-inline-start: 0
+  margin-inline-end: 0
   // 4
   -ms-overflow-style: scrollbar
 
 :where(pre:has(code))
   max-width: 120ch
+  max-inline-size: 120ch
   max-height: 340px
+  max-block-size: 340px
   padding-block: 0.5rem
   padding-inline: 1rem
 
@@ -425,7 +453,10 @@ output
 address
   margin-bottom: 1em
   margin-bottom: 1rem
+  margin-block-start: 0
   margin-block-end: 1rem
+  margin-inline-start: 0
+  margin-inline-end: 0
   font-style: normal
   line-height: inherit
 
@@ -467,6 +498,8 @@ caption
   padding: 0.75rem 0
   padding-block-start: 0.75rem
   padding-block-end: 0.75rem
+  padding-inline-start: 0
+  padding-inline-end: 0
   color: #6c757d
   caption-side: bottom
   text-align: inherit
@@ -495,6 +528,8 @@ hr
   margin: 1rem 0
   margin-block-start: 1rem
   margin-block-end: 1rem
+  margin-inline-start: 0
+  margin-inline-end: 0
   color: inherit
   opacity: 0.6
 
@@ -518,7 +553,10 @@ dfn
 dd
   margin: 0 0 0.5em
   margin: 0 0 0.5rem
+  margin-block-start: 0
   margin-block-end: 0.5rem
+  margin-inline-start: 0
+  margin-inline-end: 0
 
 // Reset all list styles for <ol> and <ul> elements used in <nav> elements
 
@@ -786,7 +824,10 @@ legend
   padding: 0
   margin-bottom: 0.36364em
   margin-bottom: 0.5rem
+  margin-block-start: 0
   margin-block-end: 0.5rem
+  margin-inline-start: 0
+  margin-inline-end: 0
   color: inherit
   font-size: 22px
   font-size: 1.375rem
@@ -807,8 +848,6 @@ progress
   outline: 0 !important
 
 // Correct the text style of placeholders in Firefox, Chrome, Edge, Safari.
-// In modern browsers, make it easier to replace the existing styles by
-// just changing the color rather than remembering to overwrite opacity.
 
 :-moz-placeholder
   color: inherit
@@ -1004,8 +1043,8 @@ svg:not([fill])
 
 @media (prefers-reduced-motion: reduce)
   *,
-  ::before,
-  ::after
+  :before,
+  :after
     // 1
     background-attachment: initial !important
     // 2
@@ -1084,10 +1123,11 @@ svg:not([fill])
 .invisible
   visibility: hidden
 
-// Contain floats with classic clearfix.
-// For all browsers (even IE 6 and up)
+// Contain floats with classic clearfix for all browsers.
 
 .clearfix
+  *zoom: 1
+
   &:before,
   &:after
     content: ' '

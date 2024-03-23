@@ -29,7 +29,7 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 1.4.1 - Last updated: 03/23/2024**
+**This is _betterize_ version 2.0.0 - Last updated: 03/23/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
@@ -37,6 +37,7 @@ There is also a print stylesheet available in all of these file types as well.
 See: [Print Styles](#print-styles).
 
 The file size of betterize.min.css is 3.51kB minified and Gzipped.
+The file size of betterize-slim.min.css is 3.24kB minified and Gzipped.
 
 ## Deployment
 
@@ -127,6 +128,20 @@ files themselves, as they are heavily documented.
 
 The next big update will include custom configurarability for the betterize
 versions written for CSS preprocessors Sass (`.scss`/`.sass`) and Less (`.less`).
+
+### Version 2.0.0 Patch Notes
+
+- Split _Betterize_ into two version. The original betterize file will remain
+  the same, and continue to normalize and improve designing for the widest range
+  of browsers and devices possible. A new version, which is called
+  betterize-slim, is a slimmed down version of _Betterize_ that only targets a
+  more limited and modern set of browser versions and devices. For example, it
+  will not include any styling which is only of benefit to Internet Explorer,
+  legacy Edge (18-) or versions of "Evergreen" browsers such as Chrome 64- which
+  are more than a few years old.
+- Fixed the logical properties in all versions of _Betterize_ such that when
+  writing style changes for different languages, the logical properties correctly
+  overwrite all of the physical properties.
 
 ### Version 1.4.1 Patch Notes
 

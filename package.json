@@ -1,6 +1,6 @@
 {
   "name": "betterize",
-  "version": "1.4.1",
+  "version": "2.0.0",
   "description": "Opinionated normalization for better cross-browser design.",
   "main": "betterize.css",
   "style": "betterize.css",
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "min": "cleancss -o betterize.min.css betterize.css && cleancss -o print.min.css print.css"
+    "min": "cleancss -o betterize.min.css betterize.css && cleancss -o print.min.css print.css && cleancss -o betterize-slim.min.css betterize-slim.css"
   },
   "repository": {
     "type": "git",
