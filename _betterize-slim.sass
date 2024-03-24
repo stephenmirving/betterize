@@ -4,7 +4,7 @@
 /// ------------------------------------------------------------------------ ///
 /// betterize-slim.sass -- Modern normalization, better cross-browser design ///
 /// @author Stephen M Irving -- <@metric_dev> ------------------------------ ///
-/// version 2.0.0 -- 03/23/2024 -------------------------------------------- ///
+/// version 2.0.1 -- 03/24/2024 -------------------------------------------- ///
 /// ------------------------------------------------------------------------ ///
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -74,8 +74,6 @@
 // 13. Remove the blue tap box over buttons and links in some versions of
 //     iOS browsers for touch-enabled devices.
 // 14. Prevent adjustments of font size after orientation changes in iOS.
-// 15. Setting @viewport causes scrollbars to overlap content in legacy Edge
-//     and IE11, so force a non-overlapping, non-auto-hiding scrollbar.
 
 html
   // 1
@@ -137,8 +135,6 @@ html
   // 14
   -webkit-text-size-adjust: 100%
   text-size-adjust: 100%
-  // 15
-  -ms-overflow-style: scrollbar
 
 // If user does not have prefers-reduced-motion on in their OS settings,
 // this will keep scrolling from looking jumpy when an anchor link or other
@@ -275,8 +271,6 @@ h5,
 h6
   margin-top: 0
   margin-block-start: 0
-  margin-block-end: initial
-  margin-inline: initial
 
 // Limit the inline size of paragraphs to 92 characters.
 // Set text-wrap to pretty if possible.
@@ -401,9 +395,7 @@ kbd
 // 1. Dont't allow content to break outside
 // 2. Remove top margin to avoid vertical margin collapse.
 // 3. Overwrite physical margin properties with logical margin properties for
-//    browsers that support it in order to improve internationalization.
-// 4. Having @viewport set causes scrollbars to overlap content in legacy Edge
-//    and IE11, so force a non-overlapping, non-auto-hiding scrollbar.
+//    browsers that support it to improve internationalization.
 
 pre
   // 1
@@ -413,8 +405,6 @@ pre
   // 3
   margin-block: 0 1rem
   margin-inline: 0
-  // 4
-  -ms-overflow-style: scrollbar
 
 :where(pre:has(code))
   max-width: 120ch
@@ -423,6 +413,7 @@ pre
   max-block-size: 340px
   padding-block: 0.5rem
   padding-inline: 1rem
+  background-color: #eee
 
 output
   display: inline-block
@@ -657,12 +648,6 @@ a:not([href]):not([tabindex])
   &:focus
     outline: 0
 
-// Show the overflow in legacy Edge (18-) and IE.
-
-button,
-input
-  overflow: visible
-
 // Remove the inheritance of text transform in Edge and Firefox.
 
 button,
@@ -716,12 +701,6 @@ button::-moz-focus-inner,
   padding: 0
   border-style: none
 
-input:disabled,
-select:disabled,
-textarea:disabled
-  background-color: #e6e6e6
-  cursor: not-allowed
-
 // Remove the border and padding in all browsers (opinionated)
 
 [type='color'],
@@ -741,12 +720,17 @@ input[type='datetime-local'],
 input[type='month']
   -webkit-appearance: listbox
 
-// Remove the default vertical scrollbar in IE 10+ and restric horizontal
-// resizing in all browsers.
+// Remove the default vertical scrollbar and restric horizontal resizing.
 
 textarea
   overflow: auto
   resize: vertical
+
+input:disabled,
+select:disabled,
+textarea:disabled
+  background-color: #e6e6e6
+  cursor: not-allowed
 
 // Reset fieldsets to make them behave more like a standard block element and
 // not negatively affect page layout.
@@ -795,13 +779,6 @@ progress
   color: inherit
   opacity: 0.54
 
-// 1. Correct the inability to style clickable types in iOS and Safari.
-// 2. Change font properties to `inherit` in Safari.
-
-::-webkit-file-upload-button
-  font: inherit
-  -webkit-appearance: button
-
 // Remove the additional :invalid styles in Firefox.
 
 :-moz-ui-invalid
@@ -810,10 +787,17 @@ progress
 :invalid
   box-shadow: none
 
+// 1. Correct the inability to style clickable types in iOS and Safari.
+// 2. Change font properties to `inherit` in Safari.
+
+::-webkit-file-upload-button
+  font: inherit
+  -webkit-appearance: button
+
 // Correct the cursor style of increment and decrement buttons in Chrome.
 
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button
   height: auto
 
 // Correct the appearance in Chrome and Safari and the outline style in Safari.
@@ -825,8 +809,8 @@ progress
 // Remove the inner padding on search cancel buttons and search decorations in
 // Chrome and Safari on macOS.
 
-[type='search']::-webkit-search-cancel-button,
-[type='search']::-webkit-search-decoration
+::-webkit-search-decoration,
+::-webkit-search-cancel-button
   -webkit-appearance: none
 
 

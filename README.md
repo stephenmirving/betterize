@@ -29,15 +29,16 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 2.0.0 - Last updated: 03/23/2024**
+**This is _betterize_ version 2.0.1 - Last updated: 03/24/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
 There is also a print stylesheet available in all of these file types as well.
 See: [Print Styles](#print-styles).
 
-The file size of betterize.min.css is 3.51kB minified and Gzipped.
-The file size of betterize-slim.min.css is 3.24kB minified and Gzipped.
+The file size of betterize.min.css is 11.49kB and is 3.58kB minified and Gzipped.
+
+The file size of betterize-slim.min.css is 9.22kB and is 3.2kB minified and Gzipped.
 
 ## Deployment
 
