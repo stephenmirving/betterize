@@ -130,6 +130,13 @@ files themselves, as they are heavily documented.
 The next big update will include custom configurarability for the betterize
 versions written for CSS preprocessors Sass (`.scss`/`.sass`) and Less (`.less`).
 
+### Version 2.0.1 - 2.0.3 Patch Notes
+
+- Fixed some mistakes related to `pre` and `code` styles
+- Removed more legacy browser code from betterize-slim files and shorted some
+  selectors.
+- Moved around the order of some rule sets to be more logically grouped.
+
 ### Version 2.0.0 Patch Notes
 
 - Split _Betterize_ into two version. The original betterize file will remain
