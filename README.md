@@ -29,7 +29,7 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 2.0.2 - Last updated: 03/24/2024**
+**This is _betterize_ version 2.0.3 - Last updated: 03/25/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
