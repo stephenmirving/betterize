@@ -29,16 +29,16 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 2.0.5 - Last updated: 03/26/2024**
+**This is _betterize_ version 2.0.6 - Last updated: 03/26/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
 There is also a print stylesheet available in all of these file types as well.
 See: [Print Styles](#print-styles).
 
-The file size of betterize.min.css is 11.55kB and is 3.59kB minified and Gzipped.
+The file size of betterize.min.css is 11.57kB and is 3.6kB minified and Gzipped.
 
-The file size of betterize-slim.min.css is 9.28kB and is 3.22kB minified and Gzipped.
+The file size of betterize-slim.min.css is 9.3kB and is 3.22kB minified and Gzipped.
 
 ## Deployment
 
@@ -130,7 +130,7 @@ files themselves, as they are heavily documented.
 The next big update will include custom configurarability for the betterize
 versions written for CSS preprocessors Sass (`.scss`/`.sass`) and Less (`.less`).
 
-### Version 2.0.1 - 2.0.5 Patch Notes
+### Version 2.0.1 - 2.0.6 Patch Notes
 
 - Fixed some mistakes related to `pre` and `code` styles
 - Removed more legacy browser code from betterize-slim files and shorted some
@@ -242,7 +242,7 @@ easiest way to accomplish that. If you want to lazy load the print stylesheet
 so it doesn't load until the user needs to print or after the page has already
 finished loading, then you can do that as well.
 
-The file size of `print.min.css` is 656 Bytes minified and Gzipped.
+The file size of `print.min.css` is 1.32 kB and is 656 Bytes minified and Gzipped.
 
 If you are using one of the CSS preprocessors (Sass or Less) then I recommend
 using `_print.sass`, `_print.scss`, and `_print.less` in their current form and
