@@ -29,7 +29,7 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 2.0.4 - Last updated: 03/25/2024**
+**This is _betterize_ version 2.0.5 - Last updated: 03/26/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
@@ -130,12 +130,13 @@ files themselves, as they are heavily documented.
 The next big update will include custom configurarability for the betterize
 versions written for CSS preprocessors Sass (`.scss`/`.sass`) and Less (`.less`).
 
-### Version 2.0.1 - 2.0.4 Patch Notes
+### Version 2.0.1 - 2.0.5 Patch Notes
 
 - Fixed some mistakes related to `pre` and `code` styles
 - Removed more legacy browser code from betterize-slim files and shorted some
   selectors.
 - Moved around the order of some rule sets to be more logically grouped.
+- Added additional comments
 
 ### Version 2.0.0 Patch Notes
 
