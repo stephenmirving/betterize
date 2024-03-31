@@ -19,17 +19,18 @@ support and improve the experience of developing stylesheets for the web.
 1. [Version](#version)
 2. [Deployment](#deployment)
 3. [Opinionated Design Choices](#opinionated-design-choices)
-4. [Recent Updates](#recent-updates)
-5. [Print Styles](#print-styles)
-6. [Contributions](#contributions)
-7. [License](#license)
-8. [Questions](#questions)
-9. [Smoother](#smoother)
-10. [Authors](#authors)
+4. [Betterize Vs. Betterize-Slim](#betterize-vs-betterize-slim)
+5. [Recent Updates](#recent-updates)
+6. [Print Styles](#print-styles)
+7. [Contributions](#contributions)
+8. [License](#license)
+9. [Questions](#questions)
+10. [Smoother](#smoother)
+11. [Authors](#authors)
 
 ## Version
 
-**This is _betterize_ version 2.0.7 - Last updated: 03/28/2024**
+**This is _betterize_ version 2.0.8 - Last updated: 03/30/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
@@ -45,13 +46,13 @@ The file size of betterize-slim.min.css is 9.29kB and is 3.22kB minified and Gzi
 _Betterize is now available on NPM! To install using NPM, simply run:
 
 ```bash
-npm i betterize
+npm i -D betterize
 ```
 
-You can see it on the NPM website here:
+You can see _Betterize_ on the NPM website here:
 [https://www.npmjs.com/package/betterize](https://www.npmjs.com/package/betterize)
 
-Alternately, you can use _betterize_ by simply downloading this repo.
+Alternately, you can use _Betterize_ by simply downloading [the _Betterize_ repo](https://github.com/stephenmirving/betterize).
 
 After using either method, you will need to choose which version of the file you
 will use. This depends on which CSS preprocessor you are using, or if you are
@@ -59,11 +60,32 @@ using one at all. _Betterize_ is included as a CSS file and a minified CSS file,
 but there are also versions for CSS preprocessors [Less](https://lesscss.org/)
 and [Sass](https://sass-lang.com/) (both `.sass` and `.scss` syntax available).
 
-Choose the file type you want and either copy it from the `node_modules/betterize`
-folder, or the downloaded repo folder, and paste it into your project. You could
-also have your build process pull it directly from the `node_modules` folder.
+Next decide if you want to use betterize or betterize-slim. While betterize
+attempts to offer maximum browser and device compatibility, from bleeding-edge
+to legacy, betterize-slim attempts to trim the fat by removing all styles and
+bug fixes that only benefit very old browsers, such as those that only target
+Internet Explorer.
+
+Choose the file version and type you want and either copy it from the
+`node_modules/betterize` folder, or the downloaded repo folder, and paste it
+into your project. You could also have your build process pull it directly from
+the `node_modules` folder.
 
 Of course, you can also simply copy and paste from the files in the repo itself.
+
+To copy all of the files from the pacackage out of the `node_modules` folder and
+into your project's style directory, you can use the following CLI command in bash.
+Change the path to wherever you want to move the file in your own project.
+
+```bash
+cp -r node_modules/betterize your/path-to/sass/vendors/
+```
+
+To copy just your chosen _Betterize_ and print file type project folder into your own style directory, you can use the following bash command:
+
+```bash
+cp node_modules/betterize/{_betterize-slim.scss,_print.scss} www/sass/vendors
+```
 
 It is recommended to put this file at the top of your existing stylesheet,
 either manually or as part of your build process, and not to link to it on its
@@ -123,14 +145,36 @@ so if you are going to use betterize you should know what to look out for.
 For more information about each specific choice, you can read the _betterize_
 files themselves, as they are heavily documented.
 
+## Betterize Vs. Betterize-Slim
+
+After version 2.0.0, _Betterize_ split into two major versions, `betterize` and
+`betterize-slim`, each with 5 possible file extension types that provide
+versions for the Sass and Less preprocessors, and a minified CSS file. (`.css`
+`.min.css`, `.sass`, `.scss`, and `.less`).
+
+While `betterize` has a design philosophy of offering the maximum browser and
+device compatibility possible, from legacy to the bleeding-edge,
+`betterize-slim` attempts to trim the fat by removing all styles and bug fixes
+that only benefit very old browsers or devices, such as those that only target
+Internet Explorer or Safari on iOS 5.1-. It also has a reduced numbers of fixes
+and styling that targets legacy Edge (18-) or versions of "Evergreen"
+PC browsers which are more than a few years old, such as Chrome 64-.
+
+If you need to support as many browsers and devices that you can, choose
+`betterize`. If you don't need to worry about very old devices and browsers,
+and in particular if you don't need to support IE, feel free to choose
+`betterize-slim` to save some bytes in your file size.
+
 ## Recent Updates
 
 ### Upcoming Changes
 
-The next big update will include custom configurarability for the betterize
-versions written for CSS preprocessors Sass (`.scss`/`.sass`) and Less (`.less`).
+- Custom configurarability for the betterize versions written for CSS
+  preprocessors Sass (`.scss`/`.sass`) and Less (`.less`).
+- An install script that lets you choose the type and file extensions you want
+  and copies those files into your project's style folder.
 
-### Version 2.0.1 - 2.0.7 Patch Notes
+### Version 2.0.1 - 2.0.8 Patch Notes
 
 - Fixed some mistakes related to `pre` and `code` styles
 - Removed more legacy browser code from betterize-slim files and shorted some
@@ -138,6 +182,7 @@ versions written for CSS preprocessors Sass (`.scss`/`.sass`) and Less (`.less`)
 - Moved around the order of some rule sets to be more logically grouped.
 - Added additional comments
 - Fixed a bad typo introduced into the `body` selectors comments.
+- Improved the README
 
 ### Version 2.0.0 Patch Notes
 
@@ -293,7 +338,7 @@ with the _Smoother_ library.
 You can install _Smoother_ in NPM like this:
 
 ```bash
-npm i smoother
+npm i -D smoother
 ```
 
 ## Contributions
