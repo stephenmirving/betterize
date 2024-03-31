@@ -30,7 +30,7 @@ support and improve the experience of developing stylesheets for the web.
 
 ## Version
 
-**This is _betterize_ version 2.0.8 - Last updated: 03/30/2024**
+**This is _betterize_ version 2.0.9 - Last updated: 03/30/2024**
 
 _Betterize_ is available in `.css`, `.min.css`, `.sass`, `.scss`, and `.less` versions.
 
@@ -46,7 +46,7 @@ The file size of betterize-slim.min.css is 9.29kB and is 3.22kB minified and Gzi
 _Betterize is now available on NPM! To install using NPM, simply run:
 
 ```bash
-npm i -D betterize
+npm i betterize
 ```
 
 You can see _Betterize_ on the NPM website here:
@@ -174,7 +174,7 @@ and in particular if you don't need to support IE, feel free to choose
 - An install script that lets you choose the type and file extensions you want
   and copies those files into your project's style folder.
 
-### Version 2.0.1 - 2.0.8 Patch Notes
+### Version 2.0.1 - 2.0.9 Patch Notes
 
 - Fixed some mistakes related to `pre` and `code` styles
 - Removed more legacy browser code from betterize-slim files and shorted some
